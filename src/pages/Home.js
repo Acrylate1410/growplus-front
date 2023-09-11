@@ -106,7 +106,7 @@ function Home() {
           </section>
           <footer className='bg-black md:flex justify-around text-white py-6 text-center md:text-start w-full'>
               <div>
-                  <p>Nhà phân phối: TRƯƠNG THANH TÚ – MẸ VÀ BÉ</p>
+                  <p>Nhà phân phối: Phúc Khang</p>
                   <p>Địa chỉ: 15 Lý Nam Đế, Hoàn Kiếm, Hà Nội</p>
                   <p>Hotline: 088 960 3579</p>
               </div>

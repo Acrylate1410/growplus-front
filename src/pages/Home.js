@@ -289,7 +289,7 @@ function Home() {
           <h2 className='font-bold text-3xl md:text-4xl mx-auto text-center mb-8 text-[#3b8b59] mt-20'>Cách sử dụng</h2>
           <div className="text-start my-20 rounded-3xl mx-2 md:flex justify-around">
               <div className='md:w-1/2 h-[400px] md:h-auto flex flex-col justify-between'>
-                {texts.map(i => <div className='text-center h-[85px] rounded-xl flex justify-center items-center bg-[#dddddd] md:px-8 px-2'>{i}</div>)}
+                {texts.map(i => <div className='text-center h-[85px] rounded-r-xl flex justify-center items-center border-l-8 border-[#3b8b59] bg-[#dddddd] md:px-8 px-2'>{i}</div>)}
               </div>
               <img alt="" className='w-4/5 mx-auto mt-8 mx:mx-0 md:w-1/3' src="f4ce03e778d1ad8ff4c0.png"></img>
           </div>

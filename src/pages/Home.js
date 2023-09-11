@@ -57,7 +57,7 @@ function Home() {
                   <HamburgerComponent />
               </div>
           </header>
-          <div className="bg-[url(/public/banner1.jpg)] bg-[length:100%_100%] h-[450px] md:h-[1100px] flex justify-center items-center px-12 mt-20 w-full">
+          <div className="bg-[url(/public/banner1.jpg)] bg-[length:100%_100%] h-[450px] md:h-[1200px] flex justify-center items-center px-12 mt-20 w-full">
             
           </div>
           <section className='w-full my-16 md:my-24'><IngredientTab /></section>

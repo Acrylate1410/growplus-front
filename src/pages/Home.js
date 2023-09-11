@@ -63,7 +63,7 @@ function Home() {
           <section className='w-full my-16 md:my-24'><IngredientTab /></section>
           <section className='w-full'><Wid /></section>
           <section className='w-full my-20'>
-              <h2 className='font-bold text-4xl mx-auto text-center mb-8 text-[#3b8b59]'>Quy cách đóng gói</h2>
+              <h2 className='font-bold text-3xl md:text-4xl mx-auto text-center mb-8 text-[#3b8b59]'>Quy cách đóng gói</h2>
               <div className='flex md:flex-row flex-col items-center md:justify-around py-4 px-2 md:px-20'>
                   <img alt="" src="gh.png" className='md:w-2/5 order-2 md:order-1 mt-8 md:mt-0'></img>
                   <div className='w-full md:w-1/3 md:order-2 order-1 '>
@@ -232,7 +232,7 @@ function Home() {
                     {id: "07", text: "Sản xuất tại nhà máy đạt chuẩn GMP có tiêu chuẩn chất lượng khắt khe về nguyên liệu, máy móc, công nghệ, quy trình sản xuất và chất lượng thành phẩm với đội ngũ chuyên gia hàng đầu nghiên cứu về nguồn dinh dưỡng & phát triển toàn diện của trẻ"}]
     return (
       <>
-        <h2 className='font-bold text-4xl mx-auto text-center mb-8 text-white'>Lợi ích của Grow Plus+</h2>
+        <h2 className='font-bold text-3xl md:text-4xl mx-auto text-center mb-8 text-white'>Lợi ích của Grow Plus+</h2>
         <div className='md:flex flex-wrap justify-around md:my-16'>
           {texts.map(i => 
             <div key={i.id} className='flex w-[90%] md:w-[34%] my-16 md:my-8 mx-auto md:mx-0 bg-[#3b8b59] items-center py-16 relative rounded-3xl border-4 border-white'>
@@ -286,7 +286,7 @@ function Home() {
     const texts = ["Liều dùng: 1 gói 1 ngày", "Nên uống buổi sáng sau hoặc trước khi ăn 30 phút đến 1 tiếng", "Nên sử dụng theo liệu trình tối thiểu 3 đến 5 tháng để đạt hiệu quả tối đa", "Sản phẩm có thể sử dụng duy trì thường xuyên mà không gây tác dụng phụ"]
     return (
         <div className='md:w-3/4 mx-auto mt-12'>
-          <h2 className='font-bold text-4xl mx-auto text-center mb-8 text-[#3b8b59] mt-20'>Cách sử dụng</h2>
+          <h2 className='font-bold text-3xl md:text-4xl mx-auto text-center mb-8 text-[#3b8b59] mt-20'>Cách sử dụng</h2>
           <div className="text-start my-20 rounded-3xl mx-2 md:flex justify-around">
               <div className='md:w-1/2 h-[400px] md:h-auto flex flex-col justify-between'>
                 {texts.map(i => <div className='text-center h-[85px] rounded-xl flex justify-center items-center bg-[#dddddd] md:px-8 px-2'>{i}</div>)}

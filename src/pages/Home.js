@@ -65,7 +65,7 @@ function Home() {
           <section className='w-full my-20'>
               <h2 className='font-bold text-3xl md:text-4xl mx-auto text-center mb-8 text-[#3b8b59]'>Quy cách đóng gói</h2>
               <div className='flex md:flex-row flex-col items-center md:justify-around py-4 px-2 md:px-20'>
-                  <img alt="" src="gh.png" className='md:w-2/5 order-2 md:order-1 mt-8 md:mt-0'></img>
+                  <img alt="" src="gh.jpg" className='md:w-2/5 order-2 md:order-1 mt-8 md:mt-0 shadow-[0_60px_60px_-15px_rgba(0,0,0,0.3)] rounded-[45px] '></img>
                   <div className='w-full md:w-1/3 md:order-2 order-1 '>
                     <div className='flex justify-around'>
                         {["gói/hộp", "gram/gói"].map(i =>

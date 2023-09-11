@@ -83,7 +83,7 @@ function Home() {
           <section className='w-full'><Accordion /></section>
           <section className='bg-[url(/public/adfh.jpg)] bg-cover bg-center relative h-[550px] mt-20' ref={form}>
             <div className='absolute top-0 bottom-0 left-0 right-0 bg-[#3b8b59] opacity-60 z-0'></div>
-            <div className='relative z-10 backdrop-blur-[1.5px] h-full  flex flex-col justify-center'>
+            <div className='relative z-10 backdrop-blur-[0.5px] h-full  flex flex-col justify-center'>
               <h2 className='text-center font-bold text-3xl md:text-4xl  mb-12 z-10 text-white'>Thông tin khách hàng</h2>
               <form onSubmit={handleSubmit} className='flex flex-col items-center'>
                 <input ref={name} required className='outline-0 border border-[#3b8b59] text-[#3b8b59] md:w-1/2 w-4/5 p-2 my-2 rounded-lg' placeholder='Họ và tên khách hàng'></input>
@@ -257,7 +257,7 @@ function Home() {
     return (
       <div className='bg-[url(/public/ed936cd603a9d1f788b8.jpg)] bg-[length:200%_100%] md:bg-[length:100%_100%] flex flex-col justify-center relative z-0'>
         <div className='absolute top-0 bottom-0 left-0 right-0 bg-[#3b8b59] opacity-80 z-0'></div>
-        <div className='relative z-10 backdrop-blur-[1.5px] h-full'>
+        <div className='relative z-10 backdrop-blur-[0.5px] h-full'>
           <h2 className='text-center font-bold text-3xl md:text-4xl z-10 mt-20 text-white'>Grow Plus+</h2>
           <p className='text-xl text-center mt-4 md:mb-0 mb-20 text-white'>Giúp mẹ chăm con nhàn rỗi và mang đến sức khỏe toàn diện cho con</p>
           <div className='mx-4 md:mx-12'>

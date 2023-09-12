@@ -57,7 +57,7 @@ function Home() {
                   <HamburgerComponent />
               </div>
           </header>
-          <div className="bg-[url(/public/banner.jpg)] bg-[length:158%_100%] md:bg-cover h-[300px] md:h-[550px] mt-20">
+          <div className="bg-[url(/public/banner.jpg)] bg-[length:158%_100%] md:bg-cover h-[350px] md:h-[550px] mt-20">
             
           </div>
           <section className='w-full my-16 md:my-24'><IngredientTab /></section>

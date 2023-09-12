@@ -57,7 +57,7 @@ function Home() {
                   <HamburgerComponent />
               </div>
           </header>
-          <div className="bg-[url(/public/banner.jpg)] bg-[length:158%_100%] md:bg-cover h-[350px] md:h-[550px] mt-20">
+          <div className="bg-[url(/public/banner.jpg)] bg-[length:158%_100%] md:bg-[length:100%_100%] h-[350px] md:h-[550px] mt-20">
             
           </div>
           <section className='w-full my-16 md:my-24'><IngredientTab /></section>
@@ -255,7 +255,7 @@ function Home() {
                     {logo: <BsFillLungsFill/>, text: "Giúp bổ phổi, tăng cường hệ hô hấp của trẻ, giảm tình trạng viêm phổi, viêm đường hô hấp và ốm vặt"},
                     {logo: <GiNightSleep/>, text: "Giúp trẻ ăn và ngủ ngon hơn"}]
     return (
-      <div className='bg-[url(/public/ed936cd603a9d1f788b8.jpg)] bg-[length:200%_100%] md:bg-cover flex flex-col justify-center relative z-0'>
+      <div className='bg-[url(/public/ed936cd603a9d1f788b8.jpg)] bg-[length:200%_100%] md:bg-[length:100%_100%] flex flex-col justify-center relative z-0'>
         <div className='absolute top-0 bottom-0 left-0 right-0 bg-[#3b8b59] opacity-80 z-0'></div>
         <div className='relative z-10 backdrop-blur-[0.5px] h-full'>
           <h2 className='text-center font-bold text-3xl md:text-4xl z-10 mt-20 text-white'>Grow Plus+</h2>

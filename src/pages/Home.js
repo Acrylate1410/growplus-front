@@ -1,6 +1,5 @@
 
 import {IoMdNutrition} from 'react-icons/io'
-
 import {IoAccessibilitySharp} from 'react-icons/io5'
 import {GiBodyHeight, GiNightSleep, GiBrain} from 'react-icons/gi'
 import {FaBacteria} from 'react-icons/fa'
@@ -9,35 +8,7 @@ import {FaShieldHalved} from 'react-icons/fa6'
 import {AiOutlineMail, AiOutlineSearch} from 'react-icons/ai'
 import { useRef, useState, useEffect } from 'react';
 import Hamburger from 'hamburger-react'
-
-
 function Home() {
-  const name = useRef(null)
-  const phone = useRef(null)
-  const address = useRef(null)
-  const subdivision = useRef(null)
-  const district = useRef(null)
-  const city = useRef(null)
-  const quantity = useRef(null)
-  const form = useRef(null)  
-  const handleSubmit = (e) => {
-      e.preventDefault()
-      fetch("http://localhost:8080/orders/save_order", {
-          method: "POST",
-          body: JSON.stringify({
-            name: name.current.value,
-            phone: phone.current.value,
-            address: address.current.value,
-            subdivision: subdivision.current.value,
-            district: district.current.value,
-            city: city.current.value,
-            quantity: quantity.current.value
-          }),
-          headers: {
-            'Content-Type': 'application/json'
-          },
-      }).then(window.location.reload())
-  }
     return (
         <div className="App w-full overflow-hidden mx-0 relative">
           <header className='header p-4 bg-[#9ec7a5] flex items-center justify-between fixed top-0 right-0 left-0 z-20'>
@@ -57,9 +28,7 @@ function Home() {
                   <HamburgerComponent />
               </div>
           </header>
-          <div className="bg-[url(/public/banner.jpg)] bg-[length:158%_100%] md:bg-[length:100%_100%] h-[350px] md:h-[550px] mt-20">
-            
-          </div>
+          <div className="bg-[url(/public/banner.jpg)] bg-[length:158%_100%] md:bg-[length:100%_100%] h-[350px] md:h-[550px] mt-20"></div>
           <section className='w-full my-16 md:my-24'><IngredientTab /></section>
           <section className='w-full'><Wid /></section>
           <section className='w-full my-20'>
@@ -79,36 +48,13 @@ function Home() {
               </div>
           </section>
           <section className='w-full  bg-gradient-to-r from-[#3b8b59] from-40% to-green-500 pt-20 pb-4'><NotableBenefits /></section>
-
           <section className='w-full'><Accordion /></section>
-          <section className='bg-[url(/public/adfh.jpg)] bg-cover bg-center relative h-[550px] mt-20' ref={form}>
-            <div className='absolute top-0 bottom-0 left-0 right-0 bg-[#3b8b59] opacity-60 z-0'></div>
-            <div className='relative z-10 backdrop-blur-[0.5px] h-full  flex flex-col justify-center'>
-              <h2 className='text-center font-bold text-3xl md:text-4xl  mb-12 z-10 text-white'>Thông tin khách hàng</h2>
-              <form onSubmit={handleSubmit} className='flex flex-col items-center'>
-                <input ref={name} required className='outline-0 border border-[#3b8b59] text-[#3b8b59] md:w-1/2 w-4/5 p-2 my-2 rounded-lg' placeholder='Họ và tên khách hàng'></input>
-                <input ref={phone} required className='outline-0 border border-[#3b8b59] text-[#3b8b59] md:w-1/2 w-4/5 p-2 my-2 rounded-lg' placeholder='Số điện thoại'></input>
-                <input ref={address} required className='outline-0 border border-[#3b8b59] text-[#3b8b59] md:w-1/2 w-4/5 p-2 my-2 rounded-lg' placeholder='Địa chỉ nhận hàng'></input>
-                <div className='flex flex-col md:flex-row justify-between md:w-1/2 w-4/5 my-0 md:my-2 mx-auto'>
-                    <input ref={subdivision} required className='outline-0 border border-[#3b8b59] text-[#3b8b59] md:w-[31.5%] my-2 md:my-0 p-2 rounded-lg' placeholder='Phường'></input>
-                    <input ref={district} required className='outline-0 border border-[#3b8b59] text-[#3b8b59] md:w-[31.5%] my-2 md:my-0 p-2 rounded-lg' placeholder='Quận'></input>
-                    <input ref={city} required className='outline-0 border border-[#3b8b59] text-[#3b8b59] md:w-[31.5%] my-2 md:my-0 p-2 rounded-lg' placeholder='Thành phố'></input>
-                </div>
-                <div className='mx-auto md:w-1/2 w-4/5 flex justify-end items-center mt-4'>
-                  <p className='text-white'>Số hộp: </p>
-                  <input ref={quantity} defaultValue="1" min="1" type="number" className='outline-0 border border-[#3b8b59] text-[#3b8b59] w-12 mx-4 pl-1 py-0.5 rounded-lg'></input>
-                  <button type="submit" className='bg-[#3b8b59] text-white w-36 h-12 rounded-full flex items-center justify-center border border-[#3b8b59] hover:bg-white hover:text-[#3b8b59] transition '>
-                      Đặt hàng        
-                  </button>
-                </div>
-              </form>
-            </div>
-          </section>
+          <section className='bg-[url(/public/adfh.jpg)] bg-cover bg-center relative h-[550px] mt-20'><Form/></section>
           <footer className='bg-black md:flex justify-around text-white py-6 text-center md:text-start w-full'>
-              <div>
-                  <p>Nhà phân phối: Phúc Khang</p>
-                  <p>Địa chỉ: 15 Lý Nam Đế, Hoàn Kiếm, Hà Nội</p>
-                  <p>Hotline: 088 960 3579</p>
+              <div className='mx-2'>
+                  <p className='my-2 md:my-0'>Nhà phân phối: Công ty TNHH Đầu tư thương mại và Du lịch Phúc Khang</p>
+                  <p className='my-2 md:my-0'>Địa chỉ: 55 Ngõ 144 An Dương Vương, Phú Thượng, Tây Hồ, Hà Nội</p>
+                  <p className='my-2 md:my-0'>Hotline: 093 909 1155</p>
               </div>
               <div className='my-6 md:my-0 md:mx-6'>
                   <p>KẾT NỐI CHÚNG TÔI QUA</p>
@@ -124,14 +70,65 @@ function Home() {
               </div>
               <div>
                   <p>HOTLINE HỖ TRỢ (VIBER, ZALO)</p>
-                  <p>0983 191 166</p>
+                  <p>098 319 1166</p>
               </div>
           </footer>
       </div>
     )
   };
   
-
+  function Form() {
+    const name = useRef(null)
+    const phone = useRef(null)
+    const address = useRef(null)
+    const subdivision = useRef(null)
+    const district = useRef(null)
+    const city = useRef(null)
+    const quantity = useRef(null)
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        fetch("http://localhost:8080/orders/save_order", {
+            method: "POST",
+            body: JSON.stringify({
+              name: name.current.value,
+              phone: phone.current.value,
+              address: address.current.value,
+              subdivision: subdivision.current.value,
+              district: district.current.value,
+              city: city.current.value,
+              quantity: quantity.current.value
+            }),
+            headers: {
+              'Content-Type': 'application/json'
+            },
+        }).then(window.location.reload())
+    }
+    return (
+      <>
+            <div className='absolute top-0 bottom-0 left-0 right-0 bg-[#3b8b59] opacity-60 z-0'></div>
+            <div className='relative z-10 backdrop-blur-[0.5px] h-full  flex flex-col justify-center'>
+              <h2 className='text-center font-bold text-3xl md:text-4xl  mb-12 z-10 text-white'>Thông tin khách hàng</h2>
+              <form onSubmit={handleSubmit} className='flex flex-col items-center'>
+                <input ref={name} required className='outline-0 text-[#3b8b59] md:w-1/2 w-4/5 p-2 my-2 rounded-lg' placeholder='Họ và tên khách hàng'></input>
+                <input ref={phone} required className='outline-0 text-[#3b8b59] md:w-1/2 w-4/5 p-2 my-2 rounded-lg' placeholder='Số điện thoại'></input>
+                <input ref={address} required className='outline-0 text-[#3b8b59] md:w-1/2 w-4/5 p-2 my-2 rounded-lg' placeholder='Địa chỉ nhận hàng'></input>
+                <div className='flex flex-col md:flex-row justify-between md:w-1/2 w-4/5 my-0 md:my-2 mx-auto'>
+                    <input ref={subdivision} required className='outline-0 text-[#3b8b59] md:w-[31.5%] my-2 md:my-0 p-2 rounded-lg' placeholder='Phường'></input>
+                    <input ref={district} required className='outline-0 text-[#3b8b59] md:w-[31.5%] my-2 md:my-0 p-2 rounded-lg' placeholder='Quận'></input>
+                    <input ref={city} required className='outline-0 text-[#3b8b59] md:w-[31.5%] my-2 md:my-0 p-2 rounded-lg' placeholder='Thành phố'></input>
+                </div>
+                <div className='mx-auto md:w-1/2 w-4/5 flex justify-end items-center mt-4'>
+                  <p className='text-white'>Số hộp: </p>
+                  <input ref={quantity} defaultValue="1" min="1" type="number" className='outline-0 text-[#3b8b59] w-12 mx-4 pl-1 py-0.5 rounded-lg'></input>
+                  <button type="submit" className='bg-[#3b8b59] text-white w-36 h-12 rounded-full flex items-center justify-center border border-[#3b8b59] hover:bg-white hover:text-[#3b8b59] transition '>
+                      Đặt hàng        
+                  </button>
+                </div>
+              </form>
+            </div>
+      </>
+    )
+  }
   
   function IngredientTab() {
     const ingredients =[{id: 1,  ingredient: "Canxi lactate", amount: "30"},
@@ -158,25 +155,25 @@ function Home() {
                         {id: 22, ingredient: "Vitamin B6", amount: "2"},
                         {id: 23, ingredient: "Vitamin B12 (0,1%)", amount: "2"},
                       ]
-        return (
-          <>
-            <h2 className='text-center font-bold text-3xl md:text-4xl  mb-12 z-10 text-[#3b8b59]'>Thành phần dinh dưỡng</h2>
-            <div id="ingredients" className='md:w-3/5 md:mx-auto mx-2'>
-              <div className='flex justify-between font-bold px-4 py-5 text-white rounded-t-xl bg-[#3b8b59] items-center'>
-                  <p>Thành phần </p>
-                  <p className='text-end'>Hàm lượng (mg/gói)</p>
-              </div>
-              <div className='h-[500px] overflow-y-scroll'>
-                  {ingredients.map(i =>
-                    <div key={i.id} className={i.id % 2 !== 0 ? 'flex justify-between py-4 px-4' :  'flex justify-between py-4 px-4 bg-[#dddddd]'}>
-                          <p>{i.ingredient}</p>
-                          <p>{i.amount}</p>
-                    </div>
-                  )}
-              </div>
-            </div>
-          </>
-        )
+    return (
+      <>
+        <h2 className='text-center font-bold text-3xl md:text-4xl  mb-12 z-10 text-[#3b8b59]'>Thành phần dinh dưỡng</h2>
+        <div id="ingredients" className='md:w-3/5 md:mx-auto mx-2'>
+          <div className='flex justify-between font-bold px-4 py-5 text-white rounded-t-xl bg-[#3b8b59] items-center'>
+              <p>Thành phần </p>
+              <p className='text-end'>Hàm lượng (mg/gói)</p>
+          </div>
+          <div className='h-[500px] overflow-y-scroll'>
+              {ingredients.map(i =>
+                <div key={i.id} className={i.id % 2 !== 0 ? 'flex justify-between py-4 px-4' :  'flex justify-between py-4 px-4 bg-[#dddddd]'}>
+                    <p>{i.ingredient}</p>
+                    <p>{i.amount}</p>
+                </div>
+              )}
+          </div>
+        </div>
+      </>
+    )
   }
   
   function SearchButton() {
@@ -234,13 +231,12 @@ function Home() {
       <>
         <h2 className='font-bold text-3xl md:text-4xl mx-auto text-center mb-8 text-white'>Lợi ích của Grow Plus+</h2>
         <div className='md:flex flex-wrap justify-around md:my-16'>
-          {texts.map(i => 
-            <div key={i.id} className='flex w-[90%] md:w-[34%] my-16 md:my-8 mx-auto md:mx-0 bg-[#3b8b59] items-center py-16 relative rounded-3xl border-4 border-white'>
-              <div className='h-24 w-24 rounded-full bg-[#9ec7a5] absolute top-[-50px] md:top-[-36px] left-[35.5%] md:left-[-36px] border-8 border-white flex items-center justify-center text-white text-4xl font-bold'>{i.id}</div>
-              <div className='flex-1 mx-6 text-center text-white'>{i.text}</div>
-            </div>
+            {texts.map(i => 
+              <div key={i.id} className='flex w-[90%] md:w-[34%] my-16 md:my-8 mx-auto md:mx-0 bg-[#3b8b59] items-center py-16 relative rounded-3xl border-4 border-white'>
+                <div className='h-24 w-24 rounded-full bg-[#9ec7a5] absolute top-[-50px] md:top-[-36px] left-[35.5%] md:left-[-36px] border-8 border-white flex items-center justify-center text-white text-4xl font-bold'>{i.id}</div>
+                <div className='flex-1 mx-6 text-center text-white'>{i.text}</div>
+              </div>
             )}
-
         </div>
       </>
     )
@@ -289,13 +285,11 @@ function Home() {
           <h2 className='font-bold text-3xl md:text-4xl mx-auto text-center mb-8 text-[#3b8b59] mt-20'>Cách sử dụng</h2>
           <div className="text-start my-20 rounded-3xl mx-2 md:flex justify-around">
               <div className='md:w-1/2 h-[400px] md:h-auto flex flex-col justify-between'>
-                {texts.map(i => <div className='text-center h-[85px] rounded-r-xl flex justify-center items-center border-l-8 border-[#3b8b59] bg-[#dddddd] md:px-8 px-2'>{i}</div>)}
+                {texts.map(i => <div key={i} className='text-center h-[85px] rounded-r-xl flex justify-center items-center border-l-8 border-[#3b8b59] bg-[#dddddd] md:px-8 px-2'>{i}</div>)}
               </div>
               <img alt="" className='w-4/5 mx-auto mt-8 mx:mx-0 md:w-1/3' src="f4ce03e778d1ad8ff4c0.png"></img>
           </div>
         </div>
     )
   }
-
-
   export default Home;

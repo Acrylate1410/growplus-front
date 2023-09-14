@@ -1,10 +1,6 @@
-import { Suspense, useEffect, useState } from "react";
-import { BsTelephone } from "react-icons/bs";
-import {CgProfile} from "react-icons/cg"
-import {RxCrossCircled} from "react-icons/rx"
+import { useEffect, useState } from "react";
 import {BiTimeFive} from "react-icons/bi"
 import {AiOutlineCheckCircle} from "react-icons/ai"
-import { IoLocationOutline} from "react-icons/io5";
 import { MdOutlineDeliveryDining} from "react-icons/md";
 
 const Dashboard = () => {
@@ -69,7 +65,6 @@ const Dashboard = () => {
                     }
                     return el.status === filter;
                 }).map(i => 
-
                     <tr className="text-center">
                       <td className="py-2">{i.name}</td>
                       <td className="py-2">{i.phone}</td>
@@ -93,7 +88,6 @@ const Dashboard = () => {
                                 </div>}    
 
                       </td>
-
                       <td className="py-2">
                       {i.status === "Chưa giao hàng" ? 
                             <button onClick={() => updateStatus(i._id, i.status)} className='mx-auto bg-blue-600 text-sm text-white w-40 h-8 rounded-full flex items-center justify-center border border-blue-600 hover:bg-white hover:text-blue-600 transition '>
@@ -107,13 +101,11 @@ const Dashboard = () => {
                                 Hoàn thành đơn hàng  
                             </button>
                             }    
-
                       </td>
                     </tr>
                 )}
             </table>
             }
-            
         </div>
     )
   };

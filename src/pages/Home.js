@@ -2,25 +2,58 @@
 import {IoMdNutrition} from 'react-icons/io'
 import {IoAccessibilitySharp} from 'react-icons/io5'
 import {GiBodyHeight, GiNightSleep, GiBrain} from 'react-icons/gi'
-import {FaBacteria} from 'react-icons/fa'
+import {FaBacteria, FaThemeco} from 'react-icons/fa'
 import {BsFillLungsFill, BsFacebook, BsInstagram, BsTwitter} from 'react-icons/bs'
 import {FaShieldHalved} from 'react-icons/fa6'
 import {AiOutlineMail, AiOutlineSearch} from 'react-icons/ai'
 import { useRef, useState, useEffect } from 'react';
 import Hamburger from 'hamburger-react'
 function Home() {
+    const sec1 = useRef(null)
+    const sec2 = useRef(null)
+    const sec3 = useRef(null)
+    const sec4 = useRef(null)
+    const sec5 = useRef(null)
+    const sec6 = useRef(null)
+    const scroll = (sec) => {
+      let destination;
+      if (sec === "Thành phần dinh dưỡng") {
+          destination = sec1
+      } else if (sec === "Công dụng") {
+          destination = sec2
+      } else if (sec === "Quy cách đóng gói") {
+          destination = sec3
+      } else if (sec === "Lợi ích của Grow Plus+") {
+        destination = sec4
+      } else if (sec === "Cách sử dụng") {
+        destination = sec5
+      } else {
+        destination = sec6
+      }
+      destination.current.style.scrollMargin = "78px"
+      destination.current.scrollIntoView({top: 100 ,behavior: 'smooth'});
+  };
     return (
         <div className="App w-full overflow-hidden mx-0 relative">
           <header className='header p-4 bg-[#9ec7a5] flex items-center justify-between fixed top-0 right-0 left-0 z-20'>
               <div className='flex h-12 cursor-pointer'>
                   <img alt="" src="logo.png"></img>
               </div>
-
+              <nav className='hidden md:flex'>
+                  {["Thành phần dinh dưỡng", "Công dụng", "Quy cách đóng gói", "Lợi ích của Grow Plus+", "Cách sử dụng"].map(i => <div key={i} className='flex'>
+                      <div className='text-center cursor-pointer' onClick={() => scroll(i)}>{i}</div>
+                      <div className='mx-2 md:mx-4'></div>
+                  </div>
+                  )}
+              </nav>
+              <button onClick={() => scroll("Mua ngay")} className='bg-[#3b8b59] text-white w-36 h-12 rounded-full flex items-center justify-center border border-[#3b8b59] hover:bg-[#9ec7a5] hover:text-[#3b8b59] transition '>
+                    Mua ngay      
+              </button>
           </header>
           <div className="bg-[url(/public/banner.jpg)] bg-[length:158%_100%] md:bg-[length:100%_100%] h-[350px] md:h-[550px] mt-20"></div>
-          <section className='w-full my-16 md:my-24'><IngredientTab /></section>
-          <section className='w-full'><Wid /></section>
-          <section className='w-full my-20'>
+          <section className='w-full my-16 md:my-24' ref={sec1}><IngredientTab /></section>
+          <section className='w-full' ref={sec2}><Wid /></section>
+          <section className='w-full my-20'  ref={sec3}>
               <h2 className='font-bold text-3xl md:text-4xl mx-auto text-center mb-8 text-[#3b8b59]'>Quy cách đóng gói</h2>
               <div className='flex md:flex-row flex-col items-center md:justify-around py-4 px-2 md:px-20'>
                   <img alt="" src="gh.jpg" className='md:w-2/5 order-2 md:order-1 mt-8 md:mt-0 shadow-[0_60px_60px_-15px_rgba(0,0,0,0.3)] rounded-[45px] '></img>
@@ -36,9 +69,9 @@ function Home() {
                   </div>
               </div>
           </section>
-          <section className='w-full  bg-gradient-to-r from-[#3b8b59] from-40% to-green-500 pt-20 pb-4'><NotableBenefits /></section>
-          <section className='w-full'><Accordion /></section>
-          <section className='bg-[url(/public/adfh.jpg)] bg-cover bg-center relative h-[550px] mt-20'><Form/></section>
+          <section className='w-full  bg-gradient-to-r from-[#3b8b59] from-40% to-green-500 pt-20 pb-4'  ref={sec4}><NotableBenefits /></section>
+          <section className='w-full'  ref={sec5}><Accordion /></section>
+          <section className='bg-[url(/public/adfh.jpg)] bg-cover bg-center relative h-[550px] mt-20'  ref={sec6}><Form/></section>
           <footer className='bg-black md:flex justify-around text-white py-6 text-center md:text-start w-full'>
               <div className='mx-2'>
                   <p className='my-2 md:my-0'>Nhà phân phối: Công ty TNHH Đầu tư thương mại và Du lịch Phúc Khang</p>
@@ -66,13 +99,7 @@ function Home() {
               </div>
               
 
-                            <nav className='hidden md:flex'>
-                  {["Về chúng tôi", "Liên hệ"].map(i => <div key={i} className='flex'>
-                      <div className='text-center cursor-pointer'>{i}</div>
-                      <div className='mx-2 md:mx-4'></div>
-                  </div>
-                  )}
-              </nav>
+
               <div className='flex items-center'>
                   <SearchButton />
                   <div className='mx-1.5'></div>
@@ -177,50 +204,7 @@ function Home() {
       </>
     )
   }
-  /*
-  function SearchButton() {
-    const [toggle, setToggle] = useState(false)
-    let style
-    toggle ? style = "w-40 md:w-60 pl-2 border" : style = "w-0 pl-0"
-    const ref = useRef(null)
-    useEffect(() => {
-        document.addEventListener("mousedown", searchOff, true)
-    }, [])
-    const searchOff = (e) => {
-      !ref.current.contains(e.target) && setToggle(false)
-    }
-    return (
-      <>
-        <button onClick={() => setToggle(true)}><AiOutlineSearch className='text-2xl'/></button>
-        <form className='fixed right-28 md:right-32 top-6'>
-          <input ref={ref} placeholder='Nhập từ khóa tìm kiếm' className={'outline-0 py-1 border-[#3b8b59] text-[#3b8b59] rounded-lg transition-[width] ' + style}></input>
-        </form>
-      </>
-    )
-  }
 
-
-  function HamburgerComponent() {
-    const [isOpen, setOpen] = useState(false)
-    let status
-    isOpen ? status = "" : status = "hidden"
-    return (
-      <>
-        <div className="z-10 relative"><Hamburger toggled={isOpen} toggle={setOpen} size={20}/></div>
-        <div className={'fixed top-0 bottom-0 left-0 right-0 bg-[#9ec7a5] flex justify-center items-center ' + status}>
-          <div>
-              {["Về chúng tôi", "Liên hệ"].map(i => 
-                  <div key={i}>
-                      <p className='cursor-pointer'>{i}</p>
-                      <div className='my-6'></div>
-                  </div>
-              )}
-          </div>
-        </div>
-      </>
-    )
-  }
-  */
   
   function NotableBenefits() {
     const texts = [ {id: "01", text: "Sản phẩm hàng đầu của Nhật Bản về SỰ PHÁT TRIỂN TOÀN DIỆN đặc biệt là SỰ PHÁT TRIỂN CHIỀU CAO của trẻ với tổng hợp 22 thành phần chọn lọc."},

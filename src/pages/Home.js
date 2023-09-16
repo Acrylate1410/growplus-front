@@ -54,7 +54,7 @@ function Home() {
               <div className='mx-2'>
                   <p className='my-2 md:my-0'>Nhà phân phối: Công ty TNHH Đầu tư thương mại và Du lịch Phúc Khang</p>
                   <p className='my-2 md:my-0'>Địa chỉ: 55 Ngõ 144 An Dương Vương, Phú Thượng, Tây Hồ, Hà Nội</p>
-                  <p className='my-2 md:my-0'>Hotline: 093 909 1155</p>
+                  <p className='my-2 md:my-0'>Hotline: 093 903 1155</p>
               </div>
               <div className='my-6 md:my-0 md:mx-6'>
                   <p>KẾT NỐI CHÚNG TÔI QUA</p>
@@ -67,10 +67,6 @@ function Home() {
                       <div className='mx-2'></div>
                       <AiOutlineMail className='cursor-pointer ' />
                   </div>
-              </div>
-              <div>
-                  <p>HOTLINE HỖ TRỢ (VIBER, ZALO)</p>
-                  <p>098 319 1166</p>
               </div>
           </footer>
       </div>
@@ -135,7 +131,7 @@ function Home() {
                         {id: 2,  ingredient: "Vitamin D3 (0,25%)", amount: "2"},
                         {id: 3,  ingredient: "Peptide lòng đỏ trứng", amount: "30"},
                         {id: 4,  ingredient: "Men chứa kẽm (10%)", amount: "20"},
-                        {id: 5,  ingredient: "Magiê sunfat", amount: "80"},
+                        {id: 5,  ingredient: "Magiê sulfat", amount: "80"},
                         {id: 6,  ingredient: "Axit folic", amount: "0,2"},
                         {id: 7,  ingredient: "Collagen peptide", amount: "100"},
                         {id: 8,  ingredient: "Dầu cá tinh luyện (DHA/EPA)", amount: "87,0058"},
@@ -220,7 +216,7 @@ function Home() {
 
   
   function NotableBenefits() {
-    const texts = [ {id: "01", text: "Sản phẩm hàng đầu của Nhật Bản về SỰ PHÁT TRIỂN TOÀN DIỆN dặc biệt là SỰ PHÁT TRIỂN CHIỀU CAO của trẻ với tổng hợp 22 thành phần chọn lọc."},
+    const texts = [ {id: "01", text: "Sản phẩm hàng đầu của Nhật Bản về SỰ PHÁT TRIỂN TOÀN DIỆN đặc biệt là SỰ PHÁT TRIỂN CHIỀU CAO của trẻ với tổng hợp 22 thành phần chọn lọc."},
                     {id: "02", text: "Các chuyên gia Nhật Bản đã xây dựng một công thức hoàn hảo không chỉ tập trung vào Canxi mà còn có các thành phần khác như Men chứa kẽm, Peptide lòng đỏ trứng, vitamin D3... Sự kết hợp này sẽ giúp xương phát triển tối đa để tăng chiều cao cho trẻ và ưu việt hơn rất nhiều so với những sản phẩm tăng cường chiều cao thông thường chỉ đơn thuần tập trung vào 1 thành phần tốt cho xương là canxi."},
                     {id: "03", text: "Đây là một sản phẩm với công thức không chỉ giúp hấp thụ nhóm các chất dinh dưỡng để tăng chiều cao từ sản phẩm mà còn hấp thụ canxi tự nhiên (thông qua thức ăn hàng ngày: trứng, sữa, phomai, tôm, cua, …) bằng cách đề cao nhóm 3 lợi khuẩn axit lactic, Bifidobacteria và Oligosaccharide giúp trẻ có 1 hệ tiêu hóa khỏe mạnh hấp thu & chuyển hóa các chất dinh dưỡng ở mức cao nhất. Sức khỏe đường ruột chiếm 70% sức khỏe tổng thể nên đây là yếu tố cốt lõi giúp trẻ có 1 cơ thể khỏe mạnh & tăng chiều cao tối đa"},
                     {id: "04", text: "Thành phần có vitamin tổng hợp, keo ong… và các dưỡng chất cần thiết khác giúp trẻ có có hệ hô hấp và cơ thể khỏe mạnh, phòng ngừa sự tấn công của các loại vi khuẩn và vi rút, tăng cường sức đề kháng và khả năng miễn dịch."},

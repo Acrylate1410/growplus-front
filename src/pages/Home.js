@@ -15,18 +15,7 @@ function Home() {
               <div className='flex h-12 cursor-pointer'>
                   <img alt="" src="logo.png"></img>
               </div>
-              <nav className='hidden md:flex'>
-                  {["Về chúng tôi", "Liên hệ"].map(i => <div key={i} className='flex'>
-                      <div className='text-center cursor-pointer'>{i}</div>
-                      <div className='mx-2 md:mx-4'></div>
-                  </div>
-                  )}
-              </nav>
-              <div className='flex items-center'>
-                  <SearchButton />
-                  <div className='mx-1.5'></div>
-                  <HamburgerComponent />
-              </div>
+
           </header>
           <div className="bg-[url(/public/banner.jpg)] bg-[length:158%_100%] md:bg-[length:100%_100%] h-[350px] md:h-[550px] mt-20"></div>
           <section className='w-full my-16 md:my-24'><IngredientTab /></section>
@@ -74,7 +63,22 @@ function Home() {
                       <div className='mx-2'></div>
                       <AiOutlineMail className='cursor-pointer ' />
                   </div>
-              </div>*/
+              </div>
+              
+
+                            <nav className='hidden md:flex'>
+                  {["Về chúng tôi", "Liên hệ"].map(i => <div key={i} className='flex'>
+                      <div className='text-center cursor-pointer'>{i}</div>
+                      <div className='mx-2 md:mx-4'></div>
+                  </div>
+                  )}
+              </nav>
+              <div className='flex items-center'>
+                  <SearchButton />
+                  <div className='mx-1.5'></div>
+                  <HamburgerComponent />
+              </div>
+              */
   function Form() {
     const name = useRef(null)
     const phone = useRef(null)
@@ -173,7 +177,7 @@ function Home() {
       </>
     )
   }
-  
+  /*
   function SearchButton() {
     const [toggle, setToggle] = useState(false)
     let style
@@ -195,6 +199,7 @@ function Home() {
     )
   }
 
+
   function HamburgerComponent() {
     const [isOpen, setOpen] = useState(false)
     let status
@@ -215,7 +220,7 @@ function Home() {
       </>
     )
   }
-
+  */
   
   function NotableBenefits() {
     const texts = [ {id: "01", text: "Sản phẩm hàng đầu của Nhật Bản về SỰ PHÁT TRIỂN TOÀN DIỆN đặc biệt là SỰ PHÁT TRIỂN CHIỀU CAO của trẻ với tổng hợp 22 thành phần chọn lọc."},

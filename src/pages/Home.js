@@ -56,7 +56,14 @@ function Home() {
                   <p className='my-2 md:my-0'>Địa chỉ: 55 Ngõ 144 An Dương Vương, Phú Thượng, Tây Hồ, Hà Nội</p>
                   <p className='my-2 md:my-0'>Hotline: 093 903 1155</p>
               </div>
-              <div className='my-6 md:my-0 md:mx-6'>
+
+          </footer>
+      </div>
+    )
+  };
+  
+  /*
+                <div className='my-6 md:my-0 md:mx-6'>
                   <p>KẾT NỐI CHÚNG TÔI QUA</p>
                   <div className='flex justify-center mt-2'>
                       <BsFacebook className='cursor-pointer ' />
@@ -67,12 +74,7 @@ function Home() {
                       <div className='mx-2'></div>
                       <AiOutlineMail className='cursor-pointer ' />
                   </div>
-              </div>
-          </footer>
-      </div>
-    )
-  };
-  
+              </div>*/
   function Form() {
     const name = useRef(null)
     const phone = useRef(null)

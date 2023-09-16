@@ -30,9 +30,31 @@ function Home() {
       } else {
         destination = sec6
       }
-      destination.current.style.scrollMargin = "78px"
       destination.current.scrollIntoView({top: 100 ,behavior: 'smooth'});
-  };
+    };
+    const HamburgerComponent = () => {
+      const [isOpen, setOpen] = useState(false)
+      let status
+      isOpen ? status = "" : status = "hidden"
+      return (
+        <>
+          <div className="z-10 relative"><Hamburger toggled={isOpen} toggle={setOpen} size={20}/></div>
+          <div className={'fixed top-0 bottom-0 left-[33%] right-0 bg-[#9ec7a5] flex justify-center items-center text-center ' + status}>
+            <div>
+                {["Thành phần dinh dưỡng", "Công dụng", "Quy cách đóng gói", "Lợi ích của Grow Plus+", "Cách sử dụng"].map(i => 
+                    <div key={i}>
+                        <p className='cursor-pointer' onClick={() => scroll(i)}>{i}</p>
+                        <div className='my-6'></div>
+                    </div>
+                )}
+                <button onClick={() => scroll("Mua ngay")} className='mx-auto bg-[#3b8b59] text-white w-36 h-12 rounded-full flex items-center justify-center border border-[#3b8b59] hover:bg-[#9ec7a5] hover:text-[#3b8b59] transition '>
+                    Mua ngay      
+                </button>
+            </div>
+          </div>
+        </>
+      )
+    }
     return (
         <div className="App w-full overflow-hidden mx-0 relative">
           <header className='header p-4 bg-[#9ec7a5] flex items-center justify-between fixed top-0 right-0 left-0 z-20'>
@@ -46,14 +68,15 @@ function Home() {
                   </div>
                   )}
               </nav>
-              <button onClick={() => scroll("Mua ngay")} className='bg-[#3b8b59] text-white w-36 h-12 rounded-full flex items-center justify-center border border-[#3b8b59] hover:bg-[#9ec7a5] hover:text-[#3b8b59] transition '>
+              <button onClick={() => scroll("Mua ngay")} className='hidden md:block bg-[#3b8b59] text-white w-36 h-12 rounded-full flex items-center justify-center border border-[#3b8b59] hover:bg-[#9ec7a5] hover:text-[#3b8b59] transition '>
                     Mua ngay      
               </button>
+              <div  className="block md:hidden"><HamburgerComponent/></div>
           </header>
           <div className="bg-[url(/public/banner.jpg)] bg-[length:158%_100%] md:bg-[length:100%_100%] h-[350px] md:h-[550px] mt-20"></div>
-          <section className='w-full my-16 md:my-24' ref={sec1}><IngredientTab /></section>
-          <section className='w-full' ref={sec2}><Wid /></section>
-          <section className='w-full my-20'  ref={sec3}>
+          <section className='w-full my-16 md:my-24 scroll-m-20' ref={sec1}><IngredientTab /></section>
+          <section className='w-full scroll-m-20' ref={sec2}><Wid /></section>
+          <section className='w-full my-20 scroll-m-20'  ref={sec3}>
               <h2 className='font-bold text-3xl md:text-4xl mx-auto text-center mb-8 text-[#3b8b59]'>Quy cách đóng gói</h2>
               <div className='flex md:flex-row flex-col items-center md:justify-around py-4 px-2 md:px-20'>
                   <img alt="" src="gh.jpg" className='md:w-2/5 order-2 md:order-1 mt-8 md:mt-0 shadow-[0_60px_60px_-15px_rgba(0,0,0,0.3)] rounded-[45px] '></img>
@@ -69,9 +92,9 @@ function Home() {
                   </div>
               </div>
           </section>
-          <section className='w-full  bg-gradient-to-r from-[#3b8b59] from-40% to-green-500 pt-20 pb-4'  ref={sec4}><NotableBenefits /></section>
-          <section className='w-full'  ref={sec5}><Accordion /></section>
-          <section className='bg-[url(/public/adfh.jpg)] bg-cover bg-center relative h-[550px] mt-20'  ref={sec6}><Form/></section>
+          <section className='w-full  bg-gradient-to-r from-[#3b8b59] from-40% to-green-500 pt-20 pb-4 scroll-m-20'  ref={sec4}><NotableBenefits /></section>
+          <section className='w-full scroll-m-20'  ref={sec5}><Accordion /></section>
+          <section className='bg-[url(/public/adfh.jpg)] bg-cover bg-center relative h-[550px] mt-20 scroll-m-20'  ref={sec6}><Form/></section>
           <footer className='bg-black md:flex justify-around text-white py-6 text-center md:text-start w-full'>
               <div className='mx-2'>
                   <p className='my-2 md:my-0'>Nhà phân phối: Công ty TNHH Đầu tư thương mại và Du lịch Phúc Khang</p>
@@ -106,6 +129,8 @@ function Home() {
                   <HamburgerComponent />
               </div>
               */
+
+
   function Form() {
     const name = useRef(null)
     const phone = useRef(null)

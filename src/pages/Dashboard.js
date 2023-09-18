@@ -5,7 +5,7 @@ import { MdOutlineDeliveryDining} from "react-icons/md";
 
 function Dashboard() {
     const [orderList, setOrderList] = useState({data: [], message: "Đang tải đơn hàng"})
-    const [filter, setFilter] = useState("Tất cả");
+    const [filter, setFilter] = useState("");
     useEffect(() => {
         fetch("http://localhost:8080/orders/get_orders").then(res => res.json()).then(data => {
           setOrderList({data: data || [], message: ""})
@@ -39,11 +39,12 @@ function Dashboard() {
         <div className="w-full overflow-hidden">
             <p className="font-bold text-2xl md:text-3xl mt-4 ml-4">Đơn hàng</p>
             <div className=" w-full overflow-x-auto">
-                <div className="flex mt-4 md:ml-4 w-max m-2">
-                    <div className={filter === "Tất cả" ? "border-b-2 border-blue-400 md:mr-8 px-4 py-2 cursor-pointer text-blue-400 overflow-hidden whitespace-nowrap text-ellipsis" : "md:mr-8 px-4 py-2 cursor-pointer overflow-hidden whitespace-nowrap text-ellipsis"} onClick={(e) => setFilter(e.target.innerText)}>Tất cả</div>
+                <div className="flex mt-4 md:ml-4 w-max m-2 items-center">
+                    <div className={filter === "" ? "border-b-2 border-blue-400 md:mr-8 px-4 py-2 cursor-pointer text-blue-400 overflow-hidden whitespace-nowrap text-ellipsis" : "md:mr-8 px-4 py-2 cursor-pointer overflow-hidden whitespace-nowrap text-ellipsis"} onClick={(e) => setFilter("")}>Tất cả</div>
                     <div className={filter === "Chưa giao hàng" ?  "border-b-2 border-blue-400 md:mr-8 px-4 py-2 cursor-pointer text-blue-400 overflow-hidden whitespace-nowrap text-ellipsis" : "md:mr-8 px-4 py-2 cursor-pointer overflow-hidden whitespace-nowrap text-ellipsis"} onClick={(e) => setFilter(e.target.innerText)}>Chưa giao hàng</div>
                     <div className={filter === "Đang giao hàng" ?  "border-b-2 border-blue-400 md:mr-8 px-4 py-2 cursor-pointer text-blue-400 overflow-hidden whitespace-nowrap text-ellipsis" : "md:mr-8 px-4 py-2 cursor-pointer overflow-hidden whitespace-nowrap text-ellipsis"} onClick={(e) => setFilter(e.target.innerText)}>Đang giao hàng</div>
                     <div className={filter === "Đã giao hàng thành công" ?  "border-b-2 border-blue-400 md:mr-8 px-4 py-2 cursor-pointer text-blue-400 overflow-hidden whitespace-nowrap text-ellipsis" : "md:mr-8 px-4 py-2 cursor-pointer overflow-hidden whitespace-nowrap text-ellipsis"} onClick={(e) => setFilter(e.target.innerText)}>Đã giao hàng thành công</div>
+                    <input onInput={(e) => {console.log(filter); setFilter(e.target.value)}} className="border border-black h-8 outline-0 w-72" placeholder="Tìm kiếm theo tên, SĐT hoặc địa chỉ"></input>
                 </div>
             </div>
             {orderList.message === "Đang tải đơn hàng" ?
@@ -62,13 +63,14 @@ function Dashboard() {
                         <th className="px-4 md:px-0 py-2 w-[16%] overflow-hidden whitespace-nowrap text-ellipsis">Tình trạng</th>
                         <th className="px-4 md:px-0 w-[14%]"></th>
                     </tr>
-
-                    {
-                    orderList.data.filter(el => {
-                        if (filter === 'Tất cả') {
+                    {orderList.data.filter(el => {
+                        if (filter === '') {
                             return true
+                        } else if (filter === "Đang giao hàng" || filter === "Chưa giao hàng" || filter === "Đã giao hàng thành công") {
+                            return el.status === filter;
                         }
-                        return el.status === filter;
+                        return el.name.includes(filter) || el.phone.includes(filter) || el.district.includes(filter) || el.subdivision.includes(filter) || el.city.includes(filter)
+                          
                     }).map(i => 
                         <tr className="text-center">
                             <td className="py-2">{i.name}</td>
@@ -107,7 +109,7 @@ function Dashboard() {
                                     }    
                             </td>
                         </tr>
-                    )
+                        )
                     }
                 </table>
             </div>

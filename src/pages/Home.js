@@ -30,7 +30,7 @@ function Home() {
       } else {
         destination = sec6
       }
-      destination.current.scrollIntoView({top: 100 ,behavior: 'smooth'});
+      destination.current.scrollIntoView({behavior: 'smooth'});
     };
     const HamburgerComponent = () => {
       const [isOpen, setOpen] = useState(false)
@@ -61,19 +61,19 @@ function Home() {
               <div className='flex h-12 cursor-pointer'>
                   <img alt="" src="logo.png"></img>
               </div>
-              <nav className='hidden md:flex'>
+              <nav className='hidden md:flex mx-4'>
                   {["Thành phần dinh dưỡng", "Công dụng", "Quy cách đóng gói", "Lợi ích của Grow Plus+", "Cách sử dụng"].map(i => <div key={i} className='flex'>
-                      <div className='text-center cursor-pointer' onClick={() => scroll(i)}>{i}</div>
+                      <div className='text-center cursor-pointer text-sm' onClick={() => scroll(i)}>{i}</div>
                       <div className='mx-2 md:mx-4'></div>
                   </div>
                   )}
               </nav>
-              <button onClick={() => scroll("Mua ngay")} className='hidden md:block bg-[#3b8b59] text-white w-36 h-12 rounded-full flex items-center justify-center border border-[#3b8b59] hover:bg-[#9ec7a5] hover:text-[#3b8b59] transition '>
+              <button onClick={() => scroll("Mua ngay")} className=' text-sm hidden md:block bg-[#3b8b59] text-white w-36 h-12 rounded-full flex items-center justify-center border border-[#3b8b59] hover:bg-[#9ec7a5] hover:text-[#3b8b59] transition '>
                     Mua ngay      
               </button>
               <div  className="block md:hidden"><HamburgerComponent/></div>
           </header>
-          <div className="bg-[url(/public/banner.jpg)] bg-[length:158%_100%] md:bg-[length:100%_100%] h-[350px] md:h-[550px] mt-20"></div>
+          <div className="bg-[url(/public/banner.jpg)] bg-[length:158%_100%] md:bg-[length:100%_100%] h-[300px] md:h-[550px] mt-20"></div>
           <section className='w-full my-16 md:my-24 scroll-m-20' ref={sec1}><IngredientTab /></section>
           <section className='w-full scroll-m-20' ref={sec2}><Wid /></section>
           <section className='w-full my-20 scroll-m-20'  ref={sec3}>

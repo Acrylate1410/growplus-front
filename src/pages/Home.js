@@ -59,9 +59,11 @@ export function Home() {
     return (
         <div className="App w-full overflow-hidden mx-0 relative">
           <header className='header p-4 bg-[#9ec7a5] flex items-center justify-between fixed top-0 right-0 left-0 z-20'>
-              <div className='flex h-12 cursor-pointer'>
-                <Link to="/"><img alt="" src="logo.png"></img></Link>
-              </div>
+              <Link to="/">
+                <div className='flex h-12 cursor-pointer'>
+                  <img alt="" src="logo.png"></img>
+                </div>
+              </Link>
               <nav className='hidden md:flex mx-4'>
                   {["Thành phần dinh dưỡng", "Công dụng", "Quy cách đóng gói", "Lợi ích của Grow Plus+", "Cách sử dụng"].map(i => <div key={i} className='flex'>
                       <div className='text-center cursor-pointer text-sm' onClick={() => scroll(i)}>{i}</div>

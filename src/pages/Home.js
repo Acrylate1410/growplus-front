@@ -8,6 +8,7 @@ import {FaShieldHalved} from 'react-icons/fa6'
 import {AiOutlineMail, AiOutlineSearch} from 'react-icons/ai'
 import { useRef, useState, useEffect } from 'react';
 import Hamburger from 'hamburger-react'
+import { Link } from "react-router-dom";
 export function Home() {
     const sec1 = useRef(null)
     const sec2 = useRef(null)
@@ -59,7 +60,7 @@ export function Home() {
         <div className="App w-full overflow-hidden mx-0 relative">
           <header className='header p-4 bg-[#9ec7a5] flex items-center justify-between fixed top-0 right-0 left-0 z-20'>
               <div className='flex h-12 cursor-pointer'>
-                  <img alt="" src="logo.png"></img>
+                <Link to="/"><img alt="" src="logo.png"></img></Link>
               </div>
               <nav className='hidden md:flex mx-4'>
                   {["Thành phần dinh dưỡng", "Công dụng", "Quy cách đóng gói", "Lợi ích của Grow Plus+", "Cách sử dụng"].map(i => <div key={i} className='flex'>
@@ -101,12 +102,10 @@ export function Home() {
                   <p className='my-2 md:my-0'>Địa chỉ: 55 Ngõ 144 An Dương Vương, Phú Thượng, Tây Hồ, Hà Nội</p>
                   <p className='my-2 md:my-0'>Hotline: 093 903 1155</p>
               </div>
-
           </footer>
       </div>
     )
   };
-  
   /*
                 <div className='my-6 md:my-0 md:mx-6'>
                   <p>KẾT NỐI CHÚNG TÔI QUA</p>
@@ -120,17 +119,7 @@ export function Home() {
                       <AiOutlineMail className='cursor-pointer ' />
                   </div>
               </div>
-              
-
-
-              <div className='flex items-center'>
-                  <SearchButton />
-                  <div className='mx-1.5'></div>
-                  <HamburgerComponent />
-              </div>
               */
-
-
   function Form() {
     const name = useRef(null)
     const phone = useRef(null)
@@ -197,7 +186,7 @@ export function Home() {
                         {id: 10, ingredient: "Protein", amount: "50"},
                         {id: 11, ingredient: "Mật ong tinh khiết", amount: "4500"},
                         {id: 12, ingredient: "Keo ong", amount: "50"},
-                        {id: 13, ingredient: "Chiết xuất Phosphatidylserin (10:1)", amount: "20"},
+                        {id: 13, ingredient: "Chiết xuất Phosphatidylserine (10:1)", amount: "20"},
                         {id: 14, ingredient: "Vi khuẩn axit lactic", amount: "4,5"},
                         {id: 15, ingredient: "Vi khuẩn Bifidobacteria", amount: "0,05"},
                         {id: 16, ingredient: "Oligosaccharide", amount: "6300"},

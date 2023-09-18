@@ -3,7 +3,7 @@ import {BiTimeFive} from "react-icons/bi"
 import {AiOutlineCheckCircle} from "react-icons/ai"
 import { MdOutlineDeliveryDining} from "react-icons/md";
 
-function Dashboard() {
+export function Dashboard() {
     const [orderList, setOrderList] = useState({data: [], message: "Đang tải đơn hàng"})
     const [filter, setFilter] = useState("");
     useEffect(() => {
@@ -54,15 +54,16 @@ function Dashboard() {
                 </div> :
                 <div className=" w-full overflow-x-auto">
                     <table className="table my-4 px-4 w-max md:w-full">
-                    <tr>
-                        <th className="px-4 md:px-0 py-2 w-[17%] overflow-hidden whitespace-nowrap text-ellipsis">Tên khách hàng</th>
-                        <th className="px-4 md:px-0 py-2 w-[8%] overflow-hidden whitespace-nowrap text-ellipsis">Số điện thoại</th>
-                        <th className="px-4 md:px-0 py-2 w-[8%] overflow-hidden whitespace-nowrap text-ellipsis">Số lượng</th>
-                        <th className="px-4 md:px-0 py-2 w-[25%] overflow-hidden whitespace-nowrap text-ellipsis">Địa chỉ nhận hàng</th>
-                        <th className="px-4 md:px-0 py-2 w-[12%] overflow-hidden whitespace-nowrap text-ellipsis">Ngày đặt hàng</th>
-                        <th className="px-4 md:px-0 py-2 w-[16%] overflow-hidden whitespace-nowrap text-ellipsis">Tình trạng</th>
-                        <th className="px-4 md:px-0 w-[14%]"></th>
-                    </tr>
+                        <tbody>
+                        <tr>
+                            <th className="px-4 md:px-0 py-2 w-[17%] overflow-hidden whitespace-nowrap text-ellipsis">Tên khách hàng</th>
+                            <th className="px-4 md:px-0 py-2 w-[8%] overflow-hidden whitespace-nowrap text-ellipsis">Số điện thoại</th>
+                            <th className="px-4 md:px-0 py-2 w-[8%] overflow-hidden whitespace-nowrap text-ellipsis">Số lượng</th>
+                            <th className="px-4 md:px-0 py-2 w-[25%] overflow-hidden whitespace-nowrap text-ellipsis">Địa chỉ nhận hàng</th>
+                            <th className="px-4 md:px-0 py-2 w-[12%] overflow-hidden whitespace-nowrap text-ellipsis">Ngày đặt hàng</th>
+                            <th className="px-4 md:px-0 py-2 w-[16%] overflow-hidden whitespace-nowrap text-ellipsis">Tình trạng</th>
+                            <th className="px-4 md:px-0 w-[14%]"></th>
+                        </tr>
                     {orderList.data.filter(el => {
                         if (filter === '') {
                             return true
@@ -70,9 +71,8 @@ function Dashboard() {
                             return el.status === filter;
                         }
                         return el.name.includes(filter) || el.phone.includes(filter) || el.district.includes(filter) || el.subdivision.includes(filter) || el.city.includes(filter)
-                          
                     }).map(i => 
-                        <tr className="text-center">
+                        <tr className="text-center" key={i._id}>
                             <td className="py-2">{i.name}</td>
                             <td className="py-2">{i.phone}</td>
                             <td className="py-2">{i.quantity}</td>
@@ -111,6 +111,7 @@ function Dashboard() {
                         </tr>
                         )
                     }
+                    </tbody>
                 </table>
             </div>
             }
@@ -118,4 +119,3 @@ function Dashboard() {
         </div>
     )
   };
-export default Dashboard;

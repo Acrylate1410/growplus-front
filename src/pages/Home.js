@@ -8,7 +8,7 @@ import {FaShieldHalved} from 'react-icons/fa6'
 import {AiOutlineMail, AiOutlineSearch} from 'react-icons/ai'
 import { useRef, useState, useEffect } from 'react';
 import Hamburger from 'hamburger-react'
-function Home() {
+export function Home() {
     const sec1 = useRef(null)
     const sec2 = useRef(null)
     const sec3 = useRef(null)
@@ -43,7 +43,7 @@ function Home() {
             <div>
                 {["Thành phần dinh dưỡng", "Công dụng", "Quy cách đóng gói", "Lợi ích của Grow Plus+", "Cách sử dụng"].map(i => 
                     <div key={i}>
-                        <p className='cursor-pointer' onClick={() => scroll(i)}>{i}</p>
+                        <div className='cursor-pointer' onClick={() => scroll(i)}>{i}</div>
                         <div className='my-6'></div>
                     </div>
                 )}
@@ -304,4 +304,3 @@ function Home() {
         </div>
     )
   }
-  export default Home;

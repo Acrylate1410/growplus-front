@@ -2,8 +2,9 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./pages/Layout";
 import {Suspense, lazy} from 'react';
-const Home = lazy(() => import('./pages/Home'));
-const Dashboard = lazy(() => import('./pages/Dashboard'));
+import {Home} from './pages/Home';
+import {Dashboard} from './pages/Dashboard';
+//const Dashboard = lazy(() => import('./pages/Dashboard'));
 
 function App() {
   return (

@@ -147,7 +147,13 @@ export function Home() {
             headers: {
               'Content-Type': 'application/json'
             },
-        }).then(window.location.reload())
+        }).then(res => {
+          if(res.status === 200) {
+            input.current.value = ''
+            alert("Đặt hàng thành công")
+          }
+        })
+      }
     }
     return (
       <>

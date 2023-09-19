@@ -133,7 +133,7 @@ export function Home() {
     const quantity = useRef(null)
     const handleSubmit = (e) => {
         e.preventDefault()
-        fetch("http://localhost:8080/orders/save_order", {
+        fetch("https://growplus-api.onrender.com/orders/save_order", {
             method: "POST",
             body: JSON.stringify({
               name: name.current.value,

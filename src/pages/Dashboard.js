@@ -7,7 +7,7 @@ export function Dashboard() {
     const [orderList, setOrderList] = useState({data: [], message: "Đang tải đơn hàng"})
     const [filter, setFilter] = useState("");
     useEffect(() => {
-        fetch("http://localhost:8080/orders/get_orders").then(res => res.json()).then(data => {
+        fetch("https://growplus-api.onrender.com/orders/get_orders").then(res => res.json()).then(data => {
           setOrderList({data: data || [], message: ""})
         })
     }, []);
@@ -15,7 +15,7 @@ export function Dashboard() {
     const updateStatus = (id, currentStatus) => {
         let newStatus;
         currentStatus === "Chưa giao hàng" ? newStatus = "Đang giao hàng" : newStatus = "Đã giao hàng thành công"
-        fetch("http://localhost:8080/orders/update/" + id, {
+        fetch("https://growplus-api.onrender.com/orders/update/" + id, {
             method: "PATCH",
             body: JSON.stringify({status: newStatus}),
             headers: {'Content-Type': 'application/json'},

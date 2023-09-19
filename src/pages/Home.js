@@ -147,10 +147,6 @@ export function Home() {
             headers: {
               'Content-Type': 'application/json'
             },
-        }).then(res => {
-          if(res.status === 200) {
-            input.current.value = ''
-          }
         })
 
     }

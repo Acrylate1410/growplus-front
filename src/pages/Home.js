@@ -147,7 +147,7 @@ export function Home() {
             headers: {
               'Content-Type': 'application/json'
             },
-        }).then(window.location.reload())
+        })
     }
     return (
       <>

@@ -101,8 +101,7 @@ export function Home() {
           <section className='bg-[url(/public/adfh.jpg)] bg-cover bg-center relative h-[550px] mt-20 scroll-m-20'  ref={sec6}><Form/></section>
           <footer className='bg-black md:flex justify-around text-white py-6 text-center md:text-start w-full'>
               <div className='mx-2'>
-                  <p className='my-2 md:my-0'>Nhà phân phối: Công ty TNHH Đầu tư thương mại và Du lịch Phúc Khang</p>
-                  <p className='my-2 md:my-0'>Địa chỉ: 55 Ngõ 144 An Dương Vương, Phú Thượng, Tây Hồ, Hà Nội</p>
+                  <p className='my-2 md:my-0'>Công ty nhập khẩu và phân phối: Công ty Phúc Khang</p>
                   <p className='my-2 md:my-0'>Hotline: 093 903 1155</p>
               </div>
           </footer>
@@ -110,6 +109,7 @@ export function Home() {
     )
   };
   /*
+                    <p className='my-2 md:my-0'>Địa chỉ: 55 Ngõ 144 An Dương Vương, Phú Thượng, Tây Hồ, Hà Nội</p>
                 <div className='my-6 md:my-0 md:mx-6'>
                   <p>KẾT NỐI CHÚNG TÔI QUA</p>
                   <div className='flex justify-center mt-2'>

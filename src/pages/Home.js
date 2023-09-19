@@ -150,10 +150,9 @@ export function Home() {
         }).then(res => {
           if(res.status === 200) {
             input.current.value = ''
-            alert("Đặt hàng thành công")
           }
         })
-      }
+
     }
     return (
       <>

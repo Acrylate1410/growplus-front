@@ -65,10 +65,11 @@ export function Home() {
                 </div>
               </Link>
               <nav className='hidden md:flex mx-4'>
-                  {["Thành phần dinh dưỡng", "Công dụng", "Quy cách đóng gói", "Lợi ích của Grow Plus+", "Cách sử dụng"].map(i => <div key={i} className='flex'>
-                      <div className='text-center cursor-pointer text-sm' onClick={() => scroll(i)}>{i}</div>
-                      <div className='mx-2 md:mx-4'></div>
-                  </div>
+                  {["Thành phần dinh dưỡng", "Công dụng", "Quy cách đóng gói", "Lợi ích của Grow Plus+", "Cách sử dụng"].map(i => 
+                    <div key={i} className='flex'>
+                        <div className='text-center cursor-pointer text-sm' onClick={() => scroll(i)}>{i}</div>
+                        <div className='mx-2 md:mx-4'></div>
+                    </div>
                   )}
               </nav>
               <button onClick={() => scroll("Mua ngay")} className=' text-sm hidden md:block bg-[#3b8b59] text-white w-36 h-12 rounded-full flex items-center justify-center border border-[#3b8b59] hover:bg-[#9ec7a5] hover:text-[#3b8b59] transition '>
@@ -290,7 +291,7 @@ export function Home() {
               <div className='md:w-1/2 h-[400px] md:h-auto flex flex-col justify-between'>
                 {texts.map(i => <div key={i} className='text-center h-[85px] rounded-r-xl flex justify-center items-center border-l-8 border-[#3b8b59] bg-[#dddddd] md:px-8 px-2'>{i}</div>)}
               </div>
-              <img alt="" className='w-4/5 mx-auto mt-8 mx:mx-0 md:w-1/3' src="f4ce03e778d1ad8ff4c0.png"></img>
+              <img alt="" className='w-4/5 mx-auto mt-8 md:w-1/3' src="f4ce03e778d1ad8ff4c0.png"></img>
           </div>
         </div>
     )

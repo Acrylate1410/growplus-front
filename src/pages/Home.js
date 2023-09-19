@@ -147,6 +147,17 @@ export function Home() {
             headers: {
               'Content-Type': 'application/json'
             },
+        }).then(res => {
+          if(res.status === 200) {
+            name.current.value = ''
+            phone.current.value = ''
+            address.current.value = ''
+            subdivision.current.value = ''
+            district.current.value = ''
+            city.current.value = ''
+            quantity.current.value = 1
+            alert("Đặt hàng thành công")
+          }
         })
 
     }

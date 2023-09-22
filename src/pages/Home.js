@@ -269,7 +269,7 @@ export function Home() {
       <div className='bg-[url(/public/ed936cd603a9d1f788b8.jpg)] bg-[length:200%_100%] md:bg-[length:100%_100%] flex flex-col justify-center relative z-0'>
         <div className='absolute top-0 bottom-0 left-0 right-0 bg-[#3b8b59] opacity-80 z-0'></div>
         <div className='relative z-10 backdrop-blur-[0.5px] h-full'>
-          <h2 className='deco1 text-center font-bold text-5xl md:text-6xl z-10 mt-20 text-red-500'>GROW PLUS+</h2>
+          <h2 className='deco1 text-center font-bold text-5xl md:text-6xl z-10 mt-20 text-red-400'>GROW PLUS+</h2>
           <p className='deco2 text-2xl md:text-3xl text-center mt-4 md:mb-0 mb-20 text-blue-700 italic font-medium'>Giúp mẹ chăm trẻ nhàn rỗi và mang đến sức khỏe toàn diện cho trẻ</p>
           <div className='mx-4 md:mx-12'>
               <WidCol data={data1}/>
@@ -285,7 +285,7 @@ export function Home() {
       <div className='text-center md:flex'>    
           {props.data.map(i => 
               <div className='my-12 md:h-44 md:w-1/4' key={i.text}>
-                  <p className='border-2 text-white border-white rounded-full w-16 aspect-square flex justify-center items-center text-4xl mx-auto'>{i.logo}</p>
+                  <p className='border-4 text-white border-white rounded-full w-16 aspect-square flex justify-center items-center text-4xl mx-auto'>{i.logo}</p>
                   <p className='md:w-3/4 mx-auto mt-4 text-white'>{i.text}</p>
               </div>
           )}  

@@ -1,3 +1,13 @@
 .table tr:nth-child(even) {
   background-color: #dddddd;
 }
+
+.deco1 {
+  text-shadow: 3px 0 #fff, -3px 0 #fff, 0 3px #fff, 0 -3px #fff,
+               2px 2px #fff, -2px -2px #fff, 2px -2px #fff, -2px 2px #fff;
+}
+
+.deco2 {
+  text-shadow: 0.5px 0 #fff, -0.5px 0 #fff, 0 0.5px #fff, 0 -0.5px #fff,
+               0.25px 0.25px #fff, -0.25px -0.25px #fff, 0.25px -0.25px #fff, -0.25px 0.25px #fff;
+}

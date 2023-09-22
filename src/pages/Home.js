@@ -96,7 +96,7 @@ export function Home() {
                   </div>
               </div>
           </section>
-          <section className='w-full  bg-gradient-to-r from-[#3b8b59] from-40% to-green-500 pt-20 pb-4 scroll-m-20'  ref={sec4}><NotableBenefits /></section>
+          <section className='w-full  bg-[#3b8b59] pt-20 pb-4 scroll-m-20'  ref={sec4}><NotableBenefits /></section>
           <section className='w-full scroll-m-20'  ref={sec5}><Accordion /></section>
           <section className='bg-[url(/public/adfh.jpg)] bg-cover bg-center relative h-[550px] mt-20 scroll-m-20'  ref={sec6}><Form/></section>
           <footer className='bg-black md:flex justify-around text-white py-6 text-center md:text-start w-full'>
@@ -235,21 +235,21 @@ export function Home() {
 
   
   function NotableBenefits() {
-    const texts = [ {id: "01", text: "Sản phẩm hàng đầu của Nhật Bản về SỰ PHÁT TRIỂN TOÀN DIỆN đặc biệt là SỰ PHÁT TRIỂN CHIỀU CAO của trẻ với tổng hợp 22 thành phần chọn lọc."},
-                    {id: "02", text: "Các chuyên gia Nhật Bản đã xây dựng một công thức hoàn hảo không chỉ tập trung vào Canxi mà còn có các thành phần khác như Men chứa kẽm, Peptide lòng đỏ trứng, vitamin D3... Sự kết hợp này sẽ giúp xương phát triển tối đa để tăng chiều cao cho trẻ và ưu việt hơn rất nhiều so với những sản phẩm tăng cường chiều cao thông thường chỉ đơn thuần tập trung vào 1 thành phần tốt cho xương là canxi."},
-                    {id: "03", text: "Đây là một sản phẩm với công thức không chỉ giúp hấp thụ nhóm các chất dinh dưỡng để tăng chiều cao từ sản phẩm mà còn hấp thụ canxi tự nhiên (thông qua thức ăn hàng ngày: trứng, sữa, phomai, tôm, cua, …) bằng cách đề cao nhóm 3 lợi khuẩn axit lactic, Bifidobacteria và Oligosaccharide giúp trẻ có 1 hệ tiêu hóa khỏe mạnh hấp thu & chuyển hóa các chất dinh dưỡng ở mức cao nhất. Sức khỏe đường ruột chiếm 70% sức khỏe tổng thể nên đây là yếu tố cốt lõi giúp trẻ có 1 cơ thể khỏe mạnh & tăng chiều cao tối đa"},
-                    {id: "04", text: "Thành phần có vitamin tổng hợp, keo ong… và các dưỡng chất cần thiết khác giúp trẻ có có hệ hô hấp và cơ thể khỏe mạnh, phòng ngừa sự tấn công của các loại vi khuẩn và vi rút, tăng cường sức đề kháng và khả năng miễn dịch."},
-                    {id: "05", text: "Sản phẩm không chỉ giúp trẻ phát triển về thể chất, chiều cao mà còn giúp trẻ tăng cường trí nhớ, phát triển trí thông minh nhờ có thành phần DHA, EPA và Phosphatidylserine giúp cải thiện chức năng não bộ, phát triển kích thích tế bào não."},
-                    {id: "06", text: "Mùi vị thơm ngon, độ ngọt vừa phải và không có đường có thể gây sâu răng cho trẻ; Bào chế dạng nước có khả năng hấp thu tốt nhất cho cơ thể so với các dạng bào chế khác; 1 gói 30ml tiện lợi để sử dụng và bảo quản."},
-                    {id: "07", text: "Sản xuất tại nhà máy đạt chuẩn GMP có tiêu chuẩn chất lượng khắt khe về nguyên liệu, máy móc, công nghệ, quy trình sản xuất và chất lượng thành phẩm với đội ngũ chuyên gia hàng đầu nghiên cứu về nguồn dinh dưỡng & phát triển toàn diện của trẻ"}]
+    const texts = [ {id: "Bảng thành phần vàng", text: "Sản phẩm hàng đầu của Nhật Bản về SỰ PHÁT TRIỂN TOÀN DIỆN đặc biệt là SỰ PHÁT TRIỂN CHIỀU CAO của trẻ với tổng hợp 23 thành phần chọn lọc."},
+                    {id: "Tăng chiều cao tối đa", text: "Các chuyên gia Nhật Bản đã xây dựng một công thức hoàn hảo không chỉ tập trung vào Canxi mà còn có các thành phần khác như Men chứa kẽm, Peptide lòng đỏ trứng, vitamin D3... Sự kết hợp này sẽ giúp xương phát triển tối đa để tăng chiều cao cho trẻ và ưu việt hơn rất nhiều so với những sản phẩm tăng cường chiều cao thông thường chỉ đơn thuần tập trung vào 1 thành phần tốt cho xương là canxi."},
+                    {id: "Hệ tiêu hóa khỏe mạnh", text: "Đây là một sản phẩm với công thức không chỉ giúp hấp thụ nhóm các chất dinh dưỡng để tăng chiều cao từ sản phẩm mà còn hấp thụ canxi tự nhiên (thông qua thức ăn hàng ngày: trứng, sữa, phomai, tôm, cua, …) bằng cách đề cao nhóm 3 lợi khuẩn axit lactic, Bifidobacteria và Oligosaccharide giúp trẻ có 1 hệ tiêu hóa khỏe mạnh hấp thu & chuyển hóa các chất dinh dưỡng ở mức cao nhất. Sức khỏe đường ruột chiếm 70% sức khỏe tổng thể nên đây là yếu tố cốt lõi giúp trẻ có 1 cơ thể khỏe mạnh & tăng chiều cao tối đa"},
+                    {id: "Tăng cường hệ miễn dịch", text: "Thành phần có vitamin tổng hợp, keo ong… và các dưỡng chất cần thiết khác giúp trẻ có có hệ hô hấp và cơ thể khỏe mạnh, phòng ngừa sự tấn công của các loại vi khuẩn và vi rút, tăng cường sức đề kháng và khả năng miễn dịch."},
+                    {id: "Hỗ trợ phát triển não bộ", text: "Sản phẩm không chỉ giúp trẻ phát triển về thể chất, chiều cao mà còn giúp trẻ tăng cường trí nhớ, phát triển trí thông minh nhờ có thành phần DHA, EPA và Phosphatidylserine giúp cải thiện chức năng não bộ, phát triển kích thích tế bào não."},
+                    {id: "Mùi vị thơm ngon, tiện lợi sử dụng", text: "Mùi vị thơm ngon, độ ngọt vừa phải và không có đường có thể gây sâu răng cho trẻ; Bào chế dạng nước có khả năng hấp thu tốt nhất cho cơ thể so với các dạng bào chế khác; 1 gói 30ml tiện lợi để sử dụng và bảo quản."},
+                    {id: "Đạt tiêu chuẩn GMP Nhật Bản", text: "Sản xuất tại nhà máy đạt chuẩn GMP có tiêu chuẩn chất lượng khắt khe về nguyên liệu, máy móc, công nghệ, quy trình sản xuất và chất lượng thành phẩm với đội ngũ chuyên gia hàng đầu nghiên cứu về nguồn dinh dưỡng & phát triển toàn diện của trẻ"}]
     return (
       <>
         <h2 className='font-bold text-3xl md:text-4xl mx-auto text-center mb-8 text-white'>Lợi ích của Grow Plus+</h2>
         <div className='md:flex flex-wrap justify-around md:my-16'>
             {texts.map(i => 
-              <div key={i.id} className='flex w-[90%] md:w-[34%] my-16 md:my-8 mx-auto md:mx-0 bg-[#3b8b59] items-center py-16 relative rounded-3xl border-4 border-white'>
-                <div className='h-24 w-24 rounded-full bg-[#9ec7a5] absolute top-[-50px] md:top-[-36px] left-[35.5%] md:left-[-36px] border-8 border-white flex items-center justify-center text-white text-4xl font-bold'>{i.id}</div>
-                <div className='flex-1 mx-6 text-center text-white'>{i.text}</div>
+              <div key={i.id} className='flex w-[90%] md:w-[34%] my-16 md:my-8 mx-auto md:mx-0 bg-sky-200 items-center py-16 relative rounded-3xl'>
+                <div className='h-20 w-full rounded-full bg-blue-800 absolute top-[-24px] border-8 border-[#3b8b59] flex items-center justify-center text-white text-xl md:text-2xl font-bold text-center text-yellow-400'>{i.id}</div>
+                <div className='flex-1 mx-6 text-center text-gray-600'>{i.text}</div>
               </div>
             )}
         </div>
@@ -269,8 +269,8 @@ export function Home() {
       <div className='bg-[url(/public/ed936cd603a9d1f788b8.jpg)] bg-[length:200%_100%] md:bg-[length:100%_100%] flex flex-col justify-center relative z-0'>
         <div className='absolute top-0 bottom-0 left-0 right-0 bg-[#3b8b59] opacity-80 z-0'></div>
         <div className='relative z-10 backdrop-blur-[0.5px] h-full'>
-          <h2 className='text-center font-bold text-3xl md:text-4xl z-10 mt-20 text-white'>Grow Plus+</h2>
-          <p className='text-xl text-center mt-4 md:mb-0 mb-20 text-white'>Giúp mẹ chăm con nhàn rỗi và mang đến sức khỏe toàn diện cho con</p>
+          <h2 className='deco1 text-center font-bold text-5xl md:text-6xl z-10 mt-20 text-red-500'>GROW PLUS+</h2>
+          <p className='deco2 text-2xl md:text-3xl text-center mt-4 md:mb-0 mb-20 text-blue-700 italic font-medium'>Giúp mẹ chăm trẻ nhàn rỗi và mang đến sức khỏe toàn diện cho trẻ</p>
           <div className='mx-4 md:mx-12'>
               <WidCol data={data1}/>
               <WidCol data={data2}/>
@@ -300,7 +300,7 @@ export function Home() {
           <h2 className='font-bold text-3xl md:text-4xl mx-auto text-center mb-8 text-[#3b8b59] mt-20'>Cách sử dụng</h2>
           <div className="text-start my-20 rounded-3xl mx-2 md:flex justify-around">
               <div className='md:w-1/2 h-[400px] md:h-auto flex flex-col justify-between'>
-                {texts.map(i => <div key={i} className='text-center h-[85px] rounded-r-xl flex justify-center items-center border-l-8 border-[#3b8b59] bg-[#dddddd] md:px-8 px-2'>{i}</div>)}
+                {texts.map(i => <div key={i} className='h-[85px] rounded-r-xl flex items-center border-l-8 border-[#3b8b59] bg-[#dddddd] md:px-8 px-2'>{i}</div>)}
               </div>
               <img alt="" className='w-4/5 mx-auto mt-8 md:w-1/3' src="f4ce03e778d1ad8ff4c0.png"></img>
           </div>

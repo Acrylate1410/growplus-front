@@ -6,6 +6,7 @@ import { MdOutlineDeliveryDining} from "react-icons/md";
 export function Dashboard() {
     const [orderList, setOrderList] = useState({data: [], message: "Đang tải đơn hàng"})
     const [filter, setFilter] = useState("");
+    const [selected, setSelected] = useState("")
     useEffect(() => {
         fetch("https://growplus-api.onrender.com/orders/get_orders").then(res => res.json()).then(data => {
           setOrderList({data: data || [], message: ""})
@@ -32,11 +33,28 @@ export function Dashboard() {
                     }
                 }
                 setOrderList(previousState => {return {...previousState, data: listToUpdate}})
+                setSelected("")
             }
         })
     }
     return (
-        <div className="w-full overflow-hidden">
+        <div className="w-full overflow-hidden relative">
+            <div className={selected !== "" ? "fixed top-0 bottom-0 right-0 left-0 bg-black opacity-60" : "hidden"}>
+                <div className="fixed top-[30%] bottom-[30%] left-[30%] right-[30%] bg-white p-8">
+                    <h2 className="font-bold text-2xl">Cập nhật trạng thái đơn hàng</h2>
+                    {selected.status === "Chưa giao hàng" ? 
+                        <p>Bạn có chắc chắn muốn cập nhật trạng thái đơn hàng này thành  
+                            <span className="font-bold"> Đang giao hàng</span> không?
+                        </p> : <p>Bạn có chắc chắn muốn cập nhật trạng thái đơn hàng này thành 
+                            <span className="font-bold"> Đã giao hàng thành công</span> không?
+                        </p>}
+                    <div className="flex justify-center md:justify-end">
+                        <button className="bg-red-600 text-white px-4 py-2" onClick={() => setSelected("")}>Không</button>
+                        <div className="mx-1"></div>
+                        <button className="bg-green-600 text-white px-4 py-2" onClick={() => updateStatus(selected._id, selected.status)}>Có</button>
+                    </div>
+                </div>
+            </div>
             <p className="font-bold text-2xl md:text-3xl mt-4 ml-4">Đơn hàng</p>
             <div className=" w-full overflow-x-auto">
                 <div className="flex mt-4 md:ml-4 w-max m-2 items-center">
@@ -96,11 +114,11 @@ export function Dashboard() {
                                     </td>
                                     <td className="px-4 md:px-0 py-2">
                                         {i.status === "Chưa giao hàng" ? 
-                                            <button onClick={() => updateStatus(i._id, i.status)} className='mx-auto bg-blue-600 text-sm text-white w-40 h-8 rounded-full flex items-center justify-center border border-blue-600 hover:bg-white hover:text-blue-600 transition '>
+                                            <button onClick={() => setSelected(i)} className='mx-auto bg-blue-600 text-sm text-white w-40 h-8 rounded-full flex items-center justify-center border border-blue-600 hover:bg-white hover:text-blue-600 transition '>
                                                 Bắt đầu giao hàng      
                                             </button>
                                             : i.status === "Đang giao hàng" ?
-                                            <button onClick={() => updateStatus(i._id, i.status)} className='mx-auto bg-green-600 text-sm text-white w-40 h-8 rounded-full flex items-center justify-center border border-green-600 hover:bg-white hover:text-green-600 transition '>
+                                            <button onClick={() => setSelected(i)} className='mx-auto bg-green-600 text-sm text-white w-40 h-8 rounded-full flex items-center justify-center border border-green-600 hover:bg-white hover:text-green-600 transition '>
                                                 Hoàn thành đơn hàng  
                                             </button> :
                                             <button className='invisible mx-auto w-40 h-8'>

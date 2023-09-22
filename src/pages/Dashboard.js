@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import {BiTimeFive} from "react-icons/bi"
-import {AiOutlineCheckCircle} from "react-icons/ai"
+import {AiOutlineCheckCircle, AiOutlineCloseCircle} from "react-icons/ai"
 import { MdOutlineDeliveryDining} from "react-icons/md";
 
 export function Dashboard() {
@@ -39,19 +39,26 @@ export function Dashboard() {
     }
     return (
         <div className="w-full overflow-hidden relative">
-            <div className={selected !== "" ? "fixed top-0 bottom-0 right-0 left-0 bg-black opacity-60" : "hidden"}>
-                <div className="fixed top-[30%] bottom-[30%] left-[30%] right-[30%] bg-white p-8">
-                    <h2 className="font-bold text-2xl">Cập nhật trạng thái đơn hàng</h2>
-                    {selected.status === "Chưa giao hàng" ? 
-                        <p>Bạn có chắc chắn muốn cập nhật trạng thái đơn hàng này thành  
-                            <span className="font-bold"> Đang giao hàng</span> không?
-                        </p> : <p>Bạn có chắc chắn muốn cập nhật trạng thái đơn hàng này thành 
-                            <span className="font-bold"> Đã giao hàng thành công</span> không?
-                        </p>}
+            <div className={selected !== "" ? "fixed top-0 bottom-0 right-0 left-0" : "hidden"}>
+                <div className="fixed top-0 bottom-0 right-0 left-0 bg-black opacity-60"  onClick={() => setSelected("")}></div>
+                <div className="fixed left-[10%] right-[10%] top-[30%] bottom-[30%] md:left-[30%] md:right-[30%] bg-white p-8 flex flex-col justify-between rounded-xl">
+                    <div>
+                        <h2 className="font-bold text-2xl">Cập nhật trạng thái đơn hàng</h2>
+                        <div className="border-2 border-black my-4"></div>
+                        {selected.status === "Chưa giao hàng" ? 
+                            <p>Bạn có chắc chắn muốn cập nhật trạng thái đơn hàng này thành  
+                                <span className="font-bold"> Đang giao hàng</span> không?
+                            </p> 
+                            : 
+                            <p>Bạn có chắc chắn muốn cập nhật trạng thái đơn hàng này thành 
+                                <span className="font-bold"> Đã giao hàng thành công</span> không?
+                            </p>
+                        }
+                    </div>
                     <div className="flex justify-center md:justify-end">
-                        <button className="bg-red-600 text-white px-4 py-2" onClick={() => setSelected("")}>Không</button>
+                        <button className="bg-red-600 text-white px-4 py-2 rounded-lg flex items-center" onClick={() => setSelected("")}><span className="mr-2 text-xl"><AiOutlineCloseCircle/></span><span>Không</span></button>
                         <div className="mx-1"></div>
-                        <button className="bg-green-600 text-white px-4 py-2" onClick={() => updateStatus(selected._id, selected.status)}>Có</button>
+                        <button className="bg-green-600 text-white px-4 py-2 rounded-lg flex items-center" onClick={() => updateStatus(selected._id, selected.status)}><span className="mr-2 text-xl"><AiOutlineCheckCircle/></span><span>Có</span></button>
                     </div>
                 </div>
             </div>

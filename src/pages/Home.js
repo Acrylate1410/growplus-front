@@ -247,8 +247,8 @@ export function Home() {
         <h2 className='font-bold text-3xl md:text-4xl mx-auto text-center mb-8 text-white'>Lợi ích của Grow Plus+</h2>
         <div className='md:flex flex-wrap justify-around md:my-16'>
             {texts.map(i => 
-              <div key={i.id} className='flex w-[90%] md:w-[34%] my-16 md:my-8 mx-auto md:mx-0 bg-sky-200 items-center py-16 relative rounded-3xl'>
-                <div className='h-20 w-full rounded-full bg-blue-800 absolute top-[-24px] border-8 border-[#3b8b59] flex items-center justify-center text-white text-xl md:text-2xl font-bold text-center text-yellow-400'>{i.id}</div>
+              <div key={i.id} className='flex w-[90%] md:w-[34%] my-16 md:my-8 mx-auto md:mx-0 bg-white items-center py-16 relative rounded-3xl'>
+                <div className='h-20 w-full rounded-full bg-[#9ec7a5] absolute top-[-24px] border-8 border-[#3b8b59] flex items-center justify-center text-xl md:text-2xl font-bold text-center text-black'>{i.id}</div>
                 <div className='flex-1 mx-6 text-center text-gray-600'>{i.text}</div>
               </div>
             )}

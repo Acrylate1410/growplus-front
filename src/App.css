@@ -11,3 +11,15 @@
   text-shadow: 0.5px 0 #fff, -0.5px 0 #fff, 0 0.5px #fff, 0 -0.5px #fff,
                0.25px 0.25px #fff, -0.25px -0.25px #fff, 0.25px -0.25px #fff, -0.25px 0.25px #fff;
 }
+
+.document-container {
+  width: 80% !important;
+}
+
+.document-container > * {
+  width: 100% !important;
+}
+
+.pg-viewer-wrapper {
+  overflow-y: hidden !important;
+}

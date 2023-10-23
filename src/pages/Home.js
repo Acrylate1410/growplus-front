@@ -1,21 +1,30 @@
-
 import {IoMdNutrition} from 'react-icons/io'
 import {IoAccessibilitySharp} from 'react-icons/io5'
 import {GiBodyHeight, GiNightSleep, GiBrain} from 'react-icons/gi'
-import {FaBacteria, FaThemeco} from 'react-icons/fa'
-import {BsFillLungsFill, BsFacebook, BsInstagram, BsTwitter} from 'react-icons/bs'
+import {FaBacteria} from 'react-icons/fa'
+import {BsFillLungsFill} from 'react-icons/bs'
 import {FaShieldHalved} from 'react-icons/fa6'
-import {AiOutlineMail, AiOutlineSearch} from 'react-icons/ai'
-import { useRef, useState, useEffect } from 'react';
+import { useEffect, useRef, useState} from 'react';
 import Hamburger from 'hamburger-react'
 import { Link } from "react-router-dom";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import { Navigation } from 'swiper/modules';
 export function Home() {
+    const [articleList, setArticleList] = useState([])
+    useEffect(() => {
+      fetch("https://growplus-api.onrender.com/articles/get_latest_articles").then(res => res.json()).then(data => {
+        setArticleList(data || [])
+      })
+    }, []);
     const sec1 = useRef(null)
     const sec2 = useRef(null)
     const sec3 = useRef(null)
     const sec4 = useRef(null)
     const sec5 = useRef(null)
     const sec6 = useRef(null)
+    const sec7 = useRef(null)
     const scroll = (sec) => {
       let destination;
       if (sec === "Thành phần dinh dưỡng") {
@@ -28,8 +37,10 @@ export function Home() {
         destination = sec4
       } else if (sec === "Cách sử dụng") {
         destination = sec5
-      } else {
+      } else if (sec === "Tin tức") {
         destination = sec6
+      } else {
+        destination = sec7
       }
       destination.current.scrollIntoView({behavior: 'smooth'});
     };
@@ -65,7 +76,7 @@ export function Home() {
                 </div>
               </Link>
               <nav className='hidden md:flex mx-4'>
-                  {["Thành phần dinh dưỡng", "Công dụng", "Quy cách đóng gói", "Lợi ích của Grow Plus+", "Cách sử dụng"].map(i => 
+                  {["Thành phần dinh dưỡng", "Công dụng", "Quy cách đóng gói", "Lợi ích của Grow Plus+", "Cách sử dụng", "Tin tức"].map(i => 
                     <div key={i} className='flex'>
                         <div className='text-center cursor-pointer text-sm' onClick={() => scroll(i)}>{i}</div>
                         <div className='mx-2 md:mx-4'></div>
@@ -75,7 +86,7 @@ export function Home() {
               <button onClick={() => scroll("Mua ngay")} className=' text-sm hidden md:block bg-[#3b8b59] text-white w-36 h-12 rounded-full flex items-center justify-center border border-[#3b8b59] hover:bg-[#9ec7a5] hover:text-[#3b8b59] transition '>
                     Mua ngay      
               </button>
-              <div  className="block md:hidden"><HamburgerComponent/></div>
+              <div className="block md:hidden"><HamburgerComponent/></div>
           </header>
           <div className="bg-[url(/public/banner.jpg)] bg-[length:158%_100%] md:bg-[length:100%_100%] h-[300px] md:h-[550px] mt-20"></div>
           <section className='w-full my-16 md:my-24 scroll-m-20' ref={sec1}><IngredientTab /></section>
@@ -98,7 +109,26 @@ export function Home() {
           </section>
           <section className='w-full  bg-[#3b8b59] pt-20 pb-4 scroll-m-20'  ref={sec4}><NotableBenefits /></section>
           <section className='w-full scroll-m-20'  ref={sec5}><Accordion /></section>
-          <section className='bg-[url(/public/adfh.jpg)] bg-cover bg-center relative h-[550px] mt-20 scroll-m-20'  ref={sec6}><Form/></section>
+          <section className='w-full scroll-m-20' ref={sec6}>
+              <h2 className='font-bold text-3xl md:text-4xl text-center mb-8 text-[#3b8b59] mt-20'>Tin tức</h2>
+              <Swiper slidesPerView={3} spaceBetween={30} navigation={true} modules={[Navigation]} className='mb-8 !mx-8'>
+                {articleList.map(i =>
+                  <SwiperSlide>
+                    <Link to={"/article?id=" + i._id}>
+                      <img className='h-52' alt={i.title} src={i.thumbnail}></img>
+                      <p className='font-bold text-xl mt-4'>{i.title}</p>
+                      <p className='mt-4'>{i.description}</p>
+                    </Link>
+                  </SwiperSlide>
+                )}
+              </Swiper>
+              <Link to="/news" className='block w-fit mx-auto'>
+                <button className='bg-[#3b8b59] text-white w-36 h-12 rounded-full flex items-center justify-center border border-[#3b8b59] hover:bg-white hover:text-[#3b8b59] transition '>
+                        Xem thêm tin tức   
+                </button>
+              </Link>
+          </section>
+          <section className='bg-[url(/public/adfh.jpg)] bg-cover bg-center relative h-[550px] mt-20 scroll-m-20'  ref={sec7}><Form/></section>
           <footer className='bg-black md:flex justify-around text-white py-6 text-center md:text-start w-full'>
               <div className='mx-2'>
                   <p className='my-2 md:my-0'>Công ty nhập khẩu và phân phối: Công ty Phúc Khang</p>
@@ -108,21 +138,7 @@ export function Home() {
       </div>
     )
   };
-  /*
-                    <p className='my-2 md:my-0'>Địa chỉ: 55 Ngõ 144 An Dương Vương, Phú Thượng, Tây Hồ, Hà Nội</p>
-                <div className='my-6 md:my-0 md:mx-6'>
-                  <p>KẾT NỐI CHÚNG TÔI QUA</p>
-                  <div className='flex justify-center mt-2'>
-                      <BsFacebook className='cursor-pointer ' />
-                      <div className='mx-2'></div>
-                      <BsInstagram className='cursor-pointer ' />
-                      <div className='mx-2'></div>
-                      <BsTwitter className='cursor-pointer ' />
-                      <div className='mx-2'></div>
-                      <AiOutlineMail className='cursor-pointer ' />
-                  </div>
-              </div>
-              */
+
   function Form() {
     const name = useRef(null)
     const phone = useRef(null)

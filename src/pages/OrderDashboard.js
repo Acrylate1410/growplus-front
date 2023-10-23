@@ -3,7 +3,7 @@ import {BiTimeFive} from "react-icons/bi"
 import {AiOutlineCheckCircle, AiOutlineCloseCircle} from "react-icons/ai"
 import { MdOutlineDeliveryDining} from "react-icons/md";
 
-export function Dashboard() {
+export function OrderDashboard() {
     const [orderList, setOrderList] = useState({data: [], message: "Đang tải đơn hàng"})
     const [filter, setFilter] = useState("");
     const [selected, setSelected] = useState("")

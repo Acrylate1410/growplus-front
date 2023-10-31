@@ -47,7 +47,7 @@ export function ArticleUploadForm() {
             formData.append('thumbnail', thumbnail);
             formData.append('content', content);
             if (location.pathname.endsWith("add_article")) {
-                fetch("https://growplus-api.onrender.com/articles/upload", {
+                fetch("http://localhost:8080/articles/upload", {
                     method: "POST",
                     body: formData
                 }).then(alert("Đã đăng bài thành công"))

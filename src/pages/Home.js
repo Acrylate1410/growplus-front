@@ -115,7 +115,7 @@ export function Home() {
                 {articleList.map(i =>
                   <SwiperSlide>
                     <Link to={"/article?id=" + i._id}>
-                      <img className='h-52' alt={i.title} src={i.thumbnail}></img>
+                      <img className='h-52 w-full' alt={i.title} src={i.thumbnail}></img>
                       <p className='font-bold text-xl mt-4'>{i.title}</p>
                       <p className='mt-4'>{i.description}</p>
                     </Link>

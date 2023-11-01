@@ -69,7 +69,6 @@ export function Home() {
     }
     return (
         <div className="App w-full overflow-hidden mx-0 relative">
-          
           <header className='header p-4 bg-[#9ec7a5] flex items-center justify-between fixed top-0 right-0 left-0 z-20'>
               <Link to="/">
                 <div className='flex h-12 cursor-pointer'>
@@ -89,7 +88,6 @@ export function Home() {
               </button>
               <div className="block md:hidden"><HamburgerComponent/></div>
           </header>
-          <MessengerChat/>
           <div className="bg-[url(/public/banner.jpg)] bg-[length:158%_100%] md:bg-[length:100%_100%] h-[300px] md:h-[550px] mt-20"></div>
           <section className='w-full my-16 md:my-24 scroll-m-20' ref={sec1}><IngredientTab /></section>
           <section className='w-full scroll-m-20' ref={sec2}><Wid /></section>
@@ -251,34 +249,7 @@ export function Home() {
     )
   }
 
-  function MessengerChat() {
-    const MessengerRef = useRef();
-    useEffect(() => {
-      MessengerRef.current.setAttribute('page_id', '135134239690741');
-      MessengerRef.current.setAttribute('attribution', 'biz_inbox');
   
-      window.fbAsyncInit = function () {
-          window.FB.init({
-              xfbml: true,
-              version: 'v18.0',
-          });
-      };
-      (function (d, s, id) {
-          var js, fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) return;
-          js = d.createElement(s);
-          js.id = id;
-          js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
-          fjs.parentNode.insertBefore(js, fjs);
-      })(document, 'script', 'facebook-jssdk');
-  }, []);
-  return (
-      <>
-          <div id="fb-root"></div>
-          <div ref={MessengerRef} id="fb-customer-chat" className="fb-customerchat"></div>
-      </>
-  );
-  }
   function NotableBenefits() {
     const texts = [ {id: "Bảng thành phần vàng", text: "Sản phẩm hàng đầu của Nhật Bản về SỰ PHÁT TRIỂN TOÀN DIỆN đặc biệt là SỰ PHÁT TRIỂN CHIỀU CAO của trẻ với tổng hợp 23 thành phần chọn lọc."},
                     {id: "Tăng chiều cao tối đa", text: "Các chuyên gia Nhật Bản đã xây dựng một công thức hoàn hảo không chỉ tập trung vào Canxi mà còn có các thành phần khác như Men chứa kẽm, Peptide lòng đỏ trứng, vitamin D3... Sự kết hợp này sẽ giúp xương phát triển tối đa để tăng chiều cao cho trẻ và ưu việt hơn rất nhiều so với những sản phẩm tăng cường chiều cao thông thường chỉ đơn thuần tập trung vào 1 thành phần tốt cho xương là canxi."},

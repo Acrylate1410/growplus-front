@@ -4,7 +4,6 @@ const Layout = () => {
     return (
         <>
             <Outlet />
-            <ChatBot/>
         </>
 )};
 

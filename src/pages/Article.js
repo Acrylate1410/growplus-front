@@ -21,12 +21,12 @@ export function Article() {
           </header>
           <div className="relative">
               <img src={article.thumbnail} alt={article.title} className="mt-20 w-full h-96 object-cover"></img>
-              <div className="absolute bottom-0 leading-normal flex items-center text-white text-4xl font-bold px-4 md:px-28 absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#3b8b59] to-transparent from-50% h-44">
+              <div className="absolute bottom-0 leading-normal flex items-center text-white text-2xl md:text-4xl font-bold px-4 md:px-28 absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#3b8b59] to-transparent from-50% h-44">
                 {article.title}
               </div>
           </div>
-          {article.date !== undefined && <div className="w-4/5 mx-auto px-[30px] pt-[30px] flex items-center text-sm"><AiOutlineClockCircle/><div className="ml-1.5">{article.date}</div></div> }
-          {article.description !== undefined && <div className="w-4/5 mx-auto px-[30px] pt-[30px] font-bold text-gray-500">{article.description}</div> }
+          {article.date !== undefined && <div className="md:w-4/5 mx-auto px-[30px] pt-[30px] flex items-center text-sm"><AiOutlineClockCircle/><div className="ml-1.5">{article.date}</div></div> }
+          {article.description !== undefined && <div className="md:w-4/5 mx-auto px-[30px] pt-[30px] font-bold text-gray-500">{article.description}</div> }
           {article.content !== undefined && <FileViewer fileType="docx" filePath={article.content}/> } 
         </>
     )

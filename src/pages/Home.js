@@ -111,7 +111,16 @@ export function Home() {
           <section className='w-full scroll-m-20'  ref={sec5}><Accordion /></section>
           <section className='w-full scroll-m-20' ref={sec6}>
               <h2 className='font-bold text-3xl md:text-4xl text-center mb-8 text-[#3b8b59] mt-20'>Tin tức</h2>
-              <Swiper slidesPerView={3} spaceBetween={30} navigation={true} modules={[Navigation]} className='mb-8 !mx-8'>
+              <Swiper 
+              breakpoints={{
+                0: {
+                  slidesPerView: 1,
+                },
+                768: {
+                  slidesPerView: 3,
+                },
+              }}
+              spaceBetween={30} navigation={true} modules={[Navigation]} className='mb-8 !mx-8'>
                 {articleList.map(i =>
                   <SwiperSlide>
                     <Link to={"/article?id=" + i._id}>

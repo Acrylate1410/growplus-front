@@ -16,6 +16,12 @@
   width: 80% !important;
 }
 
+@media screen and (max-width: 768px) {
+  .document-container {
+    width: 100% !important;
+  }
+}
+
 .document-container > * {
   width: 100% !important;
 }

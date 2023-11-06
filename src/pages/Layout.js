@@ -6,13 +6,12 @@ const Layout = () => {
             <Outlet />
         </>
 )};
-
+/*
 const ChatBot = () => {
     const MessengerRef = useRef();
     useEffect(() => {
         MessengerRef.current.setAttribute('page_id', '135134239690741');
         MessengerRef.current.setAttribute('attribution', 'biz_inbox');
-    
         window.fbAsyncInit = function () {
             window.FB.init({
                 xfbml: true,
@@ -36,4 +35,5 @@ const ChatBot = () => {
         </>
     );
 }; 
+*/
 export default Layout;

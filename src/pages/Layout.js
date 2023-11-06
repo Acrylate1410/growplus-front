@@ -4,10 +4,9 @@ const Layout = () => {
     return (
         <>
             <Outlet />
-            <ChatBot/>
         </>
 )};
-
+/*
 const ChatBot = () => {
     const MessengerRef = useRef();
     useEffect(() => {
@@ -36,5 +35,5 @@ const ChatBot = () => {
         </>
     );
 }; 
-
+*/
 export default Layout;

@@ -26,7 +26,7 @@ export function Article() {
               </div>
           </div>
           {article.date !== undefined && <div className="md:w-4/5 mx-auto px-[30px] pt-[30px] flex items-center text-sm"><AiOutlineClockCircle/><div className="ml-1.5">{article.date}</div></div> }
-          {article.description !== undefined && <div className="md:w-4/5 mx-auto px-[30px] pt-[30px] font-bold text-gray-500">{article.description}</div> }
+          {article.description !== undefined && <div className="md:w-4/5 mx-auto px-[30px] pt-[30px] font-bold text-gray-500 text-justify">{article.description}</div> }
           {article.content !== undefined && <FileViewer fileType="docx" filePath={article.content}/> } 
         </>
     )

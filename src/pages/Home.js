@@ -79,7 +79,7 @@ export function Home() {
                   {["Thành phần dinh dưỡng", "Công dụng", "Quy cách đóng gói", "Lợi ích của Grow Plus+", "Cách sử dụng", "Tin tức"].map(i => 
                     <div key={i} className='flex'>
                         <div className='text-center cursor-pointer text-sm' onClick={() => scroll(i)}>{i}</div>
-                        <div className='mx-2 md:mx-4'></div>
+                        <div className='mx-3'></div>
                     </div>
                   )}
               </nav>

@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Footer from "./Footer";
 
-export default function NotFound() {
+export function NotFound() {
   return (
     <div className="not-found">
       <header className='header p-4 bg-[#9ec7a5] flex items-center justify-between fixed top-0 right-0 left-0 z-20'>

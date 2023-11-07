@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import FileViewer from 'react-file-viewer';
 import { AiOutlineClockCircle } from "react-icons/ai";
+import Footer from "./Footer";
 export function Article() {
     const [article, setArticle] = useState({})
     const [params] = useSearchParams()
@@ -28,6 +29,7 @@ export function Article() {
           {article.date !== undefined && <div className="md:w-4/5 mx-auto px-[30px] pt-[30px] flex items-center text-sm"><AiOutlineClockCircle/><div className="ml-1.5">{article.date}</div></div> }
           {article.description !== undefined && <div className="md:w-4/5 mx-auto px-[30px] pt-[30px] font-bold text-gray-500 text-justify">{article.description}</div> }
           {article.content !== undefined && <FileViewer fileType="docx" filePath={article.content}/> } 
+          {Object.keys(article).length !== 0 && <Footer/>}
         </>
     )
 }

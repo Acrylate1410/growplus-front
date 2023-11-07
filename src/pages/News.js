@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import Footer from "./Footer";
 
 export function News() {
     const [articleList, setArticleList] = useState([])
@@ -39,6 +40,7 @@ export function News() {
                   </div>
               </Link>  
             )}
+            {articleList.length !== 0 && <Footer/>}
         </>
     )
 }

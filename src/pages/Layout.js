@@ -45,14 +45,13 @@ const ChatBot = () => {
         MessengerRef.current.setAttribute('page_id', '122098227242006889');
         MessengerRef.current.setAttribute('attribution', 'biz_inbox');
         window.fbAsyncInit = function () {
-            window.FB.init({
+            FB.init({
                 xfbml: true,
                 version: 'v18.0',
             });
         };
         (function (d, s, id) {
-            var js,
-                fjs = d.getElementsByTagName(s)[0];
+            var js, fjs = d.getElementsByTagName(s)[0];
             if (d.getElementById(id)) return;
             js = d.createElement(s);
             js.id = id;

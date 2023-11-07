@@ -8,6 +8,8 @@ import { News } from './pages/News';
 import { Article } from './pages/Article';
 import { ArticleUploadForm } from './pages/ArticleUploadForm';
 import { NewsDashboard } from './pages/NewsDashboard';
+import NotFound from './pages/NotFound';
+
 
 function App() {
   return (
@@ -22,6 +24,7 @@ function App() {
             <Route path="news_dashboard" element={<NewsDashboard />} />
             <Route path="add_article" element={<ArticleUploadForm/>}/>
             <Route path="edit_article" element={<ArticleUploadForm/>}/>
+            <Route path="*" element={<NotFound/>} />
           </Route>
         </Routes>
       </Suspense>

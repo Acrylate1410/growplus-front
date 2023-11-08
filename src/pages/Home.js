@@ -35,13 +35,13 @@ export function Home() {
       } else if (sec === "Quy cách đóng gói") {
           destination = sec3
       } else if (sec === "Lợi ích của Grow Plus+") {
-        destination = sec4
+          destination = sec4
       } else if (sec === "Cách sử dụng") {
-        destination = sec5
+          destination = sec5
       } else if (sec === "Tin tức") {
-        destination = sec6
+          destination = sec6
       } else {
-        destination = sec7
+          destination = sec7
       }
       destination.current.scrollIntoView({behavior: 'smooth'});
     };
@@ -113,15 +113,14 @@ export function Home() {
           <section className='w-full scroll-m-20' ref={sec6}>
               <h2 className='font-bold text-3xl md:text-4xl text-center mb-8 text-[#3b8b59] mt-20'>Tin tức</h2>
               <Swiper 
-              breakpoints={{
-                0: {
-                  slidesPerView: 1,
-                },
-                768: {
-                  slidesPerView: 3,
-                },
-              }}
-              spaceBetween={30} navigation={true} modules={[Navigation]} className='mb-8 !mx-8'>
+                  breakpoints={{
+                    0: {
+                      slidesPerView: 1,
+                    }, 
+                    768: {
+                      slidesPerView: 3,
+                    },
+                  }} spaceBetween={30} navigation={true} modules={[Navigation]} className='mb-8 !mx-8'>
                 {articleList.map(i =>
                   <SwiperSlide>
                     <Link to={"/article?id=" + i._id}>
@@ -179,7 +178,6 @@ export function Home() {
               alert("Đặt hàng thành công")
             }
           )
-
     }
     return (
       <>
@@ -232,7 +230,7 @@ export function Home() {
                         {id: 21, ingredient: "Vitamin B2", amount: "2"},
                         {id: 22, ingredient: "Vitamin B6", amount: "2"},
                         {id: 23, ingredient: "Vitamin B12 (0,1%)", amount: "2"},
-                      ]
+                       ]
     return (
       <>
         <h2 className='text-center font-bold text-3xl md:text-4xl  mb-12 z-10 text-[#3b8b59]'>Thành phần dinh dưỡng</h2>

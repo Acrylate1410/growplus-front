@@ -89,7 +89,7 @@ export function Home() {
               </button>
               <div className="block md:hidden"><HamburgerComponent/></div>
           </header>
-          <div className="bg-[url(/public/banner.jpg)] bg-[length:158%_100%] md:bg-[length:100%_100%] h-[300px] md:h-[550px] mt-20"></div>
+          <div className="bg-[url(/public/banner.jpg)] bg-[length:158%_100%] md:bg-[length:100%_100%] h-[300px] md:h-[500px] mt-20"></div>
           <section className='w-full my-16 md:my-24 scroll-m-20' ref={sec1}><IngredientTab /></section>
           <section className='w-full scroll-m-20' ref={sec2}><Wid /></section>
           <section className='w-full my-20 scroll-m-20'  ref={sec3}>
@@ -124,7 +124,7 @@ export function Home() {
                 {articleList.map(i =>
                   <SwiperSlide>
                     <Link to={"/article?id=" + i._id}>
-                      <img className='h-52 w-full' alt={i.title} src={i.thumbnail}></img>
+                      <img className='h-52 w-full object-cover' alt={i.title} src={i.thumbnail}></img>
                       <p className='font-bold text-xl mt-4'>{i.title}</p>
                       <p className='mt-4'>{i.description}</p>
                     </Link>

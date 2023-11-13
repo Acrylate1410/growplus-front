@@ -254,23 +254,42 @@ export function Home() {
 
   
   function NotableBenefits() {
-    const texts = [ {id: "Bảng thành phần vàng", text: "Sản phẩm hàng đầu của Nhật Bản về SỰ PHÁT TRIỂN TOÀN DIỆN đặc biệt là SỰ PHÁT TRIỂN CHIỀU CAO của trẻ với tổng hợp 23 thành phần chọn lọc."},
-                    {id: "Tăng chiều cao tối đa", text: "Các chuyên gia Nhật Bản đã xây dựng một công thức hoàn hảo không chỉ tập trung vào Canxi mà còn có các thành phần khác như Men chứa kẽm, Peptide lòng đỏ trứng, vitamin D3... Sự kết hợp này sẽ giúp xương phát triển tối đa để tăng chiều cao cho trẻ và ưu việt hơn rất nhiều so với những sản phẩm tăng cường chiều cao thông thường chỉ đơn thuần tập trung vào 1 thành phần tốt cho xương là canxi."},
-                    {id: "Hệ tiêu hóa khỏe mạnh", text: "Đây là một sản phẩm với công thức không chỉ giúp hấp thụ nhóm các chất dinh dưỡng để tăng chiều cao từ sản phẩm mà còn hấp thụ canxi tự nhiên (thông qua thức ăn hàng ngày: trứng, sữa, phomai, tôm, cua, …) bằng cách đề cao nhóm 3 lợi khuẩn axit lactic, Bifidobacteria và Oligosaccharide giúp trẻ có 1 hệ tiêu hóa khỏe mạnh hấp thu & chuyển hóa các chất dinh dưỡng ở mức cao nhất. Sức khỏe đường ruột chiếm 70% sức khỏe tổng thể nên đây là yếu tố cốt lõi giúp trẻ có 1 cơ thể khỏe mạnh & tăng chiều cao tối đa"},
-                    {id: "Tăng cường hệ miễn dịch", text: "Thành phần có vitamin tổng hợp, keo ong… và các dưỡng chất cần thiết khác giúp trẻ có có hệ hô hấp và cơ thể khỏe mạnh, phòng ngừa sự tấn công của các loại vi khuẩn và vi rút, tăng cường sức đề kháng và khả năng miễn dịch."},
-                    {id: "Hỗ trợ phát triển não bộ", text: "Sản phẩm không chỉ giúp trẻ phát triển về thể chất, chiều cao mà còn giúp trẻ tăng cường trí nhớ, phát triển trí thông minh nhờ có thành phần DHA, EPA và Phosphatidylserine giúp cải thiện chức năng não bộ, phát triển kích thích tế bào não."},
-                    {id: "Mùi vị thơm ngon, tiện lợi sử dụng", text: "Mùi vị thơm ngon, độ ngọt vừa phải và không có đường có thể gây sâu răng cho trẻ; Bào chế dạng nước có khả năng hấp thu tốt nhất cho cơ thể so với các dạng bào chế khác; 1 gói 30ml tiện lợi để sử dụng và bảo quản."},
-                    {id: "Đạt tiêu chuẩn GMP Nhật Bản", text: "Sản xuất tại nhà máy đạt chuẩn GMP có tiêu chuẩn chất lượng khắt khe về nguyên liệu, máy móc, công nghệ, quy trình sản xuất và chất lượng thành phẩm với đội ngũ chuyên gia hàng đầu nghiên cứu về nguồn dinh dưỡng & phát triển toàn diện của trẻ"}]
+
     return (
       <>
         <h2 className='font-bold text-3xl md:text-4xl mx-auto text-center mb-8 text-white'>Lợi ích của Grow Plus+</h2>
-        <div className='md:flex flex-wrap justify-around md:my-16'>
-            {texts.map(i => 
-              <div key={i.id} className='flex w-[90%] md:w-[40%] my-16 md:my-8 mx-auto md:mx-0 bg-white items-center py-16 relative rounded-3xl'>
-                <div className='h-20 w-full rounded-full bg-[#9ec7a5] absolute top-[-24px] border-8 border-[#3b8b59] flex items-center justify-center text-xl md:text-2xl font-bold text-center text-[#3b8b59]'>{i.id}</div>
-                <div className='flex-1 mx-6 text-center text-gray-600'>{i.text}</div>
+        <div className='md:flex flex-wrap justify-center md:my-16'>
+          <div className='flex w-[90%] md:w-[40%] my-16 md:my-8 mx-auto md:mx-0 bg-white items-center py-16 relative rounded-3xl'>
+                  <div className='h-20 w-full rounded-full bg-[#9ec7a5] absolute top-[-24px] border-8 border-[#3b8b59] flex items-center justify-center text-xl md:text-2xl font-bold text-center text-[#3b8b59]'>Bảng thành phần vàng</div>
+                  <div className='flex-1 mx-6 text-center text-gray-600'>Sản phẩm hàng đầu của Nhật Bản về SỰ PHÁT TRIỂN TOÀN DIỆN đặc biệt là SỰ PHÁT TRIỂN CHIỀU CAO của trẻ với tổng hợp 23 thành phần chọn lọc.</div>
+          </div>
+          <div className='md:mx-4'></div>
+          <div className='flex w-[90%] md:w-[40%] my-16 md:my-8 mx-auto md:mx-0 bg-white items-center py-16 relative rounded-3xl'>
+                <div className='h-20 w-full rounded-full bg-[#9ec7a5] absolute top-[-24px] border-8 border-[#3b8b59] flex items-center justify-center text-xl md:text-2xl font-bold text-center text-[#3b8b59]'>Tăng chiều cao tối đa</div>
+                <div className='flex-1 mx-6 text-center text-gray-600'>Các chuyên gia Nhật Bản đã xây dựng một công thức hoàn hảo không chỉ tập trung vào Canxi mà còn có các thành phần khác như Men chứa kẽm, Peptide lòng đỏ trứng, vitamin D3... Sự kết hợp này sẽ giúp xương phát triển tối đa để tăng chiều cao cho trẻ và ưu việt hơn rất nhiều so với những sản phẩm tăng cường chiều cao thông thường chỉ đơn thuần tập trung vào 1 thành phần tốt cho xương là canxi.</div>
+          </div>
+          <div className='flex w-[90%] md:w-[40%] my-16 md:my-8 mx-auto md:mx-0 bg-white items-center py-16 relative rounded-3xl'>
+                <div className='h-20 w-full rounded-full bg-[#9ec7a5] absolute top-[-24px] border-8 border-[#3b8b59] flex items-center justify-center text-xl md:text-2xl font-bold text-center text-[#3b8b59]'>Hệ tiêu hóa khỏe mạnh</div>
+                <div className='flex-1 mx-6 text-center text-gray-600'>Đây là một sản phẩm với công thức không chỉ giúp hấp thụ nhóm các chất dinh dưỡng để tăng chiều cao từ sản phẩm mà còn hấp thụ canxi tự nhiên (thông qua thức ăn hàng ngày: trứng, sữa, phomai, tôm, cua, …) bằng cách đề cao nhóm 3 lợi khuẩn axit lactic, Bifidobacteria và Oligosaccharide giúp trẻ có 1 hệ tiêu hóa khỏe mạnh hấp thu & chuyển hóa các chất dinh dưỡng ở mức cao nhất. Sức khỏe đường ruột chiếm 70% sức khỏe tổng thể nên đây là yếu tố cốt lõi giúp trẻ có 1 cơ thể khỏe mạnh & tăng chiều cao tối đa</div>
               </div>
-            )}
+              <div className='md:mx-4'></div>
+              <div className='flex w-[90%] md:w-[40%] my-16 md:my-8 mx-auto md:mx-0 bg-white items-center py-16 relative rounded-3xl'>
+                <div className='h-20 w-full rounded-full bg-[#9ec7a5] absolute top-[-24px] border-8 border-[#3b8b59] flex items-center justify-center text-xl md:text-2xl font-bold text-center text-[#3b8b59]'>Tăng cường hệ miễn dịch</div>
+                <div className='flex-1 mx-6 text-center text-gray-600'>Thành phần có vitamin tổng hợp, keo ong… và các dưỡng chất cần thiết khác giúp trẻ có có hệ hô hấp và cơ thể khỏe mạnh, phòng ngừa sự tấn công của các loại vi khuẩn và vi rút, tăng cường sức đề kháng và khả năng miễn dịch.</div>
+              </div>
+              <div className='flex w-[90%] md:w-[40%] my-16 md:my-8 mx-auto md:mx-0 bg-white items-center py-16 relative rounded-3xl'>
+                <div className='h-20 w-full rounded-full bg-[#9ec7a5] absolute top-[-24px] border-8 border-[#3b8b59] flex items-center justify-center text-xl md:text-2xl font-bold text-center text-[#3b8b59]'>Hỗ trợ phát triển não bộ</div>
+                <div className='flex-1 mx-6 text-center text-gray-600'>Sản phẩm không chỉ giúp trẻ phát triển về thể chất, chiều cao mà còn giúp trẻ tăng cường trí nhớ, phát triển trí thông minh nhờ có thành phần DHA, EPA và Phosphatidylserine giúp cải thiện chức năng não bộ, phát triển kích thích tế bào não.</div>
+              </div>
+              <div className='md:mx-4'></div>
+              <div className='flex w-[90%] md:w-[40%] my-16 md:my-8 mx-auto md:mx-0 bg-white items-center py-16 relative rounded-3xl'>
+                <div className='h-20 w-full rounded-full bg-[#9ec7a5] absolute top-[-24px] border-8 border-[#3b8b59] flex items-center justify-center text-xl md:text-2xl font-bold text-center text-[#3b8b59]'>Mùi vị thơm ngon, tiện lợi sử dụng</div>
+                <div className='flex-1 mx-6 text-center text-gray-600'>Mùi vị thơm ngon, độ ngọt vừa phải và không có đường có thể gây sâu răng cho trẻ; Bào chế dạng nước có khả năng hấp thu tốt nhất cho cơ thể so với các dạng bào chế khác; 1 gói 30ml tiện lợi để sử dụng và bảo quản.</div>
+              </div>
+              <div className='flex w-[90%] md:w-[40%] my-16 md:my-8 mx-auto md:mx-0 bg-white items-center py-16 relative rounded-3xl'>
+                <div className='h-20 w-full rounded-full bg-[#9ec7a5] absolute top-[-24px] border-8 border-[#3b8b59] flex items-center justify-center text-xl md:text-2xl font-bold text-center text-[#3b8b59]'>Đạt tiêu chuẩn GMP Nhật Bản</div>
+                <div className='flex-1 mx-6 text-center text-gray-600'>Sản xuất tại nhà máy đạt chuẩn GMP có tiêu chuẩn chất lượng khắt khe về nguyên liệu, máy móc, công nghệ, quy trình sản xuất và chất lượng thành phẩm với đội ngũ chuyên gia hàng đầu nghiên cứu về nguồn dinh dưỡng & phát triển toàn diện của trẻ</div>
+              </div>
         </div>
       </>
     )

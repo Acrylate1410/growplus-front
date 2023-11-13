@@ -94,12 +94,12 @@ export function Home() {
           <section className='w-full scroll-m-20' ref={sec2}><Wid /></section>
           <section className='w-full my-20 scroll-m-20'  ref={sec3}>
               <h2 className='font-bold text-3xl md:text-4xl mx-auto text-center mb-8 text-[#3b8b59]'>Quy cách đóng gói</h2>
-              <div className='flex md:flex-row flex-col items-center md:justify-around py-4 px-2 md:px-20'>
-                  <img alt="" src="gh.jpg" className='md:w-2/5 order-2 md:order-1 mt-8 md:mt-0 shadow-[0_60px_60px_-15px_rgba(0,0,0,0.3)] rounded-[45px] '></img>
+              <div className='flex md:flex-row flex-col items-center md:justify-around py-4 px-2'>
+                  <img alt="" src="gh.jpg" className='md:w-2/5 order-2 md:order-1 mt-8 md:mt-0 shadow-[0_60px_60px_-15px_rgba(0,0,0,0.3)] rounded-[45px] md:mr-12'></img>
                   <div className='w-full md:w-1/3 md:order-2 order-1 '>
                     <div className='flex justify-around'>
                         {["gói/hộp", "gram/gói"].map(i =>
-                          <div className=' bg-[#dddddd] rounded-b-xl border-t-8 border-[#3b8b59] text-white p-8 md:p-12 text-center w-[45%] md:w-auto' key={i}>
+                          <div className=' bg-[#dddddd] rounded-b-xl border-t-8 border-[#3b8b59] text-white p-8 md:p-12 text-center w-[40%] md:mr-4 md:w-auto' key={i}>
                             <div className='rounded-full h-20 w-20 text-3xl font-bold mx-auto border-4 border-[#3b8b59] text-[#3b8b59] flex items-center justify-center'>30</div>
                             <p className='mt-3 text-lg text-[#3b8b59] font-semibold'>{i}</p>
                           </div>
@@ -266,7 +266,7 @@ export function Home() {
         <h2 className='font-bold text-3xl md:text-4xl mx-auto text-center mb-8 text-white'>Lợi ích của Grow Plus+</h2>
         <div className='md:flex flex-wrap justify-around md:my-16'>
             {texts.map(i => 
-              <div key={i.id} className='flex w-[90%] md:w-[34%] my-16 md:my-8 mx-auto md:mx-0 bg-white items-center py-16 relative rounded-3xl'>
+              <div key={i.id} className='flex w-[90%] md:w-[40%] my-16 md:my-8 mx-auto md:mx-0 bg-white items-center py-16 relative rounded-3xl'>
                 <div className='h-20 w-full rounded-full bg-[#9ec7a5] absolute top-[-24px] border-8 border-[#3b8b59] flex items-center justify-center text-xl md:text-2xl font-bold text-center text-[#3b8b59]'>{i.id}</div>
                 <div className='flex-1 mx-6 text-center text-gray-600'>{i.text}</div>
               </div>
@@ -285,7 +285,7 @@ export function Home() {
                     {logo: <BsFillLungsFill/>, text: "Giúp bổ phổi, tăng cường hệ hô hấp của trẻ, giảm tình trạng viêm phổi, viêm đường hô hấp và bớt ốm vặt"},
                     {logo: <GiNightSleep/>, text: "Giúp trẻ ăn và ngủ ngon hơn"}]
     return (
-      <div className='bg-[url(/public/ed936cd603a9d1f788b8.jpg)] bg-[length:200%_100%] md:bg-[length:100%_100%] flex flex-col justify-center relative z-0'>
+      <div className='bg-[url(/public/ed936cd603a9d1f788b8.jpg)] bg-[length:200%_100%] md:bg-[length:100%_100%] flex flex-col justify-center relative z-0 md:h-[800px]'>
         <div className='absolute top-0 bottom-0 left-0 right-0 bg-[#3b8b59] opacity-80 z-0'></div>
         <div className='relative z-10 backdrop-blur-[0.5px] h-full'>
           <h1 className='deco1 text-center font-bold text-5xl md:text-6xl z-10 mt-20 text-red-400'>GROW PLUS+</h1>
@@ -315,11 +315,11 @@ export function Home() {
   function Accordion() {
     const texts = ["Liều dùng: 1 gói 1 ngày", "Nên uống buổi sáng sau hoặc trước khi ăn 30 phút đến 1 tiếng", "Nên sử dụng theo liệu trình tối thiểu 3 đến 5 tháng để đạt hiệu quả tối đa", "Sản phẩm có thể sử dụng duy trì thường xuyên mà không gây tác dụng phụ"]
     return (
-        <div className='md:w-3/4 mx-auto mt-12'>
+        <div className='md:w-4/5 mx-auto mt-12'>
           <h2 className='font-bold text-3xl md:text-4xl mx-auto text-center mb-8 text-[#3b8b59] mt-20'>Cách sử dụng</h2>
           <div className="text-start my-20 rounded-3xl mx-2 md:flex justify-around">
-              <div className='md:w-1/2 h-[400px] md:h-auto flex flex-col justify-between'>
-                {texts.map(i => <div key={i} className='h-[85px] rounded-r-xl flex items-center border-l-8 border-[#3b8b59] bg-[#dddddd] md:px-8 px-2'>{i}</div>)}
+              <div className='md:w-1/2 flex flex-col justify-between'>
+                {texts.map(i => <div key={i} className='h-[85px] rounded-r-xl flex items-center border-l-8 border-[#3b8b59] bg-[#dddddd] md:px-8 px-2 mb-2'>{i}</div>)}
               </div>
               <img alt="" className='w-4/5 mx-auto mt-8 md:w-1/3' src="f4ce03e778d1ad8ff4c0.png"></img>
           </div>

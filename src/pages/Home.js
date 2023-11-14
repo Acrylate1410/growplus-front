@@ -266,11 +266,11 @@ export function Home() {
           <div className='md:mx-4'></div>
           <div className='flex w-[90%] md:w-[40%] my-16 md:my-8 mx-auto md:mx-0 bg-white items-center py-16 relative rounded-3xl'>
                 <div className='h-20 w-full rounded-full bg-[#9ec7a5] absolute top-[-24px] border-8 border-[#3b8b59] flex items-center justify-center text-xl md:text-2xl font-bold text-center text-[#3b8b59]'>Tăng chiều cao tối đa</div>
-                <div className='flex-1 mx-6 text-center text-gray-600'>Các chuyên gia Nhật Bản đã xây dựng một công thức hoàn hảo không chỉ tập trung vào Canxi mà còn có các thành phần khác như Men chứa kẽm, Peptide lòng đỏ trứng, vitamin D3... Sự kết hợp này sẽ giúp xương phát triển tối đa để tăng chiều cao cho trẻ và ưu việt hơn rất nhiều so với những sản phẩm tăng cường chiều cao thông thường chỉ đơn thuần tập trung vào 1 thành phần tốt cho xương là canxi.</div>
+                <div className='flex-1 mx-6 text-center text-gray-600'>Các chuyên gia Nhật Bản đã xây dựng một công thức hoàn hảo không chỉ tập trung vào canxi mà còn có các thành phần khác, giúp xương phát triển tối đa để tăng chiều cao cho trẻ và ưu việt hơn rất nhiều so với những sản phẩm tăng chiều cao thông thường chỉ tập trung vào canxi.</div>
           </div>
           <div className='flex w-[90%] md:w-[40%] my-16 md:my-8 mx-auto md:mx-0 bg-white items-center py-16 relative rounded-3xl'>
                 <div className='h-20 w-full rounded-full bg-[#9ec7a5] absolute top-[-24px] border-8 border-[#3b8b59] flex items-center justify-center text-xl md:text-2xl font-bold text-center text-[#3b8b59]'>Hệ tiêu hóa khỏe mạnh</div>
-                <div className='flex-1 mx-6 text-center text-gray-600'>Đây là một sản phẩm với công thức không chỉ giúp hấp thụ nhóm các chất dinh dưỡng để tăng chiều cao từ sản phẩm mà còn hấp thụ canxi tự nhiên (thông qua thức ăn hàng ngày: trứng, sữa, phomai, tôm, cua, …) bằng cách đề cao nhóm 3 lợi khuẩn axit lactic, Bifidobacteria và Oligosaccharide giúp trẻ có 1 hệ tiêu hóa khỏe mạnh hấp thu & chuyển hóa các chất dinh dưỡng ở mức cao nhất. Sức khỏe đường ruột chiếm 70% sức khỏe tổng thể nên đây là yếu tố cốt lõi giúp trẻ có 1 cơ thể khỏe mạnh & tăng chiều cao tối đa</div>
+                <div className='flex-1 mx-6 text-center text-gray-600'>Đây là một sản phẩm với công thức không chỉ giúp hấp thụ nhóm các chất dinh dưỡng để tăng chiều cao từ sản phẩm mà còn hấp thụ canxi tự nhiên bằng cách đề cao nhóm 3 lợi khuẩn axit lactic, Bifidobacteria và Oligosaccharide, giúp trẻ có 1 hệ tiêu hóa khỏe mạnh hấp thu và chuyển hóa các chất dinh dưỡng ở mức cao nhất.</div>
               </div>
               <div className='md:mx-4'></div>
               <div className='flex w-[90%] md:w-[40%] my-16 md:my-8 mx-auto md:mx-0 bg-white items-center py-16 relative rounded-3xl'>
@@ -284,7 +284,7 @@ export function Home() {
               <div className='md:mx-4'></div>
               <div className='flex w-[90%] md:w-[40%] my-16 md:my-8 mx-auto md:mx-0 bg-white items-center py-16 relative rounded-3xl'>
                 <div className='h-20 w-full rounded-full bg-[#9ec7a5] absolute top-[-24px] border-8 border-[#3b8b59] flex items-center justify-center text-xl md:text-2xl font-bold text-center text-[#3b8b59]'>Mùi vị thơm ngon, tiện lợi sử dụng</div>
-                <div className='flex-1 mx-6 text-center text-gray-600'>Mùi vị thơm ngon, độ ngọt vừa phải và không có đường có thể gây sâu răng cho trẻ; Bào chế dạng nước có khả năng hấp thu tốt nhất cho cơ thể so với các dạng bào chế khác; 1 gói 30ml tiện lợi để sử dụng và bảo quản.</div>
+                <div className='flex-1 mx-6 text-center text-gray-600'>Mùi vị thơm ngon, độ ngọt vừa phải và không có đường có thể gây sâu răng cho trẻ; bào chế dạng nước có khả năng hấp thu tốt nhất cho cơ thể so với các dạng bào chế khác; 1 gói 30ml tiện lợi để sử dụng và bảo quản.</div>
               </div>
               <div className='flex w-[90%] md:w-[40%] my-16 md:my-8 mx-auto md:mx-0 bg-white items-center py-16 relative rounded-3xl'>
                 <div className='h-20 w-full rounded-full bg-[#9ec7a5] absolute top-[-24px] border-8 border-[#3b8b59] flex items-center justify-center text-xl md:text-2xl font-bold text-center text-[#3b8b59]'>Đạt tiêu chuẩn GMP Nhật Bản</div>

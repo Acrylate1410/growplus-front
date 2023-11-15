@@ -1,18 +1,15 @@
-import { IoLocationOutline } from "react-icons/io5";
 import { BiPhone } from "react-icons/bi";
 export default function Footer() {
     return (
-        <footer className='bg-black md:flex justify-around text-white py-6 md:text-start w-full px-4'>
+        <footer className='bg-white md:flex justify-around text-[#093489] py-6 md:text-start w-full px-4'>
                     <div>
-                        <img alt="" src="logo.png"></img>
-                        <p className="text-xl my-4">Liên hệ với chúng tôi</p>
-                        <div className="flex items-center">
-                            <IoLocationOutline className="text-2xl"/>
-                            <p className='my-2 md:my-0 ml-1'>Công ty nhập khẩu và phân phối: Công ty Phúc Khang</p>
+                        <div className='flex h-12 cursor-pointer'>
+                            <img alt="" src="growplus.png" className='w-56 h-30 object-cover'></img>
                         </div>
+                        <p className="text-xl my-4">Liên hệ với chúng tôi</p>
                         <div className="flex items-center my-2">
                             <BiPhone className="text-2xl"/>
-                            <p className='my-2 md:my-0 ml-1'>Hotline: 093 903 1155</p>
+                            <p className='my-2 md:my-0 ml-1'>Hotline tư vấn: 093 903 1155</p>
                         </div>
                     </div>
                     <div className="flex justify-center">

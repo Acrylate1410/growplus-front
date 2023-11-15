@@ -241,9 +241,9 @@ export function Home() {
     return (
       <>
 
-        <div id="ingredients" className='md:w-3/5 ml-32 mx-2  '>
+        <div id="ingredients" className='md:w-3/5 md:ml-32 mx-2  '>
           <h2 className='text-center font-bold text-3xl md:text-4xl  mb-5 z-10 text-[#093489] relative'>Thành phần dinh dưỡng</h2>
-          <div className='absolute right-4 overflow-hidden w-96 z-0 mt-20' ><img src="3growplus.png"></img></div>
+          <div className='absolute right-4 overflow-hidden w-96 z-0 mt-20 hidden md:block' ><img src="3growplus.png"></img></div>
           <div className='flex justify-between font-bold px-4 py-5 text-white rounded-t-xl bg-gradient-to-r from-10% to-[#0D4CC9] from-[#093489] items-center '>
               <p>Thành phần  (trong 1 gói 30ml)</p>
               <p className='text-end'>Hàm lượng (mg/gói)</p>

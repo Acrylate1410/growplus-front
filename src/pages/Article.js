@@ -13,12 +13,12 @@ export function Article() {
     }, [])
     return (
         <>
-          <header className='header p-4 bg-[#9ec7a5] flex items-center justify-between fixed top-0 right-0 left-0 z-20'>
-            <Link to="/">
-              <div className='flex h-12 cursor-pointer'>
-                <img alt="" src="logo.png"></img>
-              </div>
-            </Link>
+          <header className='header p-4 bg-white flex items-center justify-between fixed top-0 right-0 left-0 z-20'>
+              <Link to="/">
+                <div className='flex h-12 cursor-pointer'>
+                  <img alt="" src="growplus.png" className='w-48 h-30 object-cover'></img>
+                </div>
+              </Link>
           </header>
           <div className="relative">
               <img src={article.thumbnail} alt={article.title} className="mt-20 w-full h-96 object-cover"></img>

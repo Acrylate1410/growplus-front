@@ -15,15 +15,15 @@ export function News() {
     }, []);
     return (
         <>
-            <header className='header p-4 bg-[#9ec7a5] flex items-center justify-between fixed top-0 right-0 left-0 z-20'>
+        <header className='header p-4 bg-white flex items-center justify-between fixed top-0 right-0 left-0 z-20'>
               <Link to="/">
                 <div className='flex h-12 cursor-pointer'>
-                  <img alt="Grow Plus+" src="logo.png"></img>
+                  <img alt="" src="growplus.png" className='w-48 h-30 object-cover'></img>
                 </div>
               </Link>
               <AiOutlineSearch className="text-3xl cursor-pointer" onClick={() => searchToggle === "hidden" ? setSearchToggle("") : setSearchToggle("hidden")}/>
               <input className={searchToggle + " p-2 right-14 md:w-96 rounded-lg outline-0 absolute"} placeholder="Tìm bài viết theo tiêu đề" onInput={(e) => setFilter(e.target.value)}></input>
-            </header>
+          </header>
             <div className="mt-28"></div>
             {articleList.filter(el => {
                 if (filter === '') {

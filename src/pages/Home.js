@@ -11,7 +11,10 @@ import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 import { Navigation } from 'swiper/modules';
+import { Pagination } from 'swiper/modules';
+import { FaCaretDown,  FaArrowCircleUp } from "react-icons/fa";
 import Footer from './Footer'
 export function Home() {
   //          <section className='w-full scroll-m-20' ref={sec2}><Wid /></section>
@@ -21,6 +24,7 @@ export function Home() {
         setArticleList(data || [])
       })
     }, []);
+    const sec0 = useRef(null)
     const sec1 = useRef(null)
     const sec2 = useRef(null)
     const sec3 = useRef(null)
@@ -30,7 +34,9 @@ export function Home() {
     const sec7 = useRef(null)
     const scroll = (sec) => {
       let destination;
-      if (sec === "Thành phần dinh dưỡng") {
+      if (sec === "Trang chủ") {
+        destination = sec0
+      } else if (sec === "Thành phần dinh dưỡng") {
           destination = sec1
       } else if (sec === "Công dụng") {
           destination = sec2
@@ -45,7 +51,7 @@ export function Home() {
       } else {
           destination = sec7
       }
-      destination.current.scrollIntoView({behavior: 'smooth'});
+      destination.current.scrollIntoView();
     };
     const HamburgerComponent = () => {
       const [isOpen, setOpen] = useState(false)
@@ -53,18 +59,14 @@ export function Home() {
       isOpen ? status = "" : status = "hidden"
       return (
         <>
-          <div className="z-10 relative"><Hamburger toggled={isOpen} toggle={setOpen} size={20}/></div>
-          <div className={'fixed top-0 bottom-0 left-[33%] right-0 bg-[#9ec7a5] flex justify-center items-center text-center ' + status}>
-            <div>
-                {["Thành phần dinh dưỡng", "Quy cách đóng gói", "Ưu điểm nổi bật", "Hướng dẫn sử dụng"].map(i => 
+          <div className="z-10 relative"><Hamburger toggled={isOpen} toggle={setOpen} size={25}/></div>
+          <div className={'fixed top-0 bottom-0 left-[33%] right-0 bg-white ' + status}>
+            <div className='mt-20'>
+                {["Thành phần dinh dưỡng", "Ưu điểm nổi bật", "Hướng dẫn sử dụng", "Quy cách đóng gói",  "Tin tức"].map(i => 
                     <div key={i}>
-                        <div className='cursor-pointer text-[25px]' onClick={() => scroll(i)}>{i}</div>
-                        <div className='my-6'></div>
+                        <div className='cursor-pointer text-[20px] border-b border-black pl-6 py-3 text-[#093489] font-medium ' onClick={() => {scroll(i); setOpen(false)}}>{i}</div>
                     </div>
                 )}
-                <button onClick={() => scroll("Mua ngay")} className='text-2xl mx-auto bg-[#093489] text-white w-36 h-12 rounded-full flex items-center justify-center border border-[#093489] hover:bg-[#9ec7a5] hover:text-[#093489] transition '>
-                    Mua ngay      
-                </button>
             </div>
           </div>
         </>
@@ -73,12 +75,11 @@ export function Home() {
     //bg-gradient-to-r from-[#ABE0FF] to-[#82ACF6]
     return (
         <div className="App w-full overflow-hidden mx-0 relative">
+          <div className='fixed right-4 bottom-4 text-4xl z-[100] text-[#093489]' onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}><FaArrowCircleUp /></div>
           <header className='header p-4 bg-white flex items-center justify-between fixed top-0 right-0 left-0 z-20'>
-              <Link to="/">
-                <div className='flex h-12 cursor-pointer'>
-                  <img alt="" src="growplus.png" className='w-48 h-30 object-cover'></img>
-                </div>
-              </Link>
+              <div className='flex h-12 cursor-pointer'  onClick={() => window.scrollTo({top: 0, behavior: 'smooth'}) }>
+                <img alt="" src="growplus.png" className='w-48 h-30 object-cover'></img>
+              </div>
               <nav className='hidden md:flex mx-4'>
                   {["Thành phần dinh dưỡng", "Ưu điểm nổi bật", "Hướng dẫn sử dụng", "Quy cách đóng gói", "Tin tức"].map(i => 
                     <div key={i} className='flex'>
@@ -87,18 +88,24 @@ export function Home() {
                     </div>
                   )}
               </nav>
-              <button onClick={() => scroll("Mua ngay")} className='mr-8 text-sm hidden md:flex items-center justify-center bg-gradient-to-b from-60% to-[#0D4CC9] from-[#093489] text-white w-36 h-12 rounded-full border-2 border-yellow-400 hover:scale-110 transition '>
-                    <div className='text-base'>Mua ngay</div>  
-                    <div className='mx-1'></div>    
+              <button onClick={() => scroll("Mua ngay")} className='md:mr-8 hidden text-sm sm:flex items-center justify-center md:bg-gradient-to-b from-60% to-[#0D4CC9] from-[#093489] md:text-white w-8 h-8 md:w-36 md:h-12 rounded-full border md:border-2 border-black md:border-yellow-400 hover:scale-110 transition '>
+                    <div className='text-sm md:text-base hidden sm:block'>Mua ngay</div>  
+                    <div className='mx-1 hidden sm:block'></div>    
                     <div className='text-xl'><PiShoppingCart /></div>
               </button>
-              <div className="block md:hidden"><HamburgerComponent/></div>
+              <div className="flex items-center md:hidden">
+                <button onClick={() => scroll("Mua ngay")} className='md:mr-8 text-sm flex items-center justify-center md:bg-gradient-to-b from-60% to-[#0D4CC9] from-[#093489] md:text-white w-8 h-8 md:w-36 md:h-12 rounded-full border md:border-2 border-black md:border-yellow-400 hover:scale-110 transition '>
+                      <div className='text-sm md:text-base hidden sm:block'>Mua ngay</div>  
+                      <div className='mx-1 hidden sm:block'></div>    
+                      <div className='text-xl'><PiShoppingCart /></div>
+                </button>
+                <HamburgerComponent/></div>
           </header>
-          <div className="bg-[url(/public/banner.jpg)] bg-[length:158%_100%] md:bg-[length:100%_100%] h-[300px] md:h-[500px] mt-20"></div>
+          <div  ref={sec0} className="bg-[url(/public/banner.jpg)] bg-[length:158%_100%] md:bg-[length:100%_100%] h-[300px] md:h-[500px] mt-20"></div>
           <section className='w-full my-16 md:my-24 scroll-m-20' ref={sec1}><IngredientTab /></section>
 
 
-          <section className='w-full  bg-[#093489] pt-20 pb-4 scroll-m-20'  ref={sec4}><NotableBenefits /></section>
+          <section className='w-full  bg-[#093489] pt-4 md:pt-20 md:pb-4 scroll-m-20'  ref={sec4}><NotableBenefits /></section>
           <section className='w-full scroll-m-20'  ref={sec5}><Accordion /></section>
           <section className='w-full my-20 scroll-m-20'  ref={sec3}>
               <h2 className='font-bold text-3xl md:text-4xl mx-auto text-center mb-8 text-[#093489]'>Quy cách đóng gói</h2>
@@ -143,13 +150,14 @@ export function Home() {
                 </button>
               </Link>
           </section>
-          <section className='bg-[url(/public/adfh.jpg)] bg-cover bg-center relative h-[550px] mt-20 scroll-m-20'  ref={sec7}><Form/></section>
+          <section className='bg-[url(/public/adfh.jpg)] bg-cover bg-center relative h-[450px] mt-20 scroll-m-20'  ref={sec7}><Form/></section>
           <Footer/>
       </div>
     )
   };
 
   function Form() {
+    const [toggle, setToggle] = useState("hidden")
     const name = useRef(null)
     const phone = useRef(null)
     const address = useRef(null)
@@ -189,19 +197,21 @@ export function Home() {
       <>
             <div className='absolute top-0 bottom-0 left-0 right-0 bg-[#093489] opacity-60 z-0'></div>
             <div className='relative z-10 backdrop-blur-[0.5px] h-full  flex flex-col justify-center'>
-              <h2 className='text-center font-bold text-3xl md:text-4xl  mb-12 z-10 text-white'>Thông tin khách hàng</h2>
+              <h2 className='text-center font-bold text-3xl md:text-4xl  mb-4 z-10 text-white'>Thông tin giao hàng</h2>
               <form onSubmit={handleSubmit} className='flex flex-col items-center'>
                 <input ref={name} required className='outline-0 text-[#093489] md:w-1/2 w-4/5 p-2 my-2 rounded-lg' placeholder='Họ và tên khách hàng'></input>
-                <input ref={phone} required className='outline-0 text-[#093489] md:w-1/2 w-4/5 p-2 my-2 rounded-lg' placeholder='Số điện thoại'></input>
-                <input ref={address} required className='outline-0 text-[#093489] md:w-1/2 w-4/5 p-2 my-2 rounded-lg' placeholder='Địa chỉ nhận hàng'></input>
-                <div className='flex flex-col md:flex-row justify-between md:w-1/2 w-4/5 my-0 md:my-2 mx-auto'>
-                    <input ref={subdivision} required className='outline-0 text-[#093489] md:w-[31.5%] my-2 md:my-0 p-2 rounded-lg' placeholder='Phường'></input>
-                    <input ref={district} required className='outline-0 text-[#093489] md:w-[31.5%] my-2 md:my-0 p-2 rounded-lg' placeholder='Quận'></input>
-                    <input ref={city} required className='outline-0 text-[#093489] md:w-[31.5%] my-2 md:my-0 p-2 rounded-lg' placeholder='Thành phố'></input>
+
+                <div className='relative md:w-1/2 w-4/5 '>
+                  <div className='outline-0 text-zinc-500 p-2 my-2 rounded-lg w-full bg-white h-10' onMouseDown={() => {toggle === "hidden" ? setToggle("") : setToggle("hidden")}}>Số điện thoại & Địa chỉ nhận hàng</div>
+                  <div className='absolute top-4 right-4 text-2xl'  onMouseDown={() => {toggle === "hidden" ? setToggle("") : setToggle("hidden")}} ><FaCaretDown /></div>
+                </div>
+                <div className={'md:w-1/2 w-4/5 '  + toggle}>
+                <input ref={phone} required className='outline-0 text-[#093489] w-full p-2 my-2 rounded-lg' placeholder='Số điện thoại'></input>
+                  <input ref={phone} required className={'outline-0 text-[#093489] w-full p-2 my-2 rounded-lg '} placeholder='Đường, phường, quận, tỉnh/thành phố'></input>
                 </div>
                 <div className='mx-auto md:w-1/2 w-4/5 flex justify-end items-center mt-4'>
-                  <p className='text-white'>Số hộp: </p>
-                  <input ref={quantity} defaultValue="1" min="1" type="number" className='outline-0 text-[#093489] w-12 mx-4 pl-1 py-0.5 rounded-lg'></input>
+                  <p className='text-white'>Số lượng: </p>
+                  <input ref={quantity} defaultValue="1" min="1" type="number" className='md:block outline-0 text-[#093489] w-12 mx-4 pl-1 py-0.5 rounded-lg'></input>
                   <button type="submit" className='bg-[#093489] text-white w-36 h-12 rounded-full flex items-center justify-center border border-[#093489] hover:bg-white hover:text-[#093489] transition '>
                       Đặt hàng        
                   </button>
@@ -263,17 +273,18 @@ export function Home() {
 
   
   function NotableBenefits() {
+
     const texts = [ {id: "Bảng thành phần vàng", text: "Sản phẩm hàng đầu của Nhật Bản về SỰ PHÁT TRIỂN TOÀN DIỆN đặc biệt là SỰ PHÁT TRIỂN CHIỀU CAO của trẻ với tổng hợp 23 thành phần chọn lọc."},
-                    {id: "Tăng chiều cao tối đa", text: "Các chuyên gia Nhật Bản đã xây dựng một công thức hoàn hảo không chỉ tập trung vào canxi mà còn có các thành phần khác, giúp xương phát triển tối đa để tăng chiều cao cho trẻ và ưu việt hơn rất nhiều so với những sản phẩm tăng chiều cao thông thường chỉ tập trung vào canxi."},
-                    {id: "Hệ tiêu hóa khỏe mạnh", text: "Đây là một sản phẩm với công thức không chỉ giúp hấp thụ nhóm các chất dinh dưỡng để tăng chiều cao từ sản phẩm mà còn hấp thụ canxi tự nhiên bằng cách đề cao nhóm 3 lợi khuẩn axit lactic, Bifidobacteria và Oligosaccharide, giúp trẻ có 1 hệ tiêu hóa khỏe mạnh hấp thu và chuyển hóa các chất dinh dưỡng ở mức cao nhất."},
+                    {id: "Tăng chiều cao tối đa", text: "Các chuyên gia Nhật Bản đã xây dựng một công thức hoàn hảo không chỉ tập trung vào Canxi mà còn có các thành phần khác, giúp xương phát triển tối đa để tăng chiều cao cho trẻ và ưu việt hơn rất nhiều so với những sản phẩm tăng chiều cao thông thường chỉ tập trung vào Canxi."},
+                    {id: "Hệ tiêu hóa khỏe mạnh", text: "Đây là một sản phẩm với công thức không chỉ giúp hấp thụ nhóm các chất dinh dưỡng để tăng chiều cao từ sản phẩm mà còn hấp thụ Canxi tự nhiên bằng cách đề cao nhóm 3 lợi khuẩn Axit lactic, Bifidobacteria và Oligosaccharide, giúp trẻ có 1 hệ tiêu hóa khỏe mạnh, giúp trẻ hấp thu và chuyển hóa các chất dinh dưỡng ở mức tối ưu nhất."},
                     {id: "Tăng cường hệ miễn dịch", text: "Thành phần có vitamin tổng hợp, keo ong… và các dưỡng chất cần thiết khác giúp trẻ có có hệ hô hấp và cơ thể khỏe mạnh, phòng ngừa sự tấn công của các loại vi khuẩn và vi rút, tăng cường sức đề kháng và khả năng miễn dịch."},
                     {id: "Hỗ trợ phát triển não bộ", text: "Sản phẩm không chỉ giúp trẻ phát triển về thể chất, chiều cao mà còn giúp trẻ tăng cường trí nhớ, phát triển trí thông minh nhờ có thành phần DHA, EPA và Phosphatidylserine giúp cải thiện chức năng não bộ, phát triển kích thích tế bào não."},
                     {id: "Mùi vị thơm ngon, tiện lợi sử dụng", text: "Mùi vị thơm ngon, độ ngọt vừa phải và không có đường có thể gây sâu răng cho trẻ; Bào chế dạng nước có khả năng hấp thu tốt nhất cho cơ thể so với các dạng bào chế khác; 1 gói 30ml tiện lợi để sử dụng và bảo quản."},
                     {id: "Đạt tiêu chuẩn GMP Nhật Bản", text: "Sản xuất tại nhà máy đạt chuẩn GMP có tiêu chuẩn chất lượng khắt khe về nguyên liệu, máy móc, công nghệ, quy trình sản xuất và chất lượng thành phẩm với đội ngũ chuyên gia hàng đầu nghiên cứu về nguồn dinh dưỡng & phát triển toàn diện của trẻ"}]
     return (
       <>
-        <h2 className='font-bold text-3xl md:text-4xl mx-auto text-center mb-8 text-white'>Ưu điểm nổi bật</h2>
-        <div className='md:flex flex-wrap justify-between md:my-16 md:mx-12'>
+        <h2 className='font-bold text-3xl md:text-4xl mx-auto text-center md:mb-8 text-white'>Ưu điểm nổi bật</h2>
+        <div className='hidden md:flex flex-wrap justify-between md:my-16 md:mx-12'>
           {texts.map(i =>
             <div className='w-[90%] md:w-[31.5%] my-8 md:my-4 mx-auto md:mx-0 bg-white pt-8 pb-12 rounded-3xl'>
                   <div className='text-xl mx-6 md:text-2xl font-bold text-[#093489] mb-8'>{i.id}</div>
@@ -281,6 +292,21 @@ export function Home() {
             </div>
           )}
         </div>
+        <Swiper spaceBetween={30} pagination={true} modules={[Pagination]} className='mb-8 !mx-8 md:!hidden'>
+                {texts.map(i =>
+                  <SwiperSlide><div className='w-[100%] md:w-[31.5%] mt-4 mb-8 md:my-4 mx-auto md:mx-0 bg-white pt-2 pb-12 rounded-3xl h-96'>
+                    <div className='text-xl mx-6 md:text-2xl font-bold text-[#093489] md:mb-8 text-center'>{i.id}</div>
+                      <div className='flex-1 mx-6 text-justify'>{i.text}</div>
+                      <>
+                        {i.id === "Bảng thành phần vàng" && 
+                          <div className='overflow-hidden w-48 z-0 mx-auto' >
+                            <img src="3growplus.png"></img>
+                          </div>}
+                      </>
+                    </div>
+                  </SwiperSlide>
+                )}
+              </Swiper>
       </>
     )
   }

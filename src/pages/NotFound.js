@@ -19,7 +19,7 @@ export function NotFound() {
               Quay về trang chủ   
           </button>
       </Link>
-      <div className="w-full"><Footer/></div>
+      <div className="w-full mt-8"><Footer/></div>
     </div>
   )
 };

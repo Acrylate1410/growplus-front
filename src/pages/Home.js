@@ -21,7 +21,7 @@ import { Pagination } from 'swiper/modules';
 import { FaCaretDown,  FaArrowCircleUp } from "react-icons/fa";
 import Footer from './Footer'
 export function Home() {
-  //          <section className='w-full scroll-m-20' ref={sec2}><Wid /></section>
+  //<section className='w-full scroll-m-20' ref={sec2}><Wid /></section>
     const [articleList, setArticleList] = useState([])
     useEffect(() => {
       fetch("https://growplus-api.onrender.com/articles/get_latest_articles").then(res => res.json()).then(data => {
@@ -236,7 +236,7 @@ export function Home() {
   }
   
   function IngredientTab() {
-    //                        {id: 22,  ingredient: "Dextrin", amount: "1.45"},
+    //{id: 22,  ingredient: "Dextrin", amount: "1.45"},
     const ingredients =[{id: 1, ingredient: "Oligosaccharide", amount: "6300"},
                         {id: 2, ingredient: "Mật ong tinh khiết", amount: "4500"},
                         {id: 3,  ingredient: "Collagen peptide", amount: "100"},

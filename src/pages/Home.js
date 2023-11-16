@@ -20,13 +20,22 @@ import { Navigation } from 'swiper/modules';
 import { Pagination } from 'swiper/modules';
 import { FaCaretDown,  FaArrowCircleUp } from "react-icons/fa";
 import Footer from './Footer'
+//[#093489]
 export function Home() {
   //<section className='w-full scroll-m-20' ref={sec2}><Wid /></section>
     const [articleList, setArticleList] = useState([])
+    const [pos, setPos] = useState("right-[-61px]")
+    const onScroll = () => {
+      setPos("right-[24px]")
+    };
     useEffect(() => {
+      window.history.scrollRestoration = 'manual'
       fetch("https://growplus-api.onrender.com/articles/get_latest_articles").then(res => res.json()).then(data => {
         setArticleList(data || [])
+        window.removeEventListener('scroll', onScroll);
+        window.addEventListener('scroll', onScroll, { passive: true });
       })
+      return () => window.removeEventListener('scroll', onScroll);
     }, []);
     const sec1 = useRef(null)
     const sec2 = useRef(null)
@@ -76,10 +85,10 @@ export function Home() {
     //bg-gradient-to-r from-[#ABE0FF] to-[#82ACF6]
     return (
         <div className="App w-full overflow-hidden mx-0 relative">
-          <button className='fixed right-[24px] bottom-[96px] text-[60px] z-[100] text-[#093489]' onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}><FaArrowCircleUp /></button>
+          <button className={'fixed bottom-4 text-[44px] z-[100] text-[#093489] transition-[right] ' + pos} onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}><FaArrowCircleUp /></button>
           <header className='header p-4 bg-white flex items-center justify-between fixed top-0 right-0 left-0 z-20'>
               <div className='flex h-12 cursor-pointer'  onClick={() => window.scrollTo({top: 0, behavior: 'smooth'}) }>
-                <img alt="" src="growplus.png" className='w-48 h-30 object-cover'></img>
+                <img alt="Grow Plus+" src="growplus.png" className='w-48 h-30 object-cover'></img>
               </div>
               <nav className='hidden md:flex mx-4'>
                   {["Thành phần dinh dưỡng", "Ưu điểm nổi bật", "Hướng dẫn sử dụng", "Quy cách đóng gói", "Tin tức"].map(i => 
@@ -105,15 +114,15 @@ export function Home() {
           <div className="bg-[url(/public/banner.jpg)] bg-[length:158%_100%] md:bg-[length:100%_100%] h-[300px] md:h-[500px] mt-20"></div>
           <div className='w-full md:flex'>
             <div className='md:w-1/2 mt-8 md:ml-8 mx-4 flex'><img src="chart.png" className='object-contain'/></div>
-            <div className='md:w-1/2 mt-8 md:ml-8 mx-4 flex'><img src="Untitled-2.png" className='object-contain'/></div>
+            <div className='md:w-1/2 mt-8 md:ml-8 mx-4 flex hidden md:block'><img src="Untitled-2.png" className='object-contain'/></div>
           </div>
           <section className='w-full mt-6 mb-16 md:mb-24 md:mt-8 scroll-m-20' ref={sec1}><IngredientTab /></section>
-          <section className='w-full  bg-[#093489] pt-4 md:pt-20 md:pb-4 scroll-m-20'  ref={sec4}><NotableBenefits /></section>
+          <section className='w-full bg-gradient-to-r from-10% to-[#0D4CC9] from-[#093489]  pt-4 md:pt-20 md:pb-4 scroll-m-20'  ref={sec4}><NotableBenefits /></section>
           <section className='w-full scroll-m-20'  ref={sec5}><Accordion /></section>
-          <section className='w-full mt-20 scroll-m-20'  ref={sec3}>
+          <section className='w-full scroll-m-20'  ref={sec3}>
               <h2 className='font-bold text-3xl md:text-4xl mx-auto text-center text-[#093489]'>Quy cách đóng gói</h2>
               <div className='flex md:flex-row flex-col items-center md:justify-around py-4 px-2'>
-                  <img alt="" src="gh.jpg" className='md:w-2/5 mt-0 md:mt-8 md:shadow-[0_60px_60px_-15px_rgba(0,0,0,0.3)] rounded-[45px] md:mr-12'></img>
+                  <img alt="Quy cách đóng gói" src="gh.jpg" className='md:w-2/5 mt-0 md:mt-8 md:shadow-[0_60px_60px_-15px_rgba(0,0,0,0.3)] rounded-[45px]'></img>
                   <div className='w-full md:w-1/3 mt-8 md:mt-0'>
                     <div className='flex justify-around'>
                         {["gói/hộp", "ml/gói"].map(i =>
@@ -175,9 +184,6 @@ export function Home() {
     const name = useRef(null)
     const phone = useRef(null)
     const address = useRef(null)
-    const subdivision = useRef(null)
-    const district = useRef(null)
-    const city = useRef(null)
     const quantity = useRef(null)
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -187,9 +193,6 @@ export function Home() {
               name: name.current.value,
               phone: phone.current.value,
               address: address.current.value,
-              subdivision: subdivision.current.value,
-              district: district.current.value,
-              city: city.current.value,
               quantity: quantity.current.value
             }),
             headers: {
@@ -199,9 +202,6 @@ export function Home() {
               name.current.value = ''
               phone.current.value = ''
               address.current.value = ''
-              subdivision.current.value = ''
-              district.current.value = ''
-              city.current.value = ''
               quantity.current.value = 1
               alert("Đặt hàng thành công")
             }
@@ -219,8 +219,8 @@ export function Home() {
                   <div className='absolute top-4 right-4 text-2xl'  onMouseDown={() => {toggle === "hidden" ? setToggle("") : setToggle("hidden")}} ><FaCaretDown /></div>
                 </div>
                 <div className={'md:w-1/2 w-4/5 '  + toggle}>
-                <input ref={phone} required className='outline-0 text-[#093489] w-full pl-5 py-2 my-2 rounded-lg' placeholder='Số điện thoại'></input>
-                  <input ref={phone} required className={'outline-0 text-[#093489] w-full pl-5 py-2 my-2 rounded-lg '} placeholder='Đường, phường, quận, tỉnh/thành phố'></input>
+                  <input ref={phone} required className='outline-0 text-[#093489] w-full pl-5 py-2 my-2 rounded-lg' placeholder='Số điện thoại'></input>
+                  <input ref={address} required className='outline-0 text-[#093489] w-full pl-5 py-2 my-2 rounded-lg' placeholder='Đường, phường/xã, quận/huyện, thành phố/tỉnh'></input>
                 </div>
                 <div className='mx-auto md:w-1/2 w-4/5 flex justify-end items-center mt-4'>
                   <p className='text-white'>Số lượng: </p>
@@ -286,7 +286,6 @@ export function Home() {
 
   
   function NotableBenefits() {
-
     const texts = [ {id: "Bảng thành phần vàng", text: "Sản phẩm hàng đầu của Nhật Bản về SỰ PHÁT TRIỂN TOÀN DIỆN đặc biệt là SỰ PHÁT TRIỂN CHIỀU CAO của trẻ với tổng hợp 23 thành phần chọn lọc."},
                     {id: "Tăng chiều cao tối đa", text: "Các chuyên gia Nhật Bản đã xây dựng một công thức hoàn hảo không chỉ tập trung vào Canxi mà còn có các thành phần khác, giúp xương phát triển tối đa để tăng chiều cao cho trẻ và ưu việt hơn rất nhiều so với những sản phẩm tăng chiều cao thông thường chỉ tập trung vào Canxi."},
                     {id: "Hệ tiêu hóa khỏe mạnh", text: "Đây là một sản phẩm với công thức không chỉ giúp hấp thụ nhóm các chất dinh dưỡng để tăng chiều cao từ sản phẩm mà còn hấp thụ Canxi tự nhiên bằng cách đề cao nhóm 3 lợi khuẩn Axit lactic, Bifidobacteria và Oligosaccharide, giúp trẻ có 1 hệ tiêu hóa khỏe mạnh, giúp trẻ hấp thu và chuyển hóa các chất dinh dưỡng ở mức tối ưu nhất."},
@@ -319,10 +318,11 @@ export function Home() {
                     </div>
                   </SwiperSlide>
                 )}
-              </Swiper>
+        </Swiper>
       </>
     )
   }
+  /*
   function Wid() {
     const data1 = [{logo: <IoMdNutrition/>, text: "Bổ sung dinh dưỡng giúp trẻ phát triển toàn diện nhất"},
                     {logo: <GiBodyHeight/>, text: "Giúp phát triển độ dài xương, phát triển chiều cao cho trẻ"},
@@ -359,17 +359,17 @@ export function Home() {
       </div>
     )
   }
-
+*/
   function Accordion() {
     const texts = ["Liều dùng: 1 gói 1 ngày", "Nên uống buổi sáng sau hoặc trước khi ăn 30 phút đến 1 tiếng", "Nên sử dụng theo liệu trình tối thiểu 3 đến 5 tháng để đạt hiệu quả tối đa", "Sản phẩm có thể sử dụng duy trì thường xuyên mà không gây tác dụng phụ"]
     return (
         <div className='md:w-4/5 mx-auto md:mt-8'>
           <h2 className='font-bold text-3xl md:text-4xl mx-auto text-center mb-5 text-[#093489]'>Hướng dẫn sử dụng</h2>
-          <div className="text-start mb-20 rounded-3xl mx-2 md:flex justify-around">
+          <div className="text-start mb-8 rounded-3xl mx-2 md:flex justify-around">
               <div className='md:w-1/2 flex flex-col justify-between'>
                 {texts.map(i => <div key={i} className='h-[85px] rounded-r-xl flex items-center border-l-8 border-[#093489] bg-sky-100 md:px-8 px-2 mb-2'>{i}</div>)}
               </div>
-              <img alt="" className='w-4/5 mx-auto mt-8 md:w-1/3' src="f4ce03e778d1ad8ff4c0.png"></img>
+              <img alt="Hướng dẫn sử dụng" className='mx-auto mt-8 md:w-1/3' src="Untitled-2.png"></img>
           </div>
         </div>
     )

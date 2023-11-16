@@ -7,6 +7,7 @@ const Layout = () => {
             <ChatBot/>
         </>
 )};
+
 const ChatBot = () => {
     const MessengerRef = useRef();
     useEffect(() => {

@@ -9,6 +9,10 @@ import { PiShoppingCart } from "react-icons/pi";
 import Hamburger from 'hamburger-react'
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { LuBox } from "react-icons/lu";
+import { FaShippingFast } from "react-icons/fa";
+import { BsBoxSeam } from "react-icons/bs";
+//import { BsStars } from "react-icons/bs";
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -24,7 +28,6 @@ export function Home() {
         setArticleList(data || [])
       })
     }, []);
-    const sec0 = useRef(null)
     const sec1 = useRef(null)
     const sec2 = useRef(null)
     const sec3 = useRef(null)
@@ -34,9 +37,7 @@ export function Home() {
     const sec7 = useRef(null)
     const scroll = (sec) => {
       let destination;
-      if (sec === "Trang chủ") {
-        destination = sec0
-      } else if (sec === "Thành phần dinh dưỡng") {
+      if (sec === "Thành phần dinh dưỡng") {
           destination = sec1
       } else if (sec === "Công dụng") {
           destination = sec2
@@ -75,7 +76,7 @@ export function Home() {
     //bg-gradient-to-r from-[#ABE0FF] to-[#82ACF6]
     return (
         <div className="App w-full overflow-hidden mx-0 relative">
-          <div className='fixed right-4 bottom-4 text-4xl z-[100] text-[#093489]' onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}><FaArrowCircleUp /></div>
+          <div className='fixed right-[37px] bottom-4 text-4xl z-[100] text-[#093489]' onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}><FaArrowCircleUp /></div>
           <header className='header p-4 bg-white flex items-center justify-between fixed top-0 right-0 left-0 z-20'>
               <div className='flex h-12 cursor-pointer'  onClick={() => window.scrollTo({top: 0, behavior: 'smooth'}) }>
                 <img alt="" src="growplus.png" className='w-48 h-30 object-cover'></img>
@@ -88,30 +89,32 @@ export function Home() {
                     </div>
                   )}
               </nav>
-              <button onClick={() => scroll("Mua ngay")} className='md:mr-8 hidden text-sm sm:flex items-center justify-center md:bg-gradient-to-b from-60% to-[#0D4CC9] from-[#093489] md:text-white w-8 h-8 md:w-36 md:h-12 rounded-full border md:border-2 border-black md:border-yellow-400 hover:scale-110 transition '>
-                    <div className='text-sm md:text-base hidden sm:block'>Mua ngay</div>  
-                    <div className='mx-1 hidden sm:block'></div>    
+              <button onClick={() => scroll("Mua ngay")} className='md:mr-8 hidden text-sm md:flex items-center justify-center md:bg-gradient-to-b from-60% to-[#0D4CC9] from-[#093489] md:text-white w-8 h-8 md:w-36 md:h-12 rounded-full border md:border-2 border-black md:border-yellow-400 hover:scale-110 transition '>
+                    <div className='text-sm md:text-base hidden md:block'>Mua ngay</div>  
+                    <div className='mx-1 hidden md:block'></div>    
                     <div className='text-xl'><PiShoppingCart /></div>
               </button>
               <div className="flex items-center md:hidden">
                 <button onClick={() => scroll("Mua ngay")} className='md:mr-8 text-sm flex items-center justify-center md:bg-gradient-to-b from-60% to-[#0D4CC9] from-[#093489] md:text-white w-8 h-8 md:w-36 md:h-12 rounded-full border md:border-2 border-black md:border-yellow-400 hover:scale-110 transition '>
-                      <div className='text-sm md:text-base hidden sm:block'>Mua ngay</div>  
-                      <div className='mx-1 hidden sm:block'></div>    
+                      <div className='text-sm md:text-base hidden md:block'>Mua ngay</div>  
+                      <div className='mx-1 hidden md:block'></div>    
                       <div className='text-xl'><PiShoppingCart /></div>
                 </button>
                 <HamburgerComponent/></div>
           </header>
-          <div  ref={sec0} className="bg-[url(/public/banner.jpg)] bg-[length:158%_100%] md:bg-[length:100%_100%] h-[300px] md:h-[500px] mt-20"></div>
-          <section className='w-full my-16 md:my-24 scroll-m-20' ref={sec1}><IngredientTab /></section>
-
-
+          <div className="bg-[url(/public/banner.jpg)] bg-[length:158%_100%] md:bg-[length:100%_100%] h-[300px] md:h-[500px] mt-20"></div>
+          <div className='w-full md:flex'>
+            <div className='md:w-1/2 mt-8 md:ml-8 mx-4 flex'><img src="chart.png" className='object-contain'/></div>
+            <div className='md:w-1/2 mt-8 md:ml-8 mx-4 flex'><img src="Untitled-2.png" className='object-contain'/></div>
+          </div>
+          <section className='w-full mt-6 mb-16 md:mb-24 md:mt-8 scroll-m-20' ref={sec1}><IngredientTab /></section>
           <section className='w-full  bg-[#093489] pt-4 md:pt-20 md:pb-4 scroll-m-20'  ref={sec4}><NotableBenefits /></section>
           <section className='w-full scroll-m-20'  ref={sec5}><Accordion /></section>
-          <section className='w-full my-20 scroll-m-20'  ref={sec3}>
-              <h2 className='font-bold text-3xl md:text-4xl mx-auto text-center mb-8 text-[#093489]'>Quy cách đóng gói</h2>
+          <section className='w-full mt-20 scroll-m-20'  ref={sec3}>
+              <h2 className='font-bold text-3xl md:text-4xl mx-auto text-center text-[#093489]'>Quy cách đóng gói</h2>
               <div className='flex md:flex-row flex-col items-center md:justify-around py-4 px-2'>
-                  <img alt="" src="gh.jpg" className='md:w-2/5 order-2 md:order-1 mt-8 md:mt-0 shadow-[0_60px_60px_-15px_rgba(0,0,0,0.3)] rounded-[45px] md:mr-12'></img>
-                  <div className='w-full md:w-1/3 md:order-2 order-1 '>
+                  <img alt="" src="gh.jpg" className='md:w-2/5 mt-0 md:mt-8 md:shadow-[0_60px_60px_-15px_rgba(0,0,0,0.3)] rounded-[45px] md:mr-12'></img>
+                  <div className='w-full md:w-1/3 mt-8 md:mt-0'>
                     <div className='flex justify-around'>
                         {["gói/hộp", "ml/gói"].map(i =>
                           <div className=' bg-sky-100 rounded-b-xl border-t-8 border-[#093489] text-white p-8 md:p-12 text-center w-[40%] md:mr-4 md:w-auto' key={i}>
@@ -124,7 +127,7 @@ export function Home() {
               </div>
           </section>
           <section className='w-full scroll-m-20' ref={sec6}>
-              <h2 className='font-bold text-3xl md:text-4xl text-center mb-8 text-[#093489] mt-20'>Tin tức</h2>
+              <h2 className='font-bold text-3xl md:text-4xl text-center mb-8 text-[#093489] mt-8'>Tin tức</h2>
               <Swiper 
                   breakpoints={{
                     0: {
@@ -133,7 +136,7 @@ export function Home() {
                     768: {
                       slidesPerView: 3,
                     },
-                  }} spaceBetween={30} navigation={true} modules={[Navigation]} className='mb-8 !mx-8'>
+                  }} spaceBetween={30} navigation={true} modules={[Navigation]} className='!mx-8'>
                 {articleList.map(i =>
                   <SwiperSlide>
                     <Link to={"/article?id=" + i._id}>
@@ -145,12 +148,23 @@ export function Home() {
                 )}
               </Swiper>
               <Link to="/news" className='block w-fit mx-auto'>
-                <button className='bg-[#093489] text-white w-36 h-12 rounded-full flex items-center justify-center border border-[#093489] hover:bg-white hover:text-[#093489] transition '>
+                <button className='md:mt-8 bg-[#093489] text-white w-36 h-12 rounded-full flex items-center justify-center border border-[#093489] hover:bg-white hover:text-[#093489] hover:scale-105 transition '>
                         Xem thêm tin tức   
                 </button>
               </Link>
           </section>
-          <section className='bg-[url(/public/adfh.jpg)] bg-cover bg-center relative h-[450px] mt-20 scroll-m-20'  ref={sec7}><Form/></section>
+          <section className='bg-[url(/public/adfh.jpg)] bg-cover bg-center relative h-[450px] mt-10 scroll-m-20'  ref={sec7}><Form/></section>
+          <section className='flex justify-center items-center '>
+            <div className='flex flex-col items-center py-4 text-blue-900 w-2/5 md:w-1/5 text-center'>
+              <BsBoxSeam className='text-5xl'/>
+              <p>Hàng chính hãng 100%</p>
+            </div>
+            <div className='mx-4'></div>
+            <div className='flex flex-col items-center py-4 text-blue-900 w-2/5 md:w-1/5 text-center'>
+              <FaShippingFast className='text-5xl'/>
+              <p>Miễn phí giao hàng toàn quốc</p>
+            </div>
+          </section>
           <Footer/>
       </div>
     )
@@ -199,15 +213,14 @@ export function Home() {
             <div className='relative z-10 backdrop-blur-[0.5px] h-full  flex flex-col justify-center'>
               <h2 className='text-center font-bold text-3xl md:text-4xl  mb-4 z-10 text-white'>Thông tin giao hàng</h2>
               <form onSubmit={handleSubmit} className='flex flex-col items-center'>
-                <input ref={name} required className='outline-0 text-[#093489] md:w-1/2 w-4/5 p-2 my-2 rounded-lg' placeholder='Họ và tên khách hàng'></input>
-
+                <input ref={name} required className='outline-0 text-[#093489] md:w-1/2 w-4/5 pl-5 py-2 my-2 rounded-lg' placeholder='Họ và tên khách hàng'></input>
                 <div className='relative md:w-1/2 w-4/5 '>
-                  <div className='outline-0 text-zinc-500 p-2 my-2 rounded-lg w-full bg-white h-10' onMouseDown={() => {toggle === "hidden" ? setToggle("") : setToggle("hidden")}}>Số điện thoại & Địa chỉ nhận hàng</div>
+                  <div className='outline-0 text-zinc-500 pl-5 py-2  my-2 rounded-lg w-full bg-white h-10 cursor-pointer' onMouseDown={() => {toggle === "hidden" ? setToggle("") : setToggle("hidden")}}>Số điện thoại & Địa chỉ nhận hàng</div>
                   <div className='absolute top-4 right-4 text-2xl'  onMouseDown={() => {toggle === "hidden" ? setToggle("") : setToggle("hidden")}} ><FaCaretDown /></div>
                 </div>
                 <div className={'md:w-1/2 w-4/5 '  + toggle}>
-                <input ref={phone} required className='outline-0 text-[#093489] w-full p-2 my-2 rounded-lg' placeholder='Số điện thoại'></input>
-                  <input ref={phone} required className={'outline-0 text-[#093489] w-full p-2 my-2 rounded-lg '} placeholder='Đường, phường, quận, tỉnh/thành phố'></input>
+                <input ref={phone} required className='outline-0 text-[#093489] w-full pl-5 py-2 my-2 rounded-lg' placeholder='Số điện thoại'></input>
+                  <input ref={phone} required className={'outline-0 text-[#093489] w-full pl-5 py-2 my-2 rounded-lg '} placeholder='Đường, phường, quận, tỉnh/thành phố'></input>
                 </div>
                 <div className='mx-auto md:w-1/2 w-4/5 flex justify-end items-center mt-4'>
                   <p className='text-white'>Số lượng: </p>
@@ -350,8 +363,8 @@ export function Home() {
   function Accordion() {
     const texts = ["Liều dùng: 1 gói 1 ngày", "Nên uống buổi sáng sau hoặc trước khi ăn 30 phút đến 1 tiếng", "Nên sử dụng theo liệu trình tối thiểu 3 đến 5 tháng để đạt hiệu quả tối đa", "Sản phẩm có thể sử dụng duy trì thường xuyên mà không gây tác dụng phụ"]
     return (
-        <div className='md:w-4/5 mx-auto mt-12'>
-          <h2 className='font-bold text-3xl md:text-4xl mx-auto text-center mb-5 text-[#093489]  mt-20'>Hướng dẫn sử dụng</h2>
+        <div className='md:w-4/5 mx-auto md:mt-8'>
+          <h2 className='font-bold text-3xl md:text-4xl mx-auto text-center mb-5 text-[#093489]'>Hướng dẫn sử dụng</h2>
           <div className="text-start mb-20 rounded-3xl mx-2 md:flex justify-around">
               <div className='md:w-1/2 flex flex-col justify-between'>
                 {texts.map(i => <div key={i} className='h-[85px] rounded-r-xl flex items-center border-l-8 border-[#093489] bg-sky-100 md:px-8 px-2 mb-2'>{i}</div>)}

@@ -22,7 +22,7 @@ export function Article() {
           </header>
           <div className="relative">
               <img src={article.thumbnail} alt={article.title} className="mt-20 w-full h-96 object-cover"></img>
-              <div className="absolute bottom-0 leading-normal flex items-center text-white text-2xl md:text-4xl font-bold absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#3b8b59] to-transparent from-50% h-44">
+              <div className="absolute bottom-0 leading-normal flex items-center text-white text-2xl md:text-4xl font-bold absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#093489] to-transparent from-50% h-44">
                 <div className="md:w-4/5 mx-auto px-[30px]">{article.title}</div>
               </div>
           </div>

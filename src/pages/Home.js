@@ -85,7 +85,7 @@ export function Home() {
     //bg-gradient-to-r from-[#ABE0FF] to-[#82ACF6]
     return (
         <div className="App w-full overflow-hidden mx-0 relative">
-          <button className={'fixed bottom-4 text-[44px] z-[100] text-[#093489] transition-[right] ' + pos} onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}><FaArrowCircleUp /></button>
+          <button className={'fixed bottom-[80px] text-[44px] z-[100] text-[#093489] transition-[right] ' + pos} onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}><FaArrowCircleUp /></button>
           <header className='header p-4 bg-white flex items-center justify-between fixed top-0 right-0 left-0 z-20'>
               <div className='flex h-12 cursor-pointer'  onClick={() => window.scrollTo({top: 0, behavior: 'smooth'}) }>
                 <img alt="Grow Plus+" src="growplus.png" className='w-48 h-30 object-cover'></img>

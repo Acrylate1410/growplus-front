@@ -295,7 +295,7 @@ export function Home() {
                        ]
     return (
       <>
-        <div id="ingredients" className='md:w-3/5 mx-auto md:ml-44 relative'>
+        <div id="ingredients" className='w-[95%] md:w-3/5 mx-auto md:ml-44 md:mr-0 relative'>
           <img className='hidden md:inline absolute right-[-300px] bottom-0 w-96' src="Growplusbboxthanh.png" alt="Thành phần dinh dưỡng"></img>
           <h2 className='text-center font-bold text-3xl md:text-4xl  mb-5 z-10 text-[#093489] relative'>Thành phần dinh dưỡng</h2>
           <div className='flex justify-between font-bold px-4 py-5 text-white rounded-t-xl bg-gradient-to-r from-10% to-[#0D4CC9] from-[#093489] items-center  md:w-[94%]'>

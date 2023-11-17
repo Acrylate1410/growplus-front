@@ -123,8 +123,6 @@ export function Home() {
             <IngredientTab />
           </section>
           <section className='w-full  bg-gradient-to-r from-10% to-[#0D4CC9] from-[#093489] md:from-white md:to-white pt-4 md:pt-20 md:pb-4 scroll-m-20 '  ref={sec4}><NotableBenefits /></section>
-          <h2 className='font-bold text-3xl md:text-4xl mx-auto text-center md:mb-8 text-white'>Ưu điểm nổi bật</h2>
-          
           <section className='w-full scroll-m-20'  ref={sec5}><Accordion /></section>
           <section className='w-full scroll-m-20'  ref={sec3}>
               <h2 className='font-bold text-3xl md:text-4xl mx-auto text-center text-[#093489]'>Quy cách đóng gói</h2>
@@ -326,7 +324,7 @@ export function Home() {
           <div className='w-[30%]'>
               {texts1.map(i =>
                 <div className='w-full my-8 md:my-4 mx-auto md:mx-0 bg-white pt-20 pb-4 rounded-3xl relative md:shadow-[0_60px_60px_-15px_rgba(0,0,0,0.3)] rounded-[45px]'>
-                      <div className='absolute h-16 w-full bg-black top-0 rounded-t-3xl text-white bg-gradient-to-r from-yellow-500 via-yellow-300 to-yellow-500 text-black flex items-center justify-center font-bold text-lg'>{i.id}</div>
+                      <div className='absolute h-16 w-full bg-black top-0 rounded-t-3xl bg-gradient-to-r from-yellow-500 via-yellow-300 to-yellow-500 text-black flex items-center justify-center font-bold text-lg'>{i.id}</div>
                       <div className='flex-1 mx-6 text-justify'>{i.text}</div>
                 </div>
               )}
@@ -335,7 +333,7 @@ export function Home() {
           <div className='w-[30%]'>
               {texts2.map(i =>
                 <div className='w-full my-8 md:my-4 mx-auto md:mx-0 bg-white pt-20 pb-4 rounded-3xl relative md:shadow-[0_60px_60px_-15px_rgba(0,0,0,0.3)] rounded-[45px]'>
-                      <div className='absolute h-16 w-full bg-black top-0 rounded-t-3xl text-white bg-gradient-to-r from-yellow-500 via-yellow-300 to-yellow-500 text-black flex items-center justify-center font-bold text-lg'>{i.id}</div>
+                      <div className='absolute h-16 w-full bg-black top-0 rounded-t-3xl bg-gradient-to-r from-yellow-500 via-yellow-300 to-yellow-500 text-black flex items-center justify-center font-bold text-lg'>{i.id}</div>
                       <div className='flex-1 mx-6 text-justify'>{i.text}</div>
                 </div>
               )}

@@ -154,7 +154,6 @@ export function Home() {
                 </button>
               </Link>
           </section>
-          
           <section className='bg-[url(/public/adfh.jpg)] bg-cover bg-center relative h-[450px] mt-10 scroll-m-20'  ref={sec7}><Form/></section>
           <section className='flex justify-center items-center '>
             <div className='flex flex-col items-center py-4 text-blue-900 w-2/5 md:w-1/5 text-center'>
@@ -173,15 +172,15 @@ export function Home() {
   };
 
   function Info() {
-    const [effect, setEffect] = useState("")
+    const [effect, setEffect] = useState("hidden")
     return (
       <>
           <h2 className='font-bold text-3xl md:text-4xl mx-auto text-center text-[#093489]'>Thông tin sản phẩm</h2>
           <div className='flex flex-col md:flex-row justify-center items-center mt-8'>
-              <div className='w-4/5 md:w-2/5 relative ' onMouseOver={() => {setEffect("invisible")}} onMouseOut={() => {setEffect("")}}>
-                <div className='absolute top-0 bottom-0 right-0 left-0 bg-[#093489] opacity-50 rounded-[45px]'></div>
+              <div className='w-[95%] md:w-2/5 relative ' onMouseOver={() => {setEffect("")}} onMouseOut={() => {setEffect("hidden")}}>
+                <div className={'absolute top-0 bottom-0 right-0 left-0 bg-[#093489] opacity-50 rounded-[45px] ' + effect}></div>
                 <img alt="Thông tin sản phẩm" src="gh.jpg" className={'md:shadow-[0_60px_60px_-15px_rgba(0,0,0,0.3)] object-cover rounded-[45px] z-20 '}></img>
-                <div className='absolute top-0 bottom-0 right-0 left-0 flex items-center justify-center'>
+                <div className={'absolute top-0 bottom-0 right-0 left-0 flex items-center justify-center ' + effect}>
                     {["gói/hộp", "ml/gói"].map(i =>
                       <div className=' bg-sky-100 rounded-b-xl border-t-8 border-[#093489] text-white p-8 md:p-12 text-center w-[40%] md:mr-4 md:w-auto' key={i}>
                         <div className='rounded-full h-20 w-20 text-3xl font-bold mx-auto border-4 border-[#093489] text-[#093489] flex items-center justify-center'>30</div>
@@ -189,10 +188,9 @@ export function Home() {
                       </div>
                     )}
                 </div>
-                <img alt="Thông tin sản phẩm" src="gh.jpg" className={'absolute top-0 bottom-0 right-0 left-0 md:shadow-[0_60px_60px_-15px_rgba(0,0,0,0.3)] object-cover rounded-[45px] z-20 ' + effect}></img>
               </div>
               <div className='mx-6'></div>
-              <div className='w-4/5 md:w-[22%] relative'>
+              <div className='w-[95%] md:w-[22%] relative'>
                 <img className='object-contain' src="GMPMAKISHOKUHIN2024.png" alt="GMP"/>
               </div>
               <div className='mx-4'></div>
@@ -373,6 +371,19 @@ export function Home() {
         </div>
         <Swiper spaceBetween={30} pagination={true} modules={[Pagination]} className='mb-8 !mx-8 md:!hidden'>
                 {texts1.map(i =>
+                  <SwiperSlide><div className='w-[100%] md:w-[31.5%] mt-4 mb-8 md:my-4 mx-auto md:mx-0 bg-white pt-2 pb-12 rounded-3xl h-96'>
+                    <div className='text-xl mx-6 md:text-2xl font-bold text-[#093489] md:mb-8 text-center'>{i.id}</div>
+                      <div className='flex-1 mx-6 text-justify'>{i.text}</div>
+                      <>
+                        {i.id === "Bảng thành phần vàng" && 
+                          <div className='overflow-hidden w-48 z-0 mx-auto' >
+                            <img src="3growplus.png" alt=""></img>
+                          </div>}
+                      </>
+                    </div>
+                  </SwiperSlide>
+                )}
+                {texts2.map(i =>
                   <SwiperSlide><div className='w-[100%] md:w-[31.5%] mt-4 mb-8 md:my-4 mx-auto md:mx-0 bg-white pt-2 pb-12 rounded-3xl h-96'>
                     <div className='text-xl mx-6 md:text-2xl font-bold text-[#093489] md:mb-8 text-center'>{i.id}</div>
                       <div className='flex-1 mx-6 text-justify'>{i.text}</div>

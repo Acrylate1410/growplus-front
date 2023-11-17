@@ -52,7 +52,7 @@ export function Home() {
           destination = sec1
       } else if (sec === "Công dụng") {
           destination = sec2
-      } else if (sec === "Quy cách đóng gói") {
+      } else if (sec === "Thông tin sản phẩm") {
           destination = sec3
       } else if (sec === "Ưu điểm nổi bật") {
           destination = sec4
@@ -74,7 +74,7 @@ export function Home() {
           <div className="z-10 relative"><Hamburger toggled={isOpen} toggle={setOpen} size={25}/></div>
           <div className={'fixed top-0 bottom-0 left-[33%] right-0 bg-white ' + status}>
             <div className='mt-20'>
-                {["Thành phần dinh dưỡng", "Ưu điểm nổi bật", "Hướng dẫn sử dụng", "Quy cách đóng gói",  "Tin tức"].map(i => 
+                {["Thành phần dinh dưỡng", "Ưu điểm nổi bật", "Hướng dẫn sử dụng", "Thông tin sản phẩm",  "Tin tức"].map(i => 
                     <div key={i}>
                         <div className='cursor-pointer text-[20px] border-b border-black pl-6 py-3 text-[#093489] font-medium ' onClick={() => {scroll(i); setOpen(false)}}>{i}</div>
                     </div>
@@ -85,15 +85,17 @@ export function Home() {
       )
     }
     //bg-gradient-to-r from-[#ABE0FF] to-[#82ACF6]
+    //bg-[url(/public/abstract-white-background-with-smooth-lines.jpg)] 
+    //
     return (
         <div className="App w-full overflow-hidden mx-0 relative">
           <button className={'fixed bottom-[80px] text-[44px] z-[100] text-[#093489] transition-[right] ' + pos} onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}><FaArrowCircleUp /></button>
-          <header className='header p-4 bg-white flex items-center justify-between fixed top-0 right-0 left-0 z-20'>
+          <header className='header p-4 bg-white flex items-center justify-between fixed top-0 right-0 left-0 z-30'>
               <div className='flex h-12 cursor-pointer'  onClick={() => window.scrollTo({top: 0, behavior: 'smooth'}) }>
                 <img alt="Grow Plus+" src="growplus.png" className='w-48 h-30 object-cover'></img>
               </div>
               <nav className='hidden md:flex mx-4'>
-                  {["Thành phần dinh dưỡng", "Ưu điểm nổi bật", "Hướng dẫn sử dụng", "Quy cách đóng gói", "Tin tức"].map(i => 
+                  {["Thành phần dinh dưỡng", "Ưu điểm nổi bật", "Hướng dẫn sử dụng", "Thông tin sản phẩm", "Tin tức"].map(i => 
                     <div key={i} className='flex'>
                         <div className='text-center cursor-pointer text-base text-blue-900 font-medium hover:scale-105  transition' onClick={() => scroll(i)}>{i}</div>
                         <div className='mx-3'></div>
@@ -116,33 +118,19 @@ export function Home() {
           <div className="bg-[url(/public/banner.jpg)] bg-[length:158%_100%] md:bg-[length:100%_100%] h-[300px] md:h-[500px] mt-20"></div>
           <div className='w-full md:flex justify-center'>
             <div className='md:w-1/2 mt-8 md:ml-8 mx-4 flex'><img src="chart.png" className='object-contain'/></div>
-            <div className='md:w-[30%] mt-8 md:ml-8 mx-4 flex hidden md:block'><img src="3growplus.png" className='object-contain'/></div>
+            <div className='md:w-[28%] mt-8 md:ml-8 mx-4 flex hidden md:block'><img src="3growplus.png" className='object-contain'/></div>
           </div>
           <section className='w-full mt-6 mb-16 md:mb-24 md:mt-8 scroll-m-20\' ref={sec1}>
 
             <IngredientTab />
           </section>
-          <section className='w-full  bg-gradient-to-r from-10% to-[#0D4CC9] from-[#093489] md:from-white md:to-white pt-4 md:pt-20 md:pb-4 scroll-m-20 '  ref={sec4}><NotableBenefits /></section>
+          <section className='w-full  bg-gradient-to-r from-10% to-[#0D4CC9] from-[#093489] md:from-white md:to-white pt-4 md:pb-4 scroll-m-20 '  ref={sec4}><NotableBenefits /></section>
           <section className='w-full scroll-m-20'  ref={sec5}><Accordion /></section>
-          <section className='w-full scroll-m-20'  ref={sec3}>
-              <h2 className='font-bold text-3xl md:text-4xl mx-auto text-center text-[#093489]'>Quy cách đóng gói</h2>
-              <div className='flex md:flex-row flex-col items-center md:justify-around py-4 px-2'>
-                  <img alt="Quy cách đóng gói" src="gh.jpg" className='md:w-2/5 mt-0 md:mt-8 md:shadow-[0_60px_60px_-15px_rgba(0,0,0,0.3)] rounded-[45px]'></img>
-                  <div className='w-full md:w-1/3 mt-8 md:mt-0'>
-                  
-                    <div className='flex justify-around relative'>
-                        {["gói/hộp", "ml/gói"].map(i =>
-                          <div className=' bg-sky-100 rounded-b-xl border-t-8 border-[#093489] text-white p-8 md:p-12 text-center w-[40%] md:mr-4 md:w-auto' key={i}>
-                            <div className='rounded-full h-20 w-20 text-3xl font-bold mx-auto border-4 border-[#093489] text-[#093489] flex items-center justify-center'>30</div>
-                            <p className='mt-3 text-lg text-[#093489] font-semibold'>{i}</p>
-                          </div>
-                        )}
-                    </div>
-                  </div>
-              </div>
+          <section className='w-full scroll-m-20bg-[length:100%_100%] pt-12 pb-24'  ref={sec3}><Info/>
+ 
           </section>
           <section className='w-full scroll-m-20' ref={sec6}>
-              <h2 className='font-bold text-3xl md:text-4xl text-center mb-8 text-[#093489] mt-8'>Tin tức</h2>
+              <h2 className='font-bold text-3xl md:text-4xl text-center mb-8 text-[#093489] mt-20'>Tin tức</h2>
               <Swiper 
                   breakpoints={{
                     0: {
@@ -168,6 +156,7 @@ export function Home() {
                 </button>
               </Link>
           </section>
+          
           <section className='bg-[url(/public/adfh.jpg)] bg-cover bg-center relative h-[450px] mt-10 scroll-m-20'  ref={sec7}><Form/></section>
           <section className='flex justify-center items-center '>
             <div className='flex flex-col items-center py-4 text-blue-900 w-2/5 md:w-1/5 text-center'>
@@ -186,16 +175,41 @@ export function Home() {
       </div>
     )
   };
-  function Block() {
+
+  function Info() {
+    const [effect, setEffect] = useState("")
     return (
       <>
-        <div className='relative'>
-          <div className='absolute top-0 h-[12px] bg-yellow'>Tăng chiều cao tối đa</div>
-          <div className='absolute top-0 h-[24px] flex items-center'>Các chuyên gia Nhật Bản đã xây dựng một công thức hoàn hảo không chỉ tập trung vào Canxi mà còn có các thành phần khác, giúp xương phát triển tối đa để tăng chiều cao cho trẻ và ưu việt hơn rất nhiều so với những sản phẩm tăng chiều cao thông thường chỉ tập trung vào Canxi.</div>
-        </div>
+          <h2 className='font-bold text-3xl md:text-4xl mx-auto text-center text-[#093489]'>Thông tin sản phẩm</h2>
+          <div className='flex flex-col md:flex-row justify-center items-center mt-8'>
+              <div className='w-4/5 md:w-2/5 relative ' onMouseOver={() => {setEffect("invisible")}} onMouseOut={() => {setEffect("")}}>
+                <div className='absolute top-0 bottom-0 right-0 left-0 bg-[#093489] opacity-50 rounded-[45px]'></div>
+                <img alt="Thông tin sản phẩm" src="gh.jpg" className={'md:shadow-[0_60px_60px_-15px_rgba(0,0,0,0.3)] object-cover rounded-[45px] z-20 '}></img>
+                <div className='absolute top-0 bottom-0 right-0 left-0 flex items-center justify-center'>
+                    {["gói/hộp", "ml/gói"].map(i =>
+                      <div className=' bg-sky-100 rounded-b-xl border-t-8 border-[#093489] text-white p-8 md:p-12 text-center w-[40%] md:mr-4 md:w-auto' key={i}>
+                        <div className='rounded-full h-20 w-20 text-3xl font-bold mx-auto border-4 border-[#093489] text-[#093489] flex items-center justify-center'>30</div>
+                        <p className='mt-3 text-lg text-[#093489] font-semibold'>{i}</p>
+                      </div>
+                    )}
+                </div>
+                <img alt="Thông tin sản phẩm" src="gh.jpg" className={'absolute top-0 bottom-0 right-0 left-0 md:shadow-[0_60px_60px_-15px_rgba(0,0,0,0.3)] object-cover rounded-[45px] z-20 ' + effect}></img>
+              </div>
+              <div className='mx-6'></div>
+              <div className='w-4/5 md:w-[20%] relative'>
+                <img className='object-contain' src="GMPMAKISHOKUHIN2024.png"/>
+              </div>
+              <div className='text-justify w-4/5 md:w-[22%]'>
+                <p><span className='mr-1'>•</span><span className='font-semibold'>Ngày sản xuất và hạn sử dụng:</span> In trên nhãn sản phẩm</p>
+                <p><span className='mr-1'>•</span><span className='font-semibold'>Nhà sản xuất:</span> Makishokuhin Co., Ltd., Factory</p>
+                <p><span className='mr-1'>•</span><span className='font-semibold'>Địa chỉ:</span> 3-227-4, Tsushimaya, Higashi-ku, Niigata-shi, Niigata, 950-0801, Japan</p>
+                <p><span className='mr-1'>•</span><span className='font-semibold'>Xuất xứ:</span> Japan (Nhật Bản)</p>
+              </div>
+          </div>
       </>
     )
   }
+
   function Form() {
     const [toggle, setToggle] = useState("hidden")
     const name = useRef(null)
@@ -308,34 +322,53 @@ export function Home() {
   function NotableBenefits() {
     //{id: "Bảng thành phần vàng", text: "Sản phẩm hàng đầu của Nhật Bản về SỰ PHÁT TRIỂN TOÀN DIỆN đặc biệt là SỰ PHÁT TRIỂN CHIỀU CAO của trẻ với tổng hợp 23 thành phần chọn lọc."},
     const texts1 = [ 
-                    {id: "Tăng chiều cao tối đa", text: "Các chuyên gia Nhật Bản đã xây dựng một công thức hoàn hảo không chỉ tập trung vào Canxi mà còn có các thành phần khác, giúp xương phát triển tối đa để tăng chiều cao cho trẻ và ưu việt hơn rất nhiều so với những sản phẩm tăng chiều cao thông thường chỉ tập trung vào Canxi."},
-                    {id: "Hệ tiêu hóa khỏe mạnh", text: "Đây là một sản phẩm với công thức không chỉ giúp hấp thụ nhóm các chất dinh dưỡng để tăng chiều cao từ sản phẩm mà còn hấp thụ Canxi tự nhiên bằng cách đề cao nhóm 3 lợi khuẩn Axit lactic, Bifidobacteria và Oligosaccharide, giúp trẻ có 1 hệ tiêu hóa khỏe mạnh, giúp trẻ hấp thu và chuyển hóa các chất dinh dưỡng ở mức tối ưu nhất."},
-                    {id: "Tăng cường hệ miễn dịch", text: "Thành phần có vitamin tổng hợp, keo ong… và các dưỡng chất cần thiết khác giúp trẻ có có hệ hô hấp và cơ thể khỏe mạnh, phòng ngừa sự tấn công của các loại vi khuẩn và vi rút, tăng cường sức đề kháng và khả năng miễn dịch."},
+                    {isMoved: true, id: "Tăng chiều cao tối đa", text: "Các chuyên gia Nhật Bản đã xây dựng một công thức hoàn hảo không chỉ tập trung vào Canxi mà còn có các thành phần khác, giúp xương phát triển tối đa để tăng chiều cao cho trẻ và ưu việt hơn rất nhiều so với những sản phẩm tăng chiều cao thông thường chỉ tập trung vào Canxi."},
+                    {id: "Hỗ trợ phát triển não bộ", text: "Sản phẩm không chỉ giúp trẻ phát triển về thể chất, chiều cao mà còn giúp trẻ tăng cường trí nhớ, phát triển trí thông minh nhờ có thành phần DHA, EPA và Phosphatidylserine giúp cải thiện chức năng não bộ, phát triển kích thích tế bào não."},
+                    {isMoved: true, id: "Mùi vị thơm ngon, tiện lợi sử dụng", text: "Mùi vị thơm ngon, độ ngọt vừa phải và không có đường có thể gây sâu răng cho trẻ; Bào chế dạng nước có khả năng hấp thu tốt nhất cho cơ thể so với các dạng bào chế khác; 1 gói 30ml tiện lợi để sử dụng và bảo quản."},
 ]
     const texts2 = [
-                     {id: "Hỗ trợ phát triển não bộ", text: "Sản phẩm không chỉ giúp trẻ phát triển về thể chất, chiều cao mà còn giúp trẻ tăng cường trí nhớ, phát triển trí thông minh nhờ có thành phần DHA, EPA và Phosphatidylserine giúp cải thiện chức năng não bộ, phát triển kích thích tế bào não."},
-                    {id: "Mùi vị thơm ngon, tiện lợi sử dụng", text: "Mùi vị thơm ngon, độ ngọt vừa phải và không có đường có thể gây sâu răng cho trẻ; Bào chế dạng nước có khả năng hấp thu tốt nhất cho cơ thể so với các dạng bào chế khác; 1 gói 30ml tiện lợi để sử dụng và bảo quản."},
-                    {id: "Đạt tiêu chuẩn GMP Nhật Bản", text: "Sản xuất tại nhà máy đạt chuẩn GMP có tiêu chuẩn chất lượng khắt khe về nguyên liệu, máy móc, công nghệ, quy trình sản xuất và chất lượng thành phẩm với đội ngũ chuyên gia hàng đầu nghiên cứu về nguồn dinh dưỡng & phát triển toàn diện của trẻ"}
+                     {isMoved: true, id: "Hệ tiêu hóa khỏe mạnh", text: "Đây là một sản phẩm với công thức không chỉ giúp hấp thụ nhóm các chất dinh dưỡng để tăng chiều cao từ sản phẩm mà còn hấp thụ Canxi tự nhiên bằng cách đề cao nhóm 3 lợi khuẩn Axit lactic, Bifidobacteria và Oligosaccharide, giúp trẻ có 1 hệ tiêu hóa khỏe mạnh, giúp trẻ hấp thu và chuyển hóa các chất dinh dưỡng ở mức tối ưu nhất."},
+                     {id: "Tăng cường hệ miễn dịch", text: "Thành phần có vitamin tổng hợp, keo ong… và các dưỡng chất cần thiết khác giúp trẻ có có hệ hô hấp và cơ thể khỏe mạnh, phòng ngừa sự tấn công của các loại vi khuẩn và vi rút, tăng cường sức đề kháng và khả năng miễn dịch."},
+                    {isMoved: true, id: "Đạt tiêu chuẩn GMP Nhật Bản", text: "Sản xuất tại nhà máy đạt chuẩn GMP có tiêu chuẩn chất lượng khắt khe về nguyên liệu, máy móc, công nghệ, quy trình sản xuất và chất lượng thành phẩm với đội ngũ chuyên gia hàng đầu nghiên cứu về nguồn dinh dưỡng & phát triển toàn diện của trẻ."},
+
     ]
     return (
       <>
-        <h2 className='font-bold text-3xl md:text-4xl mx-auto text-center md:mb-8 text-white md:text-[#093489]'>Ưu điểm nổi bật</h2>
-        <div className='hidden md:flex flex-wrap justify-between md:my-16 md:mx-12'>
-          <div className='w-[30%]'>
+        <h2 className='font-bold text-3xl md:text-4xl mx-auto text-center text-white md:text-[#093489]'>Ưu điểm nổi bật</h2>
+        <div className='hidden md:flex flex-wrap justify-between md:mx-12'>
+          <div className='w-[28%]'>
               {texts1.map(i =>
-                <div className='w-full my-8 md:my-4 mx-auto md:mx-0 bg-white pt-20 pb-4 rounded-3xl relative md:shadow-[0_60px_60px_-15px_rgba(0,0,0,0.3)] rounded-[45px]'>
-                      <div className='absolute h-16 w-full bg-black top-0 rounded-t-3xl bg-gradient-to-r from-yellow-500 via-yellow-300 to-yellow-500 text-black flex items-center justify-center font-bold text-lg'>{i.id}</div>
+                <>
+                  {!i.isMoved ?
+                    <div className='w-full my-8 mx-auto md:mx-0 bg-white pt-14 pb-4 leading-5 rounded-3xl relative md:shadow-[0_60px_60px_-15px_rgba(0,0,0,0.3)] rounded-[45px]'>
+                      <div className='absolute h-12 w-full bg-black top-0 rounded-t-3xl bg-gradient-to-r from-yellow-500 via-yellow-300 to-yellow-500 text-black flex items-center justify-center font-bold text-lg'>{i.id}</div>
                       <div className='flex-1 mx-6 text-justify'>{i.text}</div>
-                </div>
+                    </div> :
+                    <div className='w-full my-8 mx-auto md:ml-20 md:mr-0 bg-white pt-14 pb-4 leading-5 rounded-3xl relative md:shadow-[0_60px_60px_-15px_rgba(0,0,0,0.3)] rounded-[45px]'>
+                      <div className='absolute h-12 w-full bg-black top-0 rounded-t-3xl bg-gradient-to-r from-yellow-500 via-yellow-300 to-yellow-500 text-black flex items-center justify-center font-bold text-lg'>{i.id}</div>
+                      <div className='flex-1 mx-6 text-justify'>{i.text}</div>
+                    </div>
+                  }
+
+                </>
+
               )}
           </div>
           <img src="Thanh.png" className='w-[30%] object-contain'></img>
-          <div className='w-[30%]'>
+          <div className='w-[28%]'>
               {texts2.map(i =>
-                <div className='w-full my-8 md:my-4 mx-auto md:mx-0 bg-white pt-20 pb-4 rounded-3xl relative md:shadow-[0_60px_60px_-15px_rgba(0,0,0,0.3)] rounded-[45px]'>
-                      <div className='absolute h-16 w-full bg-black top-0 rounded-t-3xl bg-gradient-to-r from-yellow-500 via-yellow-300 to-yellow-500 text-black flex items-center justify-center font-bold text-lg'>{i.id}</div>
-                      <div className='flex-1 mx-6 text-justify'>{i.text}</div>
-                </div>
+                  <>
+                    {!i.isMoved ?
+                        <div className='w-full my-8 mx-auto md:mx-0 bg-white pt-14 pb-4 leading-5 rounded-3xl relative md:shadow-[0_60px_60px_-15px_rgba(0,0,0,0.3)] rounded-[45px]'>
+                              <div className='absolute h-12 w-full bg-black top-0 rounded-t-3xl bg-gradient-to-r from-yellow-500 via-yellow-300 to-yellow-500 text-black flex items-center justify-center font-bold text-lg'>{i.id}</div>
+                              <div className='flex-1 mx-6 text-justify'>{i.text}</div>
+                        </div> : 
+                        <div className='w-full my-8 mx-auto md:mx-0 md:ml-[-80px] md:mr-0 leading-5 bg-white pt-14 pb-4 rounded-3xl relative md:shadow-[0_60px_60px_-15px_rgba(0,0,0,0.3)] rounded-[45px]'>
+                              <div className='absolute h-12 w-full bg-black top-0 rounded-t-3xl bg-gradient-to-r from-yellow-500 via-yellow-300 to-yellow-500 text-black flex items-center justify-center font-bold text-lg'>{i.id}</div>
+                              <div className='flex-1 mx-6 text-justify'>{i.text}</div>
+                        </div>
+                    }
+                    </>
               )}
           </div>
 
@@ -402,11 +435,11 @@ export function Home() {
     return (
         <div className='md:w-4/5 mx-auto md:mt-8'>
           <h2 className='font-bold text-3xl md:text-4xl mx-auto text-center mb-5 text-[#093489]'>Hướng dẫn sử dụng</h2>
-          <div className="text-start mb-8 rounded-3xl mx-2 md:flex justify-around">
-              <div className='md:w-1/2 flex flex-col justify-between'>
-                {texts.map(i => <div key={i} className='h-[85px] rounded-r-xl flex items-center border-l-8 border-[#093489] bg-sky-100 md:px-8 px-2 mb-2'>{i}</div>)}
+          <div className="text-start mb-8 rounded-3xl mx-2 md:flex justify-around items-center">
+              <div className='md:w-1/2 '>
+                {texts.map(i => <div key={i} className='h-[85px] rounded-r-xl flex items-center border-l-8 border-[#093489] bg-sky-100 md:px-8 px-2 mb-2 font-semibold'>{i}</div>)}
               </div>
-              <img alt="Hướng dẫn sử dụng" className='mx-auto mt-8 md:w-1/3' src="Untitled-2.png"></img>
+              <img alt="Hướng dẫn sử dụng" className='mx-auto md:w-2/5' src="Untitled-2.png"></img>
           </div>
         </div>
     )

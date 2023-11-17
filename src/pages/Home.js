@@ -177,7 +177,7 @@ export function Home() {
       <>
           <h2 className='font-bold text-3xl md:text-4xl mx-auto text-center text-[#093489]'>Thông tin sản phẩm</h2>
           <div className='flex flex-col md:flex-row justify-center items-center mt-8'>
-              <div className='w-[95%] md:w-2/5 relative ' onMouseOver={() => {setEffect("")}} onMouseOut={() => {setEffect("hidden")}}>
+              <div className='w-[95%] md:w-2/5 relative rounded-[45px] ' onMouseOver={() => {setEffect("")}} onMouseOut={() => {setEffect("hidden")}}>
                 <div className={'absolute top-0 bottom-0 right-0 left-0 bg-[#093489] opacity-50 rounded-[45px] ' + effect}></div>
                 <img alt="Thông tin sản phẩm" src="gh.jpg" className={'md:shadow-[0_60px_60px_-15px_rgba(0,0,0,0.3)] object-cover rounded-[45px] z-20 '}></img>
                 <div className={'absolute top-0 bottom-0 right-0 left-0 flex items-center justify-center ' + effect}>

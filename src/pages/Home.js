@@ -226,7 +226,7 @@ export function Home() {
             }),
             headers: {
               'Content-Type': 'application/json'
-            },h
+            },
         }).then(() => {
               name.current.value = ''
               phone.current.value = ''

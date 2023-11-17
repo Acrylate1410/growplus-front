@@ -149,7 +149,7 @@ export function Home() {
                 )}
               </Swiper>
               <Link to="/news" className='block w-fit mx-auto'>
-                <button className='md:mt-8 bg-[#093489] text-white w-36 h-12 rounded-full flex items-center justify-center border border-[#093489] hover:bg-white hover:text-[#093489] hover:scale-105 transition '>
+                <button className='mt-4 md:mt-8 bg-[#093489] text-white w-36 h-12 rounded-full flex items-center justify-center border border-[#093489] hover:bg-white hover:text-[#093489] hover:scale-105 transition '>
                         Xem thêm tin tức   
                 </button>
               </Link>

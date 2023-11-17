@@ -212,6 +212,7 @@ export function Home() {
     const phone = useRef(null)
     const address = useRef(null)
     const quantity = useRef(null)
+    const note = useRef(null)
     const handleSubmit = (e) => {
         e.preventDefault()
         fetch("https://growplus-api.onrender.com/orders/save_order", {
@@ -220,15 +221,17 @@ export function Home() {
               name: name.current.value,
               phone: phone.current.value,
               address: address.current.value,
-              quantity: quantity.current.value
+              quantity: quantity.current.value,
+              note: note.current.value
             }),
             headers: {
               'Content-Type': 'application/json'
-            },
+            },h
         }).then(() => {
               name.current.value = ''
               phone.current.value = ''
               address.current.value = ''
+              note.current.value = ''
               quantity.current.value = 1
               alert("Đặt hàng thành công")
             }
@@ -248,7 +251,7 @@ export function Home() {
                 <div className={'md:w-1/2 w-4/5 '  + toggle}>
                   <input ref={phone} required className='outline-0 text-[#093489] w-full px-5 py-2 my-2 rounded-lg' placeholder='Số điện thoại'></input>
                   <input ref={address} required className='outline-0 text-[#093489] w-full px-5 py-2 my-2 rounded-lg' placeholder='Đường, phường/xã, quận/huyện, thành phố/tỉnh'></input>
-                  <input ref={name} required className='outline-0 text-[#093489] w-full px-5 py-2 my-2 rounded-lg' placeholder='Ghi chú'></input>
+                  <input ref={note} className='outline-0 text-[#093489] w-full px-5 py-2 my-2 rounded-lg' placeholder='Ghi chú'></input>
                 </div>
                 <div className='mx-auto md:w-1/2 w-4/5 flex justify-end items-center mt-4'>
                   <p className='text-white'>Số lượng: </p>

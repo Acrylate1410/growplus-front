@@ -196,9 +196,10 @@ export function Home() {
                 <img alt="Thông tin sản phẩm" src="gh.jpg" className={'absolute top-0 bottom-0 right-0 left-0 md:shadow-[0_60px_60px_-15px_rgba(0,0,0,0.3)] object-cover rounded-[45px] z-20 ' + effect}></img>
               </div>
               <div className='mx-6'></div>
-              <div className='w-4/5 md:w-[20%] relative'>
+              <div className='w-4/5 md:w-[22%] relative'>
                 <img className='object-contain' src="GMPMAKISHOKUHIN2024.png"/>
               </div>
+              <div className='mx-4'></div>
               <div className='text-justify w-4/5 md:w-[22%]'>
                 <p><span className='mr-1'>•</span><span className='font-semibold'>Ngày sản xuất và hạn sử dụng:</span> In trên nhãn sản phẩm</p>
                 <p><span className='mr-1'>•</span><span className='font-semibold'>Nhà sản xuất:</span> Makishokuhin Co., Ltd., Factory</p>

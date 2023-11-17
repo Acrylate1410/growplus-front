@@ -1,15 +1,17 @@
+/*
 import {IoMdNutrition} from 'react-icons/io'
 import {IoAccessibilitySharp} from 'react-icons/io5'
 import {GiBodyHeight, GiNightSleep, GiBrain} from 'react-icons/gi'
 import {FaBacteria} from 'react-icons/fa'
 import {BsFillLungsFill} from 'react-icons/bs'
 import {FaShieldHalved} from 'react-icons/fa6'
+import { LuBox } from "react-icons/lu";
+*/
 import { useEffect, useRef, useState} from 'react';
 import { PiShoppingCart } from "react-icons/pi";
 import Hamburger from 'hamburger-react'
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { LuBox } from "react-icons/lu";
 import { FaShippingFast } from "react-icons/fa";
 import { BsBoxSeam } from "react-icons/bs";
 //import { BsStars } from "react-icons/bs";
@@ -86,7 +88,6 @@ export function Home() {
     }
     //bg-gradient-to-r from-[#ABE0FF] to-[#82ACF6]
     //bg-[url(/public/abstract-white-background-with-smooth-lines.jpg)] 
-    //
     return (
         <div className="App w-full overflow-hidden mx-0 relative">
           <button className={'fixed bottom-[80px] text-[44px] z-[100] text-[#093489] transition-[right] ' + pos} onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}><FaArrowCircleUp /></button>
@@ -117,8 +118,8 @@ export function Home() {
           </header>
           <div className="bg-[url(/public/banner.jpg)] bg-[length:158%_100%] md:bg-[length:100%_100%] h-[300px] md:h-[500px] mt-20"></div>
           <div className='w-full md:flex justify-center'>
-            <div className='md:w-1/2 mt-8 md:ml-8 mx-4 flex'><img src="chart.png" className='object-contain'/></div>
-            <div className='md:w-[28%] mt-8 md:ml-8 mx-4 flex hidden md:block'><img src="3growplus.png" className='object-contain'/></div>
+            <div className='md:w-1/2 mt-8 md:ml-8 mx-4 flex'><img src="chart.png" className='object-contain' alt=""/></div>
+            <div className='md:w-[28%] mt-8 md:ml-8 mx-4 flex hidden md:block'><img src="3growplus.png" className='object-contain' alt=""/></div>
           </div>
           <section className='w-full mt-6 mb-16 md:mb-24 md:mt-8 scroll-m-20' ref={sec1}>
             <IngredientTab />
@@ -192,7 +193,7 @@ export function Home() {
               </div>
               <div className='mx-6'></div>
               <div className='w-4/5 md:w-[22%] relative'>
-                <img className='object-contain' src="GMPMAKISHOKUHIN2024.png"/>
+                <img className='object-contain' src="GMPMAKISHOKUHIN2024.png" alt="GMP"/>
               </div>
               <div className='mx-4'></div>
               <div className='text-justify w-4/5 md:w-[22%]'>
@@ -246,7 +247,7 @@ export function Home() {
                 <input ref={name} required className='outline-0 text-[#093489] md:w-1/2 w-4/5 px-5 py-2 my-2 rounded-lg' placeholder='Họ và tên khách hàng'></input>
                 <div className='relative md:w-1/2 w-4/5 '>
                   <div className='outline-0 text-zinc-500 pl-5 py-2  my-2 rounded-lg w-full bg-white h-10 cursor-pointer' onMouseDown={() => {toggle === "hidden" ? setToggle("") : setToggle("hidden")}}>Số điện thoại & Địa chỉ nhận hàng</div>
-                  <div className='absolute top-4 right-4 text-2xl'  onMouseDown={() => {toggle === "hidden" ? setToggle("") : setToggle("hidden")}} ><FaCaretDown /></div>
+                  <div className='absolute top-4 right-4 text-2xl cursor-pointer'  onMouseDown={() => {toggle === "hidden" ? setToggle("") : setToggle("hidden")}} ><FaCaretDown /></div>
                 </div>
                 <div className={'md:w-1/2 w-4/5 '  + toggle}>
                   <input ref={phone} required className='outline-0 text-[#093489] w-full px-5 py-2 my-2 rounded-lg' placeholder='Số điện thoại'></input>
@@ -295,7 +296,7 @@ export function Home() {
     return (
       <>
         <div id="ingredients" className='md:w-3/5 mx-auto md:ml-44 relative'>
-        < img className='hidden md:inline absolute right-[-300px] bottom-0 w-96' src="Growplusbboxthanh.png"></img>
+          <img className='hidden md:inline absolute right-[-300px] bottom-0 w-96' src="Growplusbboxthanh.png" alt="Thành phần dinh dưỡng"></img>
           <h2 className='text-center font-bold text-3xl md:text-4xl  mb-5 z-10 text-[#093489] relative'>Thành phần dinh dưỡng</h2>
           <div className='flex justify-between font-bold px-4 py-5 text-white rounded-t-xl bg-gradient-to-r from-10% to-[#0D4CC9] from-[#093489] items-center  md:w-[94%]'>
               <p>Thành phần  (trong 1 gói 30ml)</p>
@@ -334,7 +335,7 @@ export function Home() {
     return (
       <>
         <h2 className='font-bold text-3xl md:text-4xl mx-auto text-center text-white md:text-[#093489]'>Ưu điểm nổi bật</h2>
-        <div className='hidden md:flex flex-wrap justify-between md:mx-12'>
+        <div className='hidden md:flex justify-between md:mx-12'>
           <div className='w-[28%]'>
               {texts1.map(i =>
                 <>
@@ -348,12 +349,10 @@ export function Home() {
                       <div className='flex-1 mx-6 text-justify'>{i.text}</div>
                     </div>
                   }
-
                 </>
-
               )}
           </div>
-          <img src="Thanh.png" className='w-[30%] object-contain'></img>
+          <img alt="Ưu điểm nổi bật" src="Thanh.png" className='w-[30%] object-contain'></img>
           <div className='w-[28%]'>
               {texts2.map(i =>
                   <>
@@ -380,7 +379,7 @@ export function Home() {
                       <>
                         {i.id === "Bảng thành phần vàng" && 
                           <div className='overflow-hidden w-48 z-0 mx-auto' >
-                            <img src="3growplus.png"></img>
+                            <img src="3growplus.png" alt=""></img>
                           </div>}
                       </>
                     </div>

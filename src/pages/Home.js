@@ -126,9 +126,9 @@ export function Home() {
           </section>
           <section className='w-full  bg-gradient-to-r from-10% to-[#0D4CC9] from-[#093489] md:from-white md:to-white pt-4 md:pb-4 scroll-m-20 '  ref={sec4}><NotableBenefits /></section>
           <section className='w-full scroll-m-20'  ref={sec5}><Accordion /></section>
-          <section className='w-full scroll-m-20 bg-[length:100%_100%] pt-12 pb-24'  ref={sec3}><Info/></section>
+          <section className='w-full scroll-m-20'  ref={sec3}><Info/></section>
           <section className='w-full scroll-m-20' ref={sec6}>
-              <h2 className='font-bold text-3xl md:text-4xl text-center mb-8 text-[#093489] mt-20'>Tin tức</h2>
+              <h2 className='font-bold text-3xl md:text-4xl text-center mb-8 text-[#093489] mt-12 md:mt-20'>Tin tức</h2>
               <Swiper 
                   breakpoints={{
                     0: {

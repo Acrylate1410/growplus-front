@@ -117,14 +117,15 @@ export function Home() {
                 <HamburgerComponent/></div>
           </header>
           <div className="bg-[url(/public/banner.jpg)] bg-[length:158%_100%] md:bg-[length:100%_100%] h-[300px] md:h-[500px] mt-20"></div>
-          <div className='w-full md:flex justify-center'>
-            <div className='md:w-1/2 mt-8 md:ml-8 mx-4 flex'><img src="chart.png" className='object-contain' alt=""/></div>
-            <div className='md:w-[28%] mt-8 md:ml-8 mx-4 flex hidden md:block'><img src="3growplus.png" className='object-contain' alt=""/></div>
+          <div className='w-full md:flex justify-center hidden md:block'>
+            <div className='md:w-1/2 mt-8 md:ml-8 mx-4 flex'><img src="chartm.png" className='object-contain' alt=""/></div>
+            <div className='md:w-[28%] mt-8 md:ml-8 mx-4 flex'><img src="3growplus.png" className='object-contain' alt=""/></div>
           </div>
+          <img src="chart.png" className='md:hidden'></img>
           <section className='w-full mt-6 mb-16 md:mb-24 md:mt-8 scroll-m-20' ref={sec1}>
             <IngredientTab />
           </section>
-          <section className='w-full  bg-gradient-to-r from-10% to-[#0D4CC9] from-[#093489] md:from-white md:to-white md:pb-4 scroll-m-20 '  ref={sec4}><NotableBenefits /></section>
+          <section className='w-full  bg-gradient-to-r from-10% to-[#0D4CC9] from-[#093489] md:from-white md:to-white md:pb-4 scroll-m-20 pt-4 md:pt-0 '  ref={sec4}><NotableBenefits /></section>
           <section className='w-full scroll-m-20'  ref={sec5}><Accordion /></section>
           <section className='w-full scroll-m-20'  ref={sec3}><Info/></section>
           <section className='w-full scroll-m-20' ref={sec6}>
@@ -138,6 +139,7 @@ export function Home() {
                       slidesPerView: 3,
                     },
                   }} spaceBetween={30} navigation={true} modules={[Navigation]} className='!mx-8'>
+                
                 {articleList.map(i =>
                   <SwiperSlide>
                     <Link to={"/article?id=" + i._id}>
@@ -332,7 +334,7 @@ export function Home() {
     ]
     return (
       <>
-        <h2 className='font-bold text-3xl md:text-4xl mx-auto text-center text-white md:text-[#093489]'>Ưu điểm nổi bật</h2>
+        <h2 className='font-bold text-3xl md:text-4xl mx-auto text-center text-white md:text-[#093489] my-4 md:my-0'>Ưu điểm nổi bật</h2>
         <div className='hidden md:flex justify-between md:mx-12'>
           <div className='w-[28%]'>
               {texts1.map(i =>
@@ -369,10 +371,11 @@ export function Home() {
           </div>
 
         </div>
-        <Swiper spaceBetween={30} pagination={true} modules={[Pagination]} className='mb-8 !mx-8 md:!hidden'>
+        <Swiper spaceBetween={30} pagination={true} modules={[Pagination]} className='mb-8 !mx-8 md:!hidden !relative'>
+                <img alt="Ưu điểm nổi bật" src="Thanh.png" className='w-[65%] object-contain absolute top-0 z-[100] hidden'></img>
                 {texts1.map(i =>
-                  <SwiperSlide><div className='w-[100%] md:w-[31.5%] mt-4 mb-8 md:my-4 mx-auto md:mx-0 bg-white pt-2 pb-12 rounded-3xl h-96'>
-                    <div className='text-xl mx-6 md:text-2xl font-bold text-[#093489] md:mb-8 text-center'>{i.id}</div>
+                  <SwiperSlide><div className='w-[100%] md:w-[31.5%] mt-4 mb-8 md:my-4 mx-auto md:mx-0 bg-white pt-12 pb-12 rounded-3xl h-72'>
+                      <div className='absolute h-12 w-full bg-black top-0 rounded-t-3xl bg-gradient-to-r from-yellow-500 via-yellow-300 to-yellow-500 text-black flex items-center justify-center font-bold text-lg'>{i.id}</div>
                       <div className='flex-1 mx-6 text-justify'>{i.text}</div>
                       <>
                         {i.id === "Bảng thành phần vàng" && 
@@ -384,8 +387,8 @@ export function Home() {
                   </SwiperSlide>
                 )}
                 {texts2.map(i =>
-                  <SwiperSlide><div className='w-[100%] md:w-[31.5%] mt-4 mb-8 md:my-4 mx-auto md:mx-0 bg-white pt-2 pb-12 rounded-3xl h-96'>
-                    <div className='text-xl mx-6 md:text-2xl font-bold text-[#093489] md:mb-8 text-center'>{i.id}</div>
+                  <SwiperSlide><div className='w-[100%] md:w-[31.5%] mt-4 mb-8 md:my-4 mx-auto md:mx-0 bg-white pt-12 pb-12 rounded-3xl h-72'>
+                      <div className='absolute h-12 w-full bg-black top-0 rounded-t-3xl bg-gradient-to-r from-yellow-500 via-yellow-300 to-yellow-500 text-black flex items-center justify-center font-bold text-lg'>{i.id}</div>
                       <div className='flex-1 mx-6 text-justify'>{i.text}</div>
                       <>
                         {i.id === "Bảng thành phần vàng" && 

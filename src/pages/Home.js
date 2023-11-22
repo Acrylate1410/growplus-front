@@ -34,7 +34,7 @@ export function Home() {
       setPos("right-[24px]")
     };
     useEffect(() => {
-      
+      window.history.scrollRestoration = 'manual'
       fetch("https://growplus-api.onrender.com/articles/get_latest_articles").then(res => res.json()).then(data => {
         setArticleList(data || [])
         window.removeEventListener('scroll', onScroll);

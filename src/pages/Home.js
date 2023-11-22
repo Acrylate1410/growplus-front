@@ -1,3 +1,11 @@
+
+import { useEffect, useRef, useState} from 'react';
+import { PiShoppingCart } from "react-icons/pi";
+import Hamburger from 'hamburger-react'
+import { Link } from "react-router-dom";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { FaShippingFast } from "react-icons/fa";
+import { BsBoxSeam } from "react-icons/bs";
 /*
 import {IoMdNutrition} from 'react-icons/io'
 import {IoAccessibilitySharp} from 'react-icons/io5'
@@ -6,15 +14,8 @@ import {FaBacteria} from 'react-icons/fa'
 import {BsFillLungsFill} from 'react-icons/bs'
 import {FaShieldHalved} from 'react-icons/fa6'
 import { LuBox } from "react-icons/lu";
+import { BsStars } from "react-icons/bs";
 */
-import { useEffect, useRef, useState} from 'react';
-import { PiShoppingCart } from "react-icons/pi";
-import Hamburger from 'hamburger-react'
-import { Link } from "react-router-dom";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { FaShippingFast } from "react-icons/fa";
-import { BsBoxSeam } from "react-icons/bs";
-//import { BsStars } from "react-icons/bs";
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -33,7 +34,7 @@ export function Home() {
       setPos("right-[24px]")
     };
     useEffect(() => {
-      window.history.scrollRestoration = 'manual'
+      
       fetch("https://growplus-api.onrender.com/articles/get_latest_articles").then(res => res.json()).then(data => {
         setArticleList(data || [])
         window.removeEventListener('scroll', onScroll);
@@ -104,9 +105,9 @@ export function Home() {
                   )}
               </nav>
               <button onClick={() => scroll("Mua ngay")} className='md:mr-8 hidden text-sm md:flex items-center justify-center md:bg-gradient-to-b from-60% to-[#0D4CC9] from-[#093489] md:text-white w-8 h-8 md:w-36 md:h-12 rounded-full border md:border-2 border-black md:border-yellow-400 hover:scale-110 transition '>
-                    <div className='text-sm md:text-base hidden md:block'>Mua ngay</div>  
-                    <div className='mx-1 hidden md:block'></div>    
-                    <div className='text-xl'><PiShoppingCart /></div>
+                <div className='text-sm md:text-base hidden md:block'>Mua ngay</div>  
+                <div className='mx-1 hidden md:block'></div>    
+                <div className='text-xl'><PiShoppingCart/></div>
               </button>
               <div className="flex items-center md:hidden">
                 <button onClick={() => scroll("Mua ngay")} className='md:mr-8 text-sm flex items-center justify-center md:bg-gradient-to-b from-60% to-[#0D4CC9] from-[#093489] md:text-white w-8 h-8 md:w-36 md:h-12 rounded-full border md:border-2 border-black md:border-yellow-400 hover:scale-110 transition '>
@@ -123,10 +124,10 @@ export function Home() {
           </div>
           <img src="chart.png" className='md:hidden'></img>
           <section className='w-full mt-6 mb-16 md:mb-24 md:mt-8 scroll-m-20' ref={sec1}>
-            <IngredientTab />
+            <IngredientTab/>
           </section>
           <section className='w-full  bg-gradient-to-r from-10% to-[#0D4CC9] from-[#093489] md:from-white md:to-white md:pb-4 scroll-m-20 pt-4 md:pt-0 '  ref={sec4}><NotableBenefits /></section>
-          <section className='w-full scroll-m-20'  ref={sec5}><Accordion /></section>
+          <section className='w-full scroll-m-20'  ref={sec5}><Accordion/></section>
           <section className='w-full scroll-m-20'  ref={sec3}><Info/></section>
           <section className='w-full scroll-m-20' ref={sec6}>
               <h2 className='font-bold text-3xl md:text-4xl text-center mb-8 text-[#093489] mt-12 md:mt-20'>Tin tức</h2>
@@ -357,11 +358,11 @@ export function Home() {
               {texts2.map(i =>
                   <>
                     {!i.isMoved ?
-                        <div className='w-full my-8 mx-auto md:mx-0 bg-white pt-14 pb-4 leading-5 rounded-3xl relative md:shadow-[0_60px_60px_-15px_rgba(0,0,0,0.3)] rounded-[45px]'>
+                        <div className='w-full my-8 mx-auto bg-white pt-14 pb-4 leading-5 rounded-3xl relative md:shadow-[0_60px_60px_-15px_rgba(0,0,0,0.3)] rounded-[45px]'>
                               <div className='absolute h-12 w-full bg-black top-0 rounded-t-3xl bg-gradient-to-r from-yellow-500 via-yellow-300 to-yellow-500 text-black flex items-center justify-center font-bold text-lg'>{i.id}</div>
                               <div className='flex-1 mx-6 text-justify'>{i.text}</div>
                         </div> : 
-                        <div className='w-full my-8 mx-auto md:mx-0 md:ml-[-80px] md:mr-0 leading-5 bg-white pt-14 pb-4 rounded-3xl relative md:shadow-[0_60px_60px_-15px_rgba(0,0,0,0.3)] rounded-[45px]'>
+                        <div className='w-full my-8 mx-auto md:ml-[-80px] md:mr-0 leading-5 bg-white pt-14 pb-4 rounded-3xl relative md:shadow-[0_60px_60px_-15px_rgba(0,0,0,0.3)] rounded-[45px]'>
                               <div className='absolute h-12 w-full bg-black top-0 rounded-t-3xl bg-gradient-to-r from-yellow-500 via-yellow-300 to-yellow-500 text-black flex items-center justify-center font-bold text-lg'>{i.id}</div>
                               <div className='flex-1 mx-6 text-justify'>{i.text}</div>
                         </div>

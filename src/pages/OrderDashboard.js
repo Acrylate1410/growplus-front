@@ -95,13 +95,13 @@ export function OrderDashboard() {
                                 } else if (filter === "Đang giao hàng" || filter === "Chưa giao hàng" || filter === "Đã giao hàng thành công") {
                                     return el.status === filter;
                                 }
-                                return el.name.includes(filter) || el.phone.includes(filter) || el.district.includes(filter) || el.subdivision.includes(filter) || el.city.includes(filter)
+                                return el.name.includes(filter) || el.phone.includes(filter) || el.address.includes(filter)
                             }).map(i => 
                                 <tr className="text-center" key={i._id}>
                                     <td className="py-2">{i.name}</td>
                                     <td className="py-2">{i.phone}</td>
                                     <td className="py-2">{i.quantity}</td>
-                                    <td className="py-2">{i.address + ", " + i.subdivision + ", " + i.district + ", " + i.city}</td>
+                                    <td className="py-2">{i.address}</td>
                                     <td className="py-2">{i.date}</td>
                                     <td className="py-2">
                                         {i.status === "Chưa giao hàng" ? 

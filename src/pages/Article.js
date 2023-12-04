@@ -9,7 +9,7 @@ export function Article() {
     useEffect(() => {
       fetch("https://growplus-api.onrender.com/articles/get_one_article/" + params.get("id")).then(res => res.json()).then(data => {
         setArticle(data || {})
-      })
+      }).catch(error => {})
     }, [])
     return (
         <>

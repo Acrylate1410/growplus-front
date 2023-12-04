@@ -10,7 +10,7 @@ export function NewsDashboard() {
     useEffect(() => {
       fetch("https://growplus-api.onrender.com/articles/get_articles").then(res => res.json()).then(data => {
         setArticleList(data || [])
-      })
+      }).catch(error => {})
     }, []);
     const handleSelect = (e, article) => {
         let selectedCopy = [...selected]
@@ -29,7 +29,7 @@ export function NewsDashboard() {
             headers: {'Content-Type': 'application/json'},
         }).then(
             alert("Đã xoá bài thành công")
-        )
+        ).catch(error => {})
     }
     return (
         <>

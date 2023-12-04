@@ -14,7 +14,7 @@ export function ArticleUploadForm() {
         if (location.pathname.endsWith("edit_article")) {
             fetch("https://growplus-api.onrender.com/articles/get_one_article/" + params.get("id")).then(res => res.json()).then(data => {
                 setArticleToEdit(data || {})
-            })
+            }).catch(error => {})
         }
     }, [])
 
@@ -50,14 +50,14 @@ export function ArticleUploadForm() {
                 fetch("http://localhost:8080/articles/upload", {
                     method: "POST",
                     body: formData
-                }).then(alert("Đã đăng bài thành công"))
+                }).then(alert("Đã đăng bài thành công")).catch(error => {})
             } else {
                 formData.append("oldThumbnail", articleToEdit.thumbnail)
                 formData.append("oldContent", articleToEdit.content)
                 fetch("https://growplus-api.onrender.com/articles/update/" + params.get("id"), {
                     method: "PATCH",
                     body: formData
-                }).then(alert("Đã đăng bài thành công"))
+                }).then(alert("Đã đăng bài thành công")).catch(error => {})
             }
         } else {
             setErrorMsg("Wrong file type")

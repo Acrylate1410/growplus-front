@@ -39,7 +39,7 @@ export function Home() {
         setArticleList(data || [])
         window.removeEventListener('scroll', onScroll);
         window.addEventListener('scroll', onScroll, { passive: true });
-      })
+      }).catch(error => {})
       return () => window.removeEventListener('scroll', onScroll);
     }, []);
     const sec1 = useRef(null)
@@ -77,7 +77,7 @@ export function Home() {
           <div className="z-10 relative"><Hamburger toggled={isOpen} toggle={setOpen} size={25}/></div>
           <div className={'fixed top-0 bottom-0 left-[33%] right-0 bg-white ' + status}>
             <div className='mt-20'>
-                {["Thành phần dinh dưỡng", "Ưu điểm nổi bật", "Hướng dẫn sử dụng", "Thông tin sản phẩm",  "Tin tức"].map(i => 
+                {["Thành phần dinh dưỡng", "Ưu điểm nổi bật", "Hướng dẫn sử dụng", "Thông tin sản phẩm",  "Tin tức", "Chính sách tuyển đại lý"].map(i => 
                     <div key={i}>
                         <div className='cursor-pointer text-[20px] border-b border-black pl-6 py-3 text-[#093489] font-medium ' onClick={() => {scroll(i); setOpen(false)}}>{i}</div>
                     </div>
@@ -96,10 +96,10 @@ export function Home() {
               <div className='flex h-12 cursor-pointer'  onClick={() => window.scrollTo({top: 0, behavior: 'smooth'}) }>
                 <img alt="Grow Plus+" src="growplus.png" className='w-48 h-30 object-cover'></img>
               </div>
-              <nav className='hidden md:flex mx-4'>
-                  {["Thành phần dinh dưỡng", "Ưu điểm nổi bật", "Hướng dẫn sử dụng", "Thông tin sản phẩm", "Tin tức"].map(i => 
+              <nav className='hidden md:flex mx-4 '>
+                  {["Thành phần dinh dưỡng", "Ưu điểm nổi bật", "Hướng dẫn sử dụng", "Thông tin sản phẩm", "Tin tức", "Chính sách tuyển đại lý"].map(i => 
                     <div key={i} className='flex'>
-                        <div className='text-center cursor-pointer text-base text-blue-900 font-medium hover:scale-105  transition' onClick={() => scroll(i)}>{i}</div>
+                        <div className='text-center cursor-pointer text-base text-blue-900 font-medium hover:scale-105  transition text-[13px]' onClick={() => scroll(i)}>{i}</div>
                         <div className='mx-3'></div>
                     </div>
                   )}
@@ -237,7 +237,7 @@ export function Home() {
               quantity.current.value = 1
               alert("Đặt hàng thành công")
             }
-          )
+          ).catch(error => {})
     }
     return (
       <>

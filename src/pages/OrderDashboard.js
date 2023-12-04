@@ -10,7 +10,7 @@ export function OrderDashboard() {
     useEffect(() => {
         fetch("https://growplus-api.onrender.com/orders/get_orders").then(res => res.json()).then(data => {
           setOrderList({data: data || [], message: ""})
-        })
+        }).catch(error => {})
     }, []);
 
     const updateStatus = (id, currentStatus) => {
@@ -35,7 +35,7 @@ export function OrderDashboard() {
                 setOrderList(previousState => {return {...previousState, data: listToUpdate}})
                 setSelected("")
             }
-        })
+        }).catch(error => {})
     }
     return (
         <div className="w-full overflow-hidden relative">

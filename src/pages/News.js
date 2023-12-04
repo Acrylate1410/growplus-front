@@ -11,7 +11,7 @@ export function News() {
     useEffect(() => {
       fetch("https://growplus-api.onrender.com/articles/get_articles").then(res => res.json()).then(data => {
         setArticleList(data || [])
-      })
+      }).catch(error => {})
     }, []);
     return (
         <>

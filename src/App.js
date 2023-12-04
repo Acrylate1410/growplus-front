@@ -9,6 +9,7 @@ import { Article } from './pages/Article';
 import { ArticleUploadForm } from './pages/ArticleUploadForm';
 import { NewsDashboard } from './pages/NewsDashboard';
 import {NotFound} from './pages/NotFound';
+import { Hiring } from './pages/Hiring';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
             <Route path="news_dashboard" element={<NewsDashboard />} />
             <Route path="add_article" element={<ArticleUploadForm/>}/>
             <Route path="edit_article" element={<ArticleUploadForm/>}/>
+            <Route path="chinh-sach-tuyen-dai-ly" element={<Hiring/>}/>
             <Route path="*" element={<NotFound/>} />
           </Route>
         </Routes>

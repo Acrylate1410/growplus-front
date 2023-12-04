@@ -5,15 +5,17 @@ export default function Footer() {
     return (
         <footer className='bg-gradient-to-r from-10% to-[#0D4CC9] from-[#093489]  text-[#093489] py-6 md:text-start w-full px-4'>
                     <div>
-                        <div className='flex h-12 cursor-pointer'>
+                        <div className='flex h-12 cursor-pointer w-fit'>
                             <img alt="" src="growplus.png" className='w-40 md:w-56 h-30 object-cover'></img>
                         </div>
-                        <div className="flex items-center text-white justify-between mx-8">
+                        <div className="flex text-white justify-between mx-8">
                             <div>
                                 <p>HỖ TRỢ KHÁCH HÀNG</p>
                                 <p>• Chính sách đổi trả</p>
+                                <p>• Chính sách tuyển đại lý</p>
                                 <p>• FAQ</p>
                             </div>
+                           
                             <div className="flex items-center">
                                 <button className="text-white px-4 py-1 md:p-4 flex items-center my-2  rounded-full border border-white hover:bg-white hover:text-[#093489] hover:scale-110 transition ">
                                     <BiPhone className="text-2xl"/>

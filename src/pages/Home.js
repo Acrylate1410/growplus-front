@@ -27,6 +27,7 @@ import Footer from './Footer'
 //bg-yellow-200
 //bg-yellow-500
 export function Home() {
+  const sections = ["Thành phần dinh dưỡng", "Ưu điểm nổi bật", "Hướng dẫn sử dụng", "Thông tin sản phẩm", "Tin tức"] 
   //<section className='w-full scroll-m-20' ref={sec2}><Wid /></section>
     const [articleList, setArticleList] = useState([])
     const [pos, setPos] = useState("right-[-61px]")
@@ -77,7 +78,7 @@ export function Home() {
           <div className="z-10 relative"><Hamburger toggled={isOpen} toggle={setOpen} size={25}/></div>
           <div className={'fixed top-0 bottom-0 left-[33%] right-0 bg-white ' + status}>
             <div className='mt-20'>
-                {["Thành phần dinh dưỡng", "Ưu điểm nổi bật", "Hướng dẫn sử dụng", "Thông tin sản phẩm",  "Tin tức", "Chính sách tuyển đại lý"].map(i => 
+                {sections.map(i => 
                     <div key={i}>
                         <div className='cursor-pointer text-[20px] border-b border-black pl-6 py-3 text-[#093489] font-medium ' onClick={() => {scroll(i); setOpen(false)}}>{i}</div>
                     </div>
@@ -97,9 +98,9 @@ export function Home() {
                 <img alt="Grow Plus+" src="growplus.png" className='w-48 h-30 object-cover'></img>
               </div>
               <nav className='hidden md:flex mx-4 '>
-                  {["Thành phần dinh dưỡng", "Ưu điểm nổi bật", "Hướng dẫn sử dụng", "Thông tin sản phẩm", "Tin tức", "Chính sách tuyển đại lý"].map(i => 
+                  {sections.map(i => 
                     <div key={i} className='flex'>
-                        <div className='text-center cursor-pointer text-base text-blue-900 font-medium hover:scale-105  transition text-[13px]' onClick={() => scroll(i)}>{i}</div>
+                        <div className='text-center cursor-pointer text-base text-blue-900 font-medium hover:scale-105  transition' onClick={() => scroll(i)}>{i}</div>
                         <div className='mx-3'></div>
                     </div>
                   )}

@@ -120,10 +120,10 @@ export function Home() {
           </header>
           <div className="bg-[url(/public/banner.jpg)] bg-[length:158%_100%] md:bg-[length:100%_100%] h-[300px] md:h-[500px] mt-20"></div>
           <div className='w-full md:flex justify-center hidden md:block'>
-            <div className='md:w-1/2 mt-8 md:ml-8 mx-4 flex'><img src="chartm.png" className='object-contain' alt=""/></div>
-            <div className='md:w-[28%] mt-8 md:ml-8 mx-4 flex'><img src="3growplus.png" className='object-contain' alt=""/></div>
+            <div className='md:w-1/2 mt-8 md:ml-8 mx-4 flex'><img src="chartm.png" className='object-contain' alt="Giúp trẻ khỏe mạnh và cao lớn vượt trội"/></div>
+            <div className='md:w-[28%] mt-8 md:ml-8 mx-4 flex'><img src="3growplus.png" className='object-contain' alt="Kết hợp 23 dưỡng chất cần thiết cho trẻ phát triển toàn diện"/></div>
           </div>
-          <img src="chart.png" className='md:hidden'></img>
+          <img src="chart.png" className='md:hidden' alt="Giúp trẻ khỏe mạnh và cao lớn vượt trội, kết hợp 23 dưỡng chất cần thiết cho trẻ phát triển toàn diện"></img>
           <section className='w-full mt-6 mb-16 md:mb-24 md:mt-8 scroll-m-20' ref={sec1}>
             <IngredientTab/>
           </section>
@@ -379,12 +379,6 @@ export function Home() {
                   <SwiperSlide><div className='w-[100%] md:w-[31.5%] mt-4 mb-8 md:my-4 mx-auto md:mx-0 bg-white pt-12 pb-12 rounded-3xl h-72'>
                       <div className='absolute h-12 w-full bg-black top-0 rounded-t-3xl bg-gradient-to-r from-yellow-500 via-yellow-300 to-yellow-500 text-black flex items-center justify-center font-bold text-lg'>{i.id}</div>
                       <div className='flex-1 mx-6 text-justify'>{i.text}</div>
-                      <>
-                        {i.id === "Bảng thành phần vàng" && 
-                          <div className='overflow-hidden w-48 z-0 mx-auto' >
-                            <img src="3growplus.png" alt=""></img>
-                          </div>}
-                      </>
                     </div>
                   </SwiperSlide>
                 )}
@@ -392,12 +386,6 @@ export function Home() {
                   <SwiperSlide><div className='w-[100%] md:w-[31.5%] mt-4 mb-8 md:my-4 mx-auto md:mx-0 bg-white pt-12 pb-12 rounded-3xl h-72'>
                       <div className='absolute h-12 w-full bg-black top-0 rounded-t-3xl bg-gradient-to-r from-yellow-500 via-yellow-300 to-yellow-500 text-black flex items-center justify-center font-bold text-lg'>{i.id}</div>
                       <div className='flex-1 mx-6 text-justify'>{i.text}</div>
-                      <>
-                        {i.id === "Bảng thành phần vàng" && 
-                          <div className='overflow-hidden w-48 z-0 mx-auto' >
-                            <img src="3growplus.png" alt=""></img>
-                          </div>}
-                      </>
                     </div>
                   </SwiperSlide>
                 )}

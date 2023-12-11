@@ -5,9 +5,9 @@ export default function Footer() {
     return (
         <footer className='bg-gradient-to-r from-10% to-[#0D4CC9] from-[#093489]  text-[#093489] py-6 md:text-start w-full px-4'>
                     <div>
-                        <div className='flex h-12 cursor-pointer w-fit'>
-                            <img alt="" src="growplus.png" className='w-40 md:w-56 h-30 object-cover'></img>
-                        </div>
+                        <Link reloadDocument to="/" className='flex h-12 cursor-pointer w-fit'>
+                            <img alt="Grow Plus+" src="growplus.png" className='w-40 md:w-56 h-30 object-cover'></img>
+                        </Link>
                         <div className="md:flex text-white justify-between mx-8">
                             <div>
                                 <p>HỖ TRỢ KHÁCH HÀNG</p>

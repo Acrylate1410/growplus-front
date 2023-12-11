@@ -116,7 +116,8 @@ export function Home() {
                       <div className='mx-1 hidden md:block'></div>    
                       <div className='text-xl'><PiShoppingCart /></div>
                 </button>
-                <HamburgerComponent/></div>
+                <HamburgerComponent/>
+              </div>
           </header>
           <div className="bg-[url(/public/banner.jpg)] bg-[length:158%_100%] md:bg-[length:100%_100%] h-[300px] md:h-[500px] mt-20"></div>
           <div className='w-full md:flex justify-center hidden md:block'>
@@ -271,18 +272,18 @@ export function Home() {
   
   function IngredientTab() {
     //{id: 22,  ingredient: "Dextrin", amount: "1.45"},
-    const ingredients =[{id: 1, ingredient: "Oligosaccharide", amount: "6300"},
-                        {id: 2, ingredient: "Mật ong tinh khiết", amount: "4500"},
+    const ingredients =[{id: 1,  ingredient: "Oligosaccharide", amount: "6300"},
+                        {id: 2,  ingredient: "Mật ong tinh khiết", amount: "4500"},
                         {id: 3,  ingredient: "Collagen peptide", amount: "100"},
                         {id: 4,  ingredient: "Dầu cá tinh luyện (chứa DHA/EPA)", amount: "87,0058"},
                         {id: 5,  ingredient: "Magie Sulfat (Magie 16mg)", amount: "80"},
                         {id: 6,  ingredient: "L-ornithine hydrochloride", amount: "50"},
-                        {id: 7, ingredient: "Protein", amount: "50"},
-                        {id: 8, ingredient: "Keo ong", amount: "50"},
+                        {id: 7,  ingredient: "Protein", amount: "50"},
+                        {id: 8,  ingredient: "Keo ong", amount: "50"},
                         {id: 9,  ingredient: "Peptide lòng đỏ trứng", amount: "30"},
-                        {id: 10,  ingredient: "Canxi lactate", amount: "30"},
+                        {id: 10, ingredient: "Canxi lactate", amount: "30"},
                         {id: 11, ingredient: "Phosphatidylserine (5:1)", amount: "20"},
-                        {id: 12,  ingredient: "Men chứa kẽm (10%)", amount: "20"},
+                        {id: 12, ingredient: "Men chứa kẽm (10%)", amount: "20"},
                         {id: 13, ingredient: "Vitamin A (10%)", amount: "12"},
                         {id: 14, ingredient: "Vitamin C", amount: "10"},
                         {id: 15, ingredient: "Vi khuẩn axit lactic", amount: "4,5"},
@@ -291,8 +292,8 @@ export function Home() {
                         {id: 18, ingredient: "Vitamin B2", amount: "2"},
                         {id: 19, ingredient: "Vitamin B6", amount: "2"},
                         {id: 20, ingredient: "Vitamin B12 (0,1%)", amount: "2"},
-                        {id: 21,  ingredient: "Vitamin D3 (0,25%)", amount: "2"},
-                        {id: 22,  ingredient: "Axit folic", amount: "0,2"},
+                        {id: 21, ingredient: "Vitamin D3 (0,25%)", amount: "2"},
+                        {id: 22, ingredient: "Axit folic", amount: "0,2"},
                         {id: 23, ingredient: "Vi khuẩn Bifidobacteria", amount: "0,05"},
                        ]
     return (
@@ -301,11 +302,10 @@ export function Home() {
           <img className='hidden md:inline absolute right-[-300px] bottom-0 w-96' src="Growplusbboxthanh.png" alt="Thành phần dinh dưỡng"></img>
           <h2 className='text-center font-bold text-3xl md:text-4xl  mb-5 z-10 text-[#093489] relative'>Thành phần dinh dưỡng</h2>
           <div className='flex justify-between font-bold px-4 py-5 text-white rounded-t-xl bg-gradient-to-r from-10% to-[#0D4CC9] from-[#093489] items-center  md:w-[94%]'>
-              <p>Thành phần  (trong 1 gói 30ml)</p>
+              <p>Thành phần (trong 1 gói 30ml)</p>
               <p className='text-end'>Hàm lượng (mg/gói)</p>
           </div>
           <div className='h-[500px] overflow-y-scroll  shadow-[0_60px_60px_-15px_rgba(0,0,0,0.3)] md:w-[94%]'>
-
               {ingredients.map(i =>
                 <div key={i.id} className={i.id % 2 !== 0 ? 'flex justify-between py-4 px-4' :  'flex justify-between py-4 px-4 bg-sky-100'}>
                     <p className='font-semibold'>{i.id + ". " + i.ingredient}</p>

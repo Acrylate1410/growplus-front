@@ -29,7 +29,7 @@ export function Article() {
           {article.date !== undefined && <div className="md:w-4/5 mx-auto px-[30px] pt-[30px] flex items-center text-sm"><AiOutlineClockCircle/><div className="ml-1.5">{article.date}</div></div> }
           {article.description !== undefined && <div className="md:w-4/5 mx-auto px-[30px] pt-[30px] font-bold text-gray-500 text-justify">{article.description}</div> }
           {article.content !== undefined && <FileViewer fileType="docx" filePath={article.content}/> } 
-          {article.src !== undefined && <div className="md:w-4/5 mx-auto text-sm text-gray-500 text-justify my-8">{"(Nguồn: " + article.src}</div> } 
+          {article.src !== undefined && <div className="md:w-4/5 mx-auto text-sm text-gray-500 text-justify mb-8 px-[30px]">{"(Nguồn: " + article.src + ")"}</div> } 
           {Object.keys(article).length !== 0 && <Footer/>}
         </>
     )

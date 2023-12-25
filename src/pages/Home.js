@@ -313,8 +313,7 @@ export function Home() {
                 </div>
               )}
           </div>
-          <div className='py-2 bg-white rounded-b-lg  md:w-[94%]'>
-          </div>
+          <div className='py-2 bg-white rounded-b-lg md:w-[94%]'></div>
         </div>
       </>
     )
@@ -327,12 +326,11 @@ export function Home() {
                     {isMoved: true, id: "Tăng chiều cao tối đa", text: "Các chuyên gia Nhật Bản đã xây dựng một công thức hoàn hảo không chỉ tập trung vào Canxi mà còn có các thành phần khác, giúp xương phát triển tối đa để tăng chiều cao cho trẻ và ưu việt hơn rất nhiều so với những sản phẩm tăng chiều cao thông thường chỉ tập trung vào Canxi."},
                     {id: "Hỗ trợ phát triển não bộ", text: "Sản phẩm không chỉ giúp trẻ phát triển về thể chất, chiều cao mà còn giúp trẻ tăng cường trí nhớ, phát triển trí thông minh nhờ có thành phần DHA, EPA và Phosphatidylserine giúp cải thiện chức năng não bộ, phát triển kích thích tế bào não."},
                     {isMoved: true, id: "Mùi vị thơm ngon, tiện lợi sử dụng", text: "Mùi vị thơm ngon, độ ngọt vừa phải và không có đường có thể gây sâu răng cho trẻ; Bào chế dạng nước có khả năng hấp thu tốt nhất cho cơ thể so với các dạng bào chế khác; 1 gói 30ml tiện lợi để sử dụng và bảo quản."},
-]
+    ]
     const texts2 = [
                      {isMoved: true, id: "Hệ tiêu hóa khỏe mạnh", text: "Đây là một sản phẩm với công thức không chỉ giúp hấp thụ nhóm các chất dinh dưỡng để tăng chiều cao từ sản phẩm mà còn hấp thụ Canxi tự nhiên bằng cách đề cao nhóm 3 lợi khuẩn Axit lactic, Bifidobacteria và Oligosaccharide, giúp trẻ có 1 hệ tiêu hóa khỏe mạnh, giúp trẻ hấp thu và chuyển hóa các chất dinh dưỡng ở mức tối ưu nhất."},
                      {id: "Tăng cường hệ miễn dịch", text: "Thành phần có vitamin tổng hợp, keo ong… và các dưỡng chất cần thiết khác giúp trẻ có có hệ hô hấp và cơ thể khỏe mạnh, phòng ngừa sự tấn công của các loại vi khuẩn và vi rút, tăng cường sức đề kháng và khả năng miễn dịch."},
                     {isMoved: true, id: "Đạt tiêu chuẩn GMP Nhật Bản", text: "Sản xuất tại nhà máy đạt chuẩn GMP có tiêu chuẩn chất lượng khắt khe về nguyên liệu, máy móc, công nghệ, quy trình sản xuất và chất lượng thành phẩm với đội ngũ chuyên gia hàng đầu nghiên cứu về nguồn dinh dưỡng & phát triển toàn diện của trẻ."},
-
     ]
     return (
       <>
@@ -368,7 +366,7 @@ export function Home() {
                               <div className='flex-1 mx-6 text-justify'>{i.text}</div>
                         </div>
                     }
-                    </>
+                  </>
               )}
           </div>
 

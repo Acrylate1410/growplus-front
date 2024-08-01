@@ -12,7 +12,7 @@ export function ArticleUploadForm() {
     const location = useLocation()
     useEffect(() => {
         if (location.pathname.endsWith("edit_article")) {
-            fetch("https://growplus-api.onrender.com/articles/get_one_article/" + params.get("id")).then(res => res.json()).then(data => {
+            fetch("https://okyibhzr7o.genhosting.net/articles/get_one_article/" + params.get("id")).then(res => res.json()).then(data => {
                 setArticleToEdit(data || {})
             }).catch(error => {})
         }
@@ -54,7 +54,7 @@ export function ArticleUploadForm() {
             } else {
                 formData.append("oldThumbnail", articleToEdit.thumbnail)
                 formData.append("oldContent", articleToEdit.content)
-                fetch("https://growplus-api.onrender.com/articles/update/" + params.get("id"), {
+                fetch("https://okyibhzr7o.genhosting.net/articles/update/" + params.get("id"), {
                     method: "PATCH",
                     body: formData
                 }).then(alert("Đã đăng bài thành công")).catch(error => {})

@@ -36,7 +36,7 @@ export function Home() {
     };
     useEffect(() => {
       window.history.scrollRestoration = 'manual'
-      fetch("https://okyibhzr7o.genhosting.net/articles/get_latest_articles").then(res => res.json()).then(data => {
+      fetch("https://okyibhzr7o.genhosting.net/growplus/articles/get_latest_articles").then(res => res.json()).then(data => {
         setArticleList(data || [])
         window.removeEventListener('scroll', onScroll);
         window.addEventListener('scroll', onScroll, { passive: true });
@@ -219,7 +219,7 @@ export function Home() {
     const note = useRef(null)
     const handleSubmit = (e) => {
         e.preventDefault()
-        fetch("https://okyibhzr7o.genhosting.net/orders/save_order", {
+        fetch("https://okyibhzr7o.genhosting.net/growplus/orders/save_order", {
             method: "POST",
             body: JSON.stringify({
               name: name.current.value,

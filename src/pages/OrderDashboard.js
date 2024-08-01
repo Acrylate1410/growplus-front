@@ -8,7 +8,7 @@ export function OrderDashboard() {
     const [filter, setFilter] = useState("");
     const [selected, setSelected] = useState("")
     useEffect(() => {
-        fetch("https://okyibhzr7o.genhosting.net/orders/get_orders").then(res => res.json()).then(data => {
+        fetch("https://okyibhzr7o.genhosting.net/growplus/orders/get_orders").then(res => res.json()).then(data => {
           setOrderList({data: data || [], message: ""})
         }).catch(error => {})
     }, []);
@@ -16,7 +16,7 @@ export function OrderDashboard() {
     const updateStatus = (id, currentStatus) => {
         let newStatus;
         currentStatus === "Chưa giao hàng" ? newStatus = "Đang giao hàng" : newStatus = "Đã giao hàng thành công"
-        fetch("https://okyibhzr7o.genhosting.net/orders/update/" + id, {
+        fetch("https://okyibhzr7o.genhosting.net/growplus/orders/update/" + id, {
             method: "PATCH",
             body: JSON.stringify({status: newStatus}),
             headers: {'Content-Type': 'application/json'},

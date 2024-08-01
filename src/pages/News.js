@@ -9,7 +9,7 @@ export function News() {
     const [searchToggle, setSearchToggle] = useState("hidden")
 
     useEffect(() => {
-      fetch("https://okyibhzr7o.genhosting.net/articles/get_articles").then(res => res.json()).then(data => {
+      fetch("https://okyibhzr7o.genhosting.net/growplus/articles/get_articles").then(res => res.json()).then(data => {
         setArticleList(data || [])
       }).catch(error => {})
     }, []);

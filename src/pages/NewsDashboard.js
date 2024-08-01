@@ -8,7 +8,7 @@ export function NewsDashboard() {
     const [articleList, setArticleList] = useState([])
     const [filter, setFilter] = useState("");
     useEffect(() => {
-      fetch("https://okyibhzr7o.genhosting.net/articles/get_articles").then(res => res.json()).then(data => {
+      fetch("https://okyibhzr7o.genhosting.net/growplus/articles/get_articles").then(res => res.json()).then(data => {
         setArticleList(data || [])
       }).catch(error => {})
     }, []);
@@ -23,7 +23,7 @@ export function NewsDashboard() {
         setSelected(selectedCopy)
     }
     const handleDelete = () => {
-        fetch("https://okyibhzr7o.genhosting.net/articles/delete", {
+        fetch("https://okyibhzr7o.genhosting.net/growplus/articles/delete", {
             method: "DELETE",
             body: JSON.stringify({articlesToDelete: selected}),
             headers: {'Content-Type': 'application/json'},

@@ -9,7 +9,7 @@ export function News() {
     const [searchToggle, setSearchToggle] = useState("hidden")
 
     useEffect(() => {
-      fetch("http://api.kenkojapan.vn/growplus/articles/get_articles").then(res => res.json()).then(data => {
+      fetch("https://api.kenkojapan.vn/growplus/articles/get_articles").then(res => res.json()).then(data => {
         setArticleList(data || [])
       }).catch(error => {})
     }, []);

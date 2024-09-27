@@ -36,7 +36,7 @@ export function Home() {
     };
     useEffect(() => {
       window.history.scrollRestoration = 'manual'
-      fetch("http://api.kenkojapan.vn/growplus/articles/get_latest_articles").then(res => res.json()).then(data => {
+      fetch("https://api.kenkojapan.vn/growplus/articles/get_latest_articles").then(res => res.json()).then(data => {
         setArticleList(data || [])
         window.removeEventListener('scroll', onScroll);
         window.addEventListener('scroll', onScroll, { passive: true });
@@ -219,7 +219,7 @@ export function Home() {
     const note = useRef(null)
     const handleSubmit = (e) => {
         e.preventDefault()
-        fetch("http://api.kenkojapan.vn/growplus/orders/save_order", {
+        fetch("https://api.kenkojapan.vn/growplus/orders/save_order", {
             method: "POST",
             body: JSON.stringify({
               name: name.current.value,

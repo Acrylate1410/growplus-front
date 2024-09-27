@@ -8,7 +8,7 @@ export function OrderDashboard() {
     const [filter, setFilter] = useState("");
     const [selected, setSelected] = useState("")
     useEffect(() => {
-        fetch("http://api.kenkojapan.vn/growplus/orders/get_orders").then(res => res.json()).then(data => {
+        fetch("https://api.kenkojapan.vn/growplus/orders/get_orders").then(res => res.json()).then(data => {
           setOrderList({data: data || [], message: ""})
         }).catch(error => {})
     }, []);
@@ -16,7 +16,7 @@ export function OrderDashboard() {
     const updateStatus = (id, currentStatus) => {
         let newStatus;
         currentStatus === "Chưa giao hàng" ? newStatus = "Đang giao hàng" : newStatus = "Đã giao hàng thành công"
-        fetch("http://api.kenkojapan.vn/growplus/orders/update/" + id, {
+        fetch("https://api.kenkojapan.vn/growplus/orders/update/" + id, {
             method: "PATCH",
             body: JSON.stringify({status: newStatus}),
             headers: {'Content-Type': 'application/json'},

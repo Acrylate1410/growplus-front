@@ -7,7 +7,7 @@ export function Article() {
     const [article, setArticle] = useState({})
     const [params] = useSearchParams()
     useEffect(() => {
-      fetch("https://okyibhzr7o.genhosting.net/growplus/articles/get_one_article/" + params.get("id")).then(res => res.json()).then(data => {
+      fetch("http://api.kenkojapan.vn/growplus/articles/get_one_article/" + params.get("id")).then(res => res.json()).then(data => {
         setArticle(data || {})
       }).catch(error => {})
     }, [])
